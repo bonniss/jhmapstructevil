@@ -1,13 +1,13 @@
 {
   "annotations": {
-    "changelogDate": "20241021173532"
+    "changelogDate": "20241021173905"
   },
   "applications": ["realworld"],
   "fields": [
     {
       "fieldName": "dataSourceMappingType",
       "fieldType": "AlphaSourceType",
-      "fieldValues": "COMPLETED_ORDER,BOOKING_INFORMATION,CUSTOMER_INFORMATION"
+      "fieldValues": "COMPLETED_ORDER,BOOKING_INFORMATION"
     },
     {
       "fieldName": "keyword",

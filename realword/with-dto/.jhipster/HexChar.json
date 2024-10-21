@@ -1,6 +1,6 @@
 {
   "annotations": {
-    "changelogDate": "20241021171358"
+    "changelogDate": "20241021171820"
   },
   "applications": ["realworld"],
   "dto": "mapstruct",
@@ -12,7 +12,7 @@
     {
       "fieldName": "gender",
       "fieldType": "TyrantSex",
-      "fieldValues": "MALE,FEMALE,OTHER"
+      "fieldValues": "MALE,FEMALE"
     },
     {
       "fieldName": "phone",

@@ -6,5 +6,4 @@ package ai.realworld.domain.enumeration;
 public enum SitomutaType {
     LOGIN_FAILED,
     LOGIN_SUCCESS,
-    CLIENT_APP_IMPOSTER,
 }

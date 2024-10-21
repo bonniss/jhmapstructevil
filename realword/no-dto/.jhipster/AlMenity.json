@@ -1,6 +1,6 @@
 {
   "annotations": {
-    "changelogDate": "20241021172532"
+    "changelogDate": "20241021172905"
   },
   "applications": ["realworld"],
   "fields": [
@@ -18,7 +18,7 @@
     {
       "fieldName": "propertyType",
       "fieldType": "PeteType",
-      "fieldValues": "VILLA,ROOM,HOTEL,BUNGALOW,HOUSE,APARTMENT"
+      "fieldValues": "VILLA,ROOM"
     }
   ],
   "jpaMetamodelFiltering": true,

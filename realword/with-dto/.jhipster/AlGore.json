@@ -1,6 +1,6 @@
 {
   "annotations": {
-    "changelogDate": "20241021170658"
+    "changelogDate": "20241021171120"
   },
   "applications": ["realworld"],
   "dto": "mapstruct",
@@ -15,7 +15,7 @@
     {
       "fieldName": "discountType",
       "fieldType": "AlcountTypo",
-      "fieldValues": "BY_FIXED_AMOUNT,BY_PERCENT,BY_PERCENT_UPPER_LIMIT_AMOUNT,FREE,OTHER"
+      "fieldValues": "BY_FIXED_AMOUNT,BY_PERCENT"
     },
     {
       "fieldName": "discountRate",

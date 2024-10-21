@@ -5,7 +5,5 @@ package ai.realworld.domain.enumeration;
  */
 public enum EeriePointSource {
     PURCHASE,
-    MINIGAME,
-    PROMOTION,
-    OTHER,
+    MENTI,
 }

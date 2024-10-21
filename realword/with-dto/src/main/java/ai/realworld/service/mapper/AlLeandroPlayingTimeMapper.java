@@ -19,7 +19,7 @@ import org.mapstruct.*;
  */
 @Mapper(componentModel = "spring")
 public interface AlLeandroPlayingTimeMapper extends EntityMapper<AlLeandroPlayingTimeDTO, AlLeandroPlayingTime> {
-    @Mapping(target = "miniGame", source = "miniGame", qualifiedByName = "alLeandroId")
+    @Mapping(target = "maggi", source = "maggi", qualifiedByName = "alLeandroId")
     @Mapping(target = "user", source = "user", qualifiedByName = "alPacinoId")
     @Mapping(target = "award", source = "award", qualifiedByName = "alDesireId")
     @Mapping(target = "application", source = "application", qualifiedByName = "johnLennonId")

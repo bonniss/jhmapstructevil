@@ -71,7 +71,7 @@ public class AlDesireAsserts {
         assertThat(expected)
             .as("Verify AlDesire relationships")
             .satisfies(e -> assertThat(e.getImage()).as("check image").isEqualTo(actual.getImage()))
-            .satisfies(e -> assertThat(e.getMiniGame()).as("check miniGame").isEqualTo(actual.getMiniGame()))
+            .satisfies(e -> assertThat(e.getMaggi()).as("check maggi").isEqualTo(actual.getMaggi()))
             .satisfies(e -> assertThat(e.getApplication()).as("check application").isEqualTo(actual.getApplication()));
     }
 }

@@ -72,7 +72,7 @@ public class AlLeandroPlayingTimeAsserts {
     public static void assertAlLeandroPlayingTimeUpdatableRelationshipsEquals(AlLeandroPlayingTime expected, AlLeandroPlayingTime actual) {
         assertThat(expected)
             .as("Verify AlLeandroPlayingTime relationships")
-            .satisfies(e -> assertThat(e.getMiniGame()).as("check miniGame").isEqualTo(actual.getMiniGame()))
+            .satisfies(e -> assertThat(e.getMaggi()).as("check maggi").isEqualTo(actual.getMaggi()))
             .satisfies(e -> assertThat(e.getUser()).as("check user").isEqualTo(actual.getUser()))
             .satisfies(e -> assertThat(e.getAward()).as("check award").isEqualTo(actual.getAward()))
             .satisfies(e -> assertThat(e.getApplication()).as("check application").isEqualTo(actual.getApplication()));

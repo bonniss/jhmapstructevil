@@ -1,6 +1,6 @@
 {
   "annotations": {
-    "changelogDate": "20241021171132"
+    "changelogDate": "20241021171505"
   },
   "applications": ["realworld"],
   "fields": [
@@ -10,8 +10,8 @@
     },
     {
       "fieldName": "status",
-      "fieldType": "MiniGamePlayingTimeStatus",
-      "fieldValues": "READY_TO_PLAY,PLAYING,PLAYED,ALREADY_SENT_AWARD_TO_PLAYER,COMPLETED"
+      "fieldType": "MaBooDragonBall",
+      "fieldValues": "READY_TO_PLAY,PLAYING"
     },
     {
       "fieldName": "wonDate",
@@ -40,7 +40,7 @@
   "relationships": [
     {
       "otherEntityName": "alLeandro",
-      "relationshipName": "miniGame",
+      "relationshipName": "maggi",
       "relationshipSide": "left",
       "relationshipType": "many-to-one"
     },

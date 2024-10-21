@@ -38,15 +38,15 @@ class AlDesireTest {
     }
 
     @Test
-    void miniGameTest() {
+    void maggiTest() {
         AlDesire alDesire = getAlDesireRandomSampleGenerator();
         AlLeandro alLeandroBack = getAlLeandroRandomSampleGenerator();
 
-        alDesire.setMiniGame(alLeandroBack);
-        assertThat(alDesire.getMiniGame()).isEqualTo(alLeandroBack);
+        alDesire.setMaggi(alLeandroBack);
+        assertThat(alDesire.getMaggi()).isEqualTo(alLeandroBack);
 
-        alDesire.miniGame(null);
-        assertThat(alDesire.getMiniGame()).isNull();
+        alDesire.maggi(null);
+        assertThat(alDesire.getMaggi()).isNull();
     }
 
     @Test

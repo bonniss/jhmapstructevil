@@ -6,5 +6,4 @@ package ai.realworld.domain.enumeration;
 public enum PeteStatus {
     ACTIVE,
     INACTIVE,
-    DISCONTINUED,
 }

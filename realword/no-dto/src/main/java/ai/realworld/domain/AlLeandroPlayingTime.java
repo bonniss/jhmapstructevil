@@ -1,6 +1,6 @@
 package ai.realworld.domain;
 
-import ai.realworld.domain.enumeration.MiniGamePlayingTimeStatus;
+import ai.realworld.domain.enumeration.MaBooDragonBall;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.*;
 import java.io.Serializable;
@@ -27,7 +27,7 @@ public class AlLeandroPlayingTime implements Serializable {
 
     @Enumerated(EnumType.STRING)
     @Column(name = "status")
-    private MiniGamePlayingTimeStatus status;
+    private MaBooDragonBall status;
 
     @Column(name = "won_date")
     private Instant wonDate;
@@ -46,14 +46,14 @@ public class AlLeandroPlayingTime implements Serializable {
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JsonIgnoreProperties(value = { "programBackground", "wheelBackground", "application", "awards" }, allowSetters = true)
-    private AlLeandro miniGame;
+    private AlLeandro maggi;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JsonIgnoreProperties(value = { "application", "membershipTier", "alVueVueUsage" }, allowSetters = true)
     private AlPacino user;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JsonIgnoreProperties(value = { "image", "miniGame", "application" }, allowSetters = true)
+    @JsonIgnoreProperties(value = { "image", "maggi", "application" }, allowSetters = true)
     private AlDesire award;
 
     @ManyToOne(fetch = FetchType.LAZY)
@@ -75,16 +75,16 @@ public class AlLeandroPlayingTime implements Serializable {
         this.id = id;
     }
 
-    public MiniGamePlayingTimeStatus getStatus() {
+    public MaBooDragonBall getStatus() {
         return this.status;
     }
 
-    public AlLeandroPlayingTime status(MiniGamePlayingTimeStatus status) {
+    public AlLeandroPlayingTime status(MaBooDragonBall status) {
         this.setStatus(status);
         return this;
     }
 
-    public void setStatus(MiniGamePlayingTimeStatus status) {
+    public void setStatus(MaBooDragonBall status) {
         this.status = status;
     }
 
@@ -153,16 +153,16 @@ public class AlLeandroPlayingTime implements Serializable {
         this.playSourceTime = playSourceTime;
     }
 
-    public AlLeandro getMiniGame() {
-        return this.miniGame;
+    public AlLeandro getMaggi() {
+        return this.maggi;
     }
 
-    public void setMiniGame(AlLeandro alLeandro) {
-        this.miniGame = alLeandro;
+    public void setMaggi(AlLeandro alLeandro) {
+        this.maggi = alLeandro;
     }
 
-    public AlLeandroPlayingTime miniGame(AlLeandro alLeandro) {
-        this.setMiniGame(alLeandro);
+    public AlLeandroPlayingTime maggi(AlLeandro alLeandro) {
+        this.setMaggi(alLeandro);
         return this;
     }
 

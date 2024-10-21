@@ -4,6 +4,7 @@
     "authenticationType": "jwt",
     "baseName": "realworld",
     "buildTool": "maven",
+    "creationTimestamp": 1729530717199,
     "devDatabaseType": "postgresql",
     "entities": [
       "HandCraft",
@@ -56,12 +57,14 @@
       "AppZnsTemplate",
       "OlAlmantinoMilo",
       "JohnLennon",
-      "OlMaster"
+      "OlMaster",
+      "AllMassageThai",
+      "AlZorroTemptation"
     ],
     "jhipsterVersion": "8.7.1",
-    "jwtSecretKey": "MDEyZjc5ZjcyMzk0MWI0Y2JkZDcyMzk1NTdkMjFkM2EwNGE0N2VmNWE1NzEzYWY5OWE5NzRhYjAzNTBjZjdlYjA4NWQwZDhkZjJmMTBiNjMyZTYwMzVhNDZkNWEwYjViMjhiMmE2NGNjN2RhMDMzZTgyOTc1ZjU3NjdhZjBlY2I=",
+    "jwtSecretKey": "YTdiNjRlNDQ2N2E4YWQ4NDAyNTc3NTZlNjkzNzA1YmQwOTQ1N2VlN2IyZjBmY2E1MjA5NmMxZmNhZmIzNTkzNTc4NzkzODljMjlhNzlkMTY1ZGY5ZWJkNTdlNTY1NjRmYmRjZjcwMGY5YmFjZDdmNGJkNzRiZmIxMjI5NTIxYTU=",
     "languages": ["en"],
-    "lastLiquibaseTimestamp": 1729532912000,
+    "lastLiquibaseTimestamp": 1729533127000,
     "monorepository": true,
     "nativeLanguage": "en",
     "packageName": "ai.realworld",

@@ -37,7 +37,7 @@ import org.springframework.transaction.annotation.Transactional;
 class AlPacinoPointHistoryResourceIT {
 
     private static final EeriePointSource DEFAULT_SOURCE = EeriePointSource.PURCHASE;
-    private static final EeriePointSource UPDATED_SOURCE = EeriePointSource.MINIGAME;
+    private static final EeriePointSource UPDATED_SOURCE = EeriePointSource.MENTI;
 
     private static final String DEFAULT_ASSOCIATED_ID = "AAAAAAAAAA";
     private static final String UPDATED_ASSOCIATED_ID = "BBBBBBBBBB";

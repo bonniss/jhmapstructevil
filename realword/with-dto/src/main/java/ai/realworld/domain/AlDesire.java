@@ -58,7 +58,7 @@ public class AlDesire implements Serializable {
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JsonIgnoreProperties(value = { "programBackground", "wheelBackground", "application", "awards" }, allowSetters = true)
-    private AlLeandro miniGame;
+    private AlLeandro maggi;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JsonIgnoreProperties(value = { "logo", "appManager", "organization", "jelloInitium", "inhouseInitium" }, allowSetters = true)
@@ -196,16 +196,16 @@ public class AlDesire implements Serializable {
         return this;
     }
 
-    public AlLeandro getMiniGame() {
-        return this.miniGame;
+    public AlLeandro getMaggi() {
+        return this.maggi;
     }
 
-    public void setMiniGame(AlLeandro alLeandro) {
-        this.miniGame = alLeandro;
+    public void setMaggi(AlLeandro alLeandro) {
+        this.maggi = alLeandro;
     }
 
-    public AlDesire miniGame(AlLeandro alLeandro) {
-        this.setMiniGame(alLeandro);
+    public AlDesire maggi(AlLeandro alLeandro) {
+        this.setMaggi(alLeandro);
         return this;
     }
 

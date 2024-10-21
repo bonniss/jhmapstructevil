@@ -1,6 +1,6 @@
 {
   "annotations": {
-    "changelogDate": "20241021173432"
+    "changelogDate": "20241021173805"
   },
   "applications": ["realworld"],
   "fields": [
@@ -32,7 +32,7 @@
     {
       "fieldName": "status",
       "fieldType": "PeteStatus",
-      "fieldValues": "ACTIVE,INACTIVE,DISCONTINUED"
+      "fieldValues": "ACTIVE,INACTIVE"
     },
     {
       "fieldName": "isEnabled",

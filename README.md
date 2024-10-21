@@ -120,18 +120,18 @@ Run 3: 15.310 seconds
 
 ```txt
 ==================
-realworld
+realword
 ==================
 
 ~~~~~~~~~~~~~~~~~~
 Measuring build time for no-dto...
-Run 1: 6.138 seconds
-6.138 seconds
+Run 1: 8.475 seconds
+8.475 seconds
 ~~~~~~~~~~~~~~~~~~
 
 ~~~~~~~~~~~~~~~~~~
 Measuring build time for with-dto...
-Run 1: 299.662 seconds
-299.662 seconds
+Run 1: 326.540 seconds
+326.540 seconds
 ~~~~~~~~~~~~~~~~~~
 ```

@@ -3,14 +3,14 @@
     "cannotCreate": true,
     "cannotDelete": true,
     "cannotUpdate": true,
-    "changelogDate": "20241021172032"
+    "changelogDate": "20241021172405"
   },
   "applications": ["realworld"],
   "fields": [
     {
       "fieldName": "type",
       "fieldType": "SitomutaType",
-      "fieldValues": "LOGIN_FAILED,LOGIN_SUCCESS,CLIENT_APP_IMPOSTER"
+      "fieldValues": "LOGIN_FAILED,LOGIN_SUCCESS"
     },
     {
       "fieldName": "content",

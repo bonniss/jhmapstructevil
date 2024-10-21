@@ -81,7 +81,7 @@ class AlLeandroPlayingTimeCriteriaTest {
         alLeandroPlayingTimeCriteria.sentAwardToPlayerBy();
         alLeandroPlayingTimeCriteria.playerReceivedTheAwardAt();
         alLeandroPlayingTimeCriteria.playSourceTime();
-        alLeandroPlayingTimeCriteria.miniGameId();
+        alLeandroPlayingTimeCriteria.maggiId();
         alLeandroPlayingTimeCriteria.userId();
         alLeandroPlayingTimeCriteria.awardId();
         alLeandroPlayingTimeCriteria.applicationId();
@@ -98,7 +98,7 @@ class AlLeandroPlayingTimeCriteriaTest {
                 condition.apply(criteria.getSentAwardToPlayerBy()) &&
                 condition.apply(criteria.getPlayerReceivedTheAwardAt()) &&
                 condition.apply(criteria.getPlaySourceTime()) &&
-                condition.apply(criteria.getMiniGameId()) &&
+                condition.apply(criteria.getMaggiId()) &&
                 condition.apply(criteria.getUserId()) &&
                 condition.apply(criteria.getAwardId()) &&
                 condition.apply(criteria.getApplicationId()) &&
@@ -120,7 +120,7 @@ class AlLeandroPlayingTimeCriteriaTest {
                 condition.apply(criteria.getSentAwardToPlayerBy(), copy.getSentAwardToPlayerBy()) &&
                 condition.apply(criteria.getPlayerReceivedTheAwardAt(), copy.getPlayerReceivedTheAwardAt()) &&
                 condition.apply(criteria.getPlaySourceTime(), copy.getPlaySourceTime()) &&
-                condition.apply(criteria.getMiniGameId(), copy.getMiniGameId()) &&
+                condition.apply(criteria.getMaggiId(), copy.getMaggiId()) &&
                 condition.apply(criteria.getUserId(), copy.getUserId()) &&
                 condition.apply(criteria.getAwardId(), copy.getAwardId()) &&
                 condition.apply(criteria.getApplicationId(), copy.getApplicationId()) &&

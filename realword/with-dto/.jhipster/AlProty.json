@@ -1,6 +1,6 @@
 {
   "annotations": {
-    "changelogDate": "20241021173358"
+    "changelogDate": "20241021173820"
   },
   "applications": ["realworld"],
   "dto": "mapstruct",
@@ -33,7 +33,7 @@
     {
       "fieldName": "status",
       "fieldType": "PeteStatus",
-      "fieldValues": "ACTIVE,INACTIVE,DISCONTINUED"
+      "fieldValues": "ACTIVE,INACTIVE"
     },
     {
       "fieldName": "isEnabled",

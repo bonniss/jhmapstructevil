@@ -34,7 +34,7 @@ public class AlDesireDTO implements Serializable {
 
     private MetaverseDTO image;
 
-    private AlLeandroDTO miniGame;
+    private AlLeandroDTO maggi;
 
     private JohnLennonDTO application;
 
@@ -118,12 +118,12 @@ public class AlDesireDTO implements Serializable {
         this.image = image;
     }
 
-    public AlLeandroDTO getMiniGame() {
-        return miniGame;
+    public AlLeandroDTO getMaggi() {
+        return maggi;
     }
 
-    public void setMiniGame(AlLeandroDTO miniGame) {
-        this.miniGame = miniGame;
+    public void setMaggi(AlLeandroDTO maggi) {
+        this.maggi = maggi;
     }
 
     public JohnLennonDTO getApplication() {
@@ -169,7 +169,7 @@ public class AlDesireDTO implements Serializable {
             ", awardReference='" + getAwardReference() + "'" +
             ", isDefault='" + getIsDefault() + "'" +
             ", image=" + getImage() +
-            ", miniGame=" + getMiniGame() +
+            ", maggi=" + getMaggi() +
             ", application=" + getApplication() +
             "}";
     }

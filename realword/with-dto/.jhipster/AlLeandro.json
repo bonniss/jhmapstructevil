@@ -1,6 +1,6 @@
 {
   "annotations": {
-    "changelogDate": "20241021170858"
+    "changelogDate": "20241021171320"
   },
   "applications": ["realworld"],
   "dto": "mapstruct",
@@ -70,7 +70,7 @@
     },
     {
       "otherEntityName": "alDesire",
-      "otherEntityRelationshipName": "miniGame",
+      "otherEntityRelationshipName": "maggi",
       "relationshipName": "awards",
       "relationshipSide": "right",
       "relationshipType": "one-to-many"

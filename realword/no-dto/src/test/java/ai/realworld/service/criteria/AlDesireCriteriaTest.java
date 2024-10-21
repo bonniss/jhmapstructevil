@@ -84,7 +84,7 @@ class AlDesireCriteriaTest {
         alDesireCriteria.awardReference();
         alDesireCriteria.isDefault();
         alDesireCriteria.imageId();
-        alDesireCriteria.miniGameId();
+        alDesireCriteria.maggiId();
         alDesireCriteria.applicationId();
         alDesireCriteria.distinct();
     }
@@ -102,7 +102,7 @@ class AlDesireCriteriaTest {
                 condition.apply(criteria.getAwardReference()) &&
                 condition.apply(criteria.getIsDefault()) &&
                 condition.apply(criteria.getImageId()) &&
-                condition.apply(criteria.getMiniGameId()) &&
+                condition.apply(criteria.getMaggiId()) &&
                 condition.apply(criteria.getApplicationId()) &&
                 condition.apply(criteria.getDistinct()),
             "every filter matches"
@@ -122,7 +122,7 @@ class AlDesireCriteriaTest {
                 condition.apply(criteria.getAwardReference(), copy.getAwardReference()) &&
                 condition.apply(criteria.getIsDefault(), copy.getIsDefault()) &&
                 condition.apply(criteria.getImageId(), copy.getImageId()) &&
-                condition.apply(criteria.getMiniGameId(), copy.getMiniGameId()) &&
+                condition.apply(criteria.getMaggiId(), copy.getMaggiId()) &&
                 condition.apply(criteria.getApplicationId(), copy.getApplicationId()) &&
                 condition.apply(criteria.getDistinct(), copy.getDistinct()),
             "every filter matches"

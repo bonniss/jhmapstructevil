@@ -63,9 +63,9 @@ public class AlLeandro implements Serializable {
     @JsonIgnoreProperties(value = { "logo", "appManager", "organization", "jelloInitium", "inhouseInitium" }, allowSetters = true)
     private JohnLennon application;
 
-    @OneToMany(fetch = FetchType.LAZY, mappedBy = "miniGame")
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "maggi")
     @Cache(usage = CacheConcurrencyStrategy.READ_WRITE)
-    @JsonIgnoreProperties(value = { "image", "miniGame", "application" }, allowSetters = true)
+    @JsonIgnoreProperties(value = { "image", "maggi", "application" }, allowSetters = true)
     private Set<AlDesire> awards = new HashSet<>();
 
     // jhipster-needle-entity-add-field - JHipster will add fields here
@@ -219,10 +219,10 @@ public class AlLeandro implements Serializable {
 
     public void setAwards(Set<AlDesire> alDesires) {
         if (this.awards != null) {
-            this.awards.forEach(i -> i.setMiniGame(null));
+            this.awards.forEach(i -> i.setMaggi(null));
         }
         if (alDesires != null) {
-            alDesires.forEach(i -> i.setMiniGame(this));
+            alDesires.forEach(i -> i.setMaggi(this));
         }
         this.awards = alDesires;
     }
@@ -234,13 +234,13 @@ public class AlLeandro implements Serializable {
 
     public AlLeandro addAwards(AlDesire alDesire) {
         this.awards.add(alDesire);
-        alDesire.setMiniGame(this);
+        alDesire.setMaggi(this);
         return this;
     }
 
     public AlLeandro removeAwards(AlDesire alDesire) {
         this.awards.remove(alDesire);
-        alDesire.setMiniGame(null);
+        alDesire.setMaggi(null);
         return this;
     }
 

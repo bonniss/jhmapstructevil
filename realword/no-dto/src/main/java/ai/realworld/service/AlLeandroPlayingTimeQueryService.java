@@ -98,10 +98,10 @@ public class AlLeandroPlayingTimeQueryService extends QueryService<AlLeandroPlay
                     buildStringSpecification(criteria.getPlaySourceTime(), AlLeandroPlayingTime_.playSourceTime)
                 );
             }
-            if (criteria.getMiniGameId() != null) {
+            if (criteria.getMaggiId() != null) {
                 specification = specification.and(
-                    buildSpecification(criteria.getMiniGameId(), root ->
-                        root.join(AlLeandroPlayingTime_.miniGame, JoinType.LEFT).get(AlLeandro_.id)
+                    buildSpecification(criteria.getMaggiId(), root ->
+                        root.join(AlLeandroPlayingTime_.maggi, JoinType.LEFT).get(AlLeandro_.id)
                     )
                 );
             }

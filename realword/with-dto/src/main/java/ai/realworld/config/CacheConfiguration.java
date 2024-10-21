@@ -130,6 +130,8 @@ public class CacheConfiguration {
             createCache(cm, ai.realworld.domain.JohnLennon.class.getName());
             createCache(cm, ai.realworld.domain.OlMaster.class.getName());
             createCache(cm, ai.realworld.domain.OlMaster.class.getName() + ".applications");
+            createCache(cm, ai.realworld.domain.AllMassageThai.class.getName());
+            createCache(cm, ai.realworld.domain.AlZorroTemptation.class.getName());
             // jhipster-needle-ehcache-add-entry
         };
     }

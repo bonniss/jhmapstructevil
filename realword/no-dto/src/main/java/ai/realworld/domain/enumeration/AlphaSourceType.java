@@ -6,5 +6,4 @@ package ai.realworld.domain.enumeration;
 public enum AlphaSourceType {
     COMPLETED_ORDER,
     BOOKING_INFORMATION,
-    CUSTOMER_INFORMATION,
 }

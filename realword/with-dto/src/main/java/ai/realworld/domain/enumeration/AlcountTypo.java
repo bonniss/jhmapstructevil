@@ -6,7 +6,4 @@ package ai.realworld.domain.enumeration;
 public enum AlcountTypo {
     BY_FIXED_AMOUNT,
     BY_PERCENT,
-    BY_PERCENT_UPPER_LIMIT_AMOUNT,
-    FREE,
-    OTHER,
 }

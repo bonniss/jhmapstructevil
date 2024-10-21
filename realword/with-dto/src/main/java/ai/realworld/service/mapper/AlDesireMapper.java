@@ -18,7 +18,7 @@ import org.mapstruct.*;
 @Mapper(componentModel = "spring")
 public interface AlDesireMapper extends EntityMapper<AlDesireDTO, AlDesire> {
     @Mapping(target = "image", source = "image", qualifiedByName = "metaverseId")
-    @Mapping(target = "miniGame", source = "miniGame", qualifiedByName = "alLeandroId")
+    @Mapping(target = "maggi", source = "maggi", qualifiedByName = "alLeandroId")
     @Mapping(target = "application", source = "application", qualifiedByName = "johnLennonId")
     AlDesireDTO toDto(AlDesire s);
 

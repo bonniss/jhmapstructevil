@@ -1,6 +1,6 @@
 {
   "annotations": {
-    "changelogDate": "20241021171032"
+    "changelogDate": "20241021171405"
   },
   "applications": ["realworld"],
   "fields": [
@@ -34,7 +34,7 @@
     {
       "fieldName": "awardResultType",
       "fieldType": "FooGameAward",
-      "fieldValues": "LOST,PLAY_TIMES,DISCOUNT_CODE,PRODUCT,OTHER"
+      "fieldValues": "LOST,PLAY_TIMES"
     },
     {
       "fieldName": "awardReference",
@@ -58,7 +58,7 @@
     {
       "otherEntityName": "alLeandro",
       "otherEntityRelationshipName": "awards",
-      "relationshipName": "miniGame",
+      "relationshipName": "maggi",
       "relationshipSide": "left",
       "relationshipType": "many-to-one"
     },

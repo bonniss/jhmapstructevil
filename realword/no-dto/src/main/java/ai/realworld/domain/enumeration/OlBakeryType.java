@@ -6,6 +6,4 @@ package ai.realworld.domain.enumeration;
 public enum OlBakeryType {
     CLIENT_COMPANY,
     CLIENT_INDIVIDUAL,
-    PARTNER,
-    OTHER,
 }

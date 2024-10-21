@@ -60,7 +60,7 @@ public class AlDesireCriteria implements Serializable, Criteria {
 
     private LongFilter imageId;
 
-    private UUIDFilter miniGameId;
+    private UUIDFilter maggiId;
 
     private UUIDFilter applicationId;
 
@@ -79,7 +79,7 @@ public class AlDesireCriteria implements Serializable, Criteria {
         this.awardReference = other.optionalAwardReference().map(StringFilter::copy).orElse(null);
         this.isDefault = other.optionalIsDefault().map(BooleanFilter::copy).orElse(null);
         this.imageId = other.optionalImageId().map(LongFilter::copy).orElse(null);
-        this.miniGameId = other.optionalMiniGameId().map(UUIDFilter::copy).orElse(null);
+        this.maggiId = other.optionalMaggiId().map(UUIDFilter::copy).orElse(null);
         this.applicationId = other.optionalApplicationId().map(UUIDFilter::copy).orElse(null);
         this.distinct = other.distinct;
     }
@@ -279,23 +279,23 @@ public class AlDesireCriteria implements Serializable, Criteria {
         this.imageId = imageId;
     }
 
-    public UUIDFilter getMiniGameId() {
-        return miniGameId;
+    public UUIDFilter getMaggiId() {
+        return maggiId;
     }
 
-    public Optional<UUIDFilter> optionalMiniGameId() {
-        return Optional.ofNullable(miniGameId);
+    public Optional<UUIDFilter> optionalMaggiId() {
+        return Optional.ofNullable(maggiId);
     }
 
-    public UUIDFilter miniGameId() {
-        if (miniGameId == null) {
-            setMiniGameId(new UUIDFilter());
+    public UUIDFilter maggiId() {
+        if (maggiId == null) {
+            setMaggiId(new UUIDFilter());
         }
-        return miniGameId;
+        return maggiId;
     }
 
-    public void setMiniGameId(UUIDFilter miniGameId) {
-        this.miniGameId = miniGameId;
+    public void setMaggiId(UUIDFilter maggiId) {
+        this.maggiId = maggiId;
     }
 
     public UUIDFilter getApplicationId() {
@@ -356,7 +356,7 @@ public class AlDesireCriteria implements Serializable, Criteria {
             Objects.equals(awardReference, that.awardReference) &&
             Objects.equals(isDefault, that.isDefault) &&
             Objects.equals(imageId, that.imageId) &&
-            Objects.equals(miniGameId, that.miniGameId) &&
+            Objects.equals(maggiId, that.maggiId) &&
             Objects.equals(applicationId, that.applicationId) &&
             Objects.equals(distinct, that.distinct)
         );
@@ -375,7 +375,7 @@ public class AlDesireCriteria implements Serializable, Criteria {
             awardReference,
             isDefault,
             imageId,
-            miniGameId,
+            maggiId,
             applicationId,
             distinct
         );
@@ -395,7 +395,7 @@ public class AlDesireCriteria implements Serializable, Criteria {
             optionalAwardReference().map(f -> "awardReference=" + f + ", ").orElse("") +
             optionalIsDefault().map(f -> "isDefault=" + f + ", ").orElse("") +
             optionalImageId().map(f -> "imageId=" + f + ", ").orElse("") +
-            optionalMiniGameId().map(f -> "miniGameId=" + f + ", ").orElse("") +
+            optionalMaggiId().map(f -> "maggiId=" + f + ", ").orElse("") +
             optionalApplicationId().map(f -> "applicationId=" + f + ", ").orElse("") +
             optionalDistinct().map(f -> "distinct=" + f + ", ").orElse("") +
         "}";

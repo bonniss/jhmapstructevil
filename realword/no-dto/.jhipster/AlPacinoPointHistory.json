@@ -1,13 +1,13 @@
 {
   "annotations": {
-    "changelogDate": "20241021173932"
+    "changelogDate": "20241021174305"
   },
   "applications": ["realworld"],
   "fields": [
     {
       "fieldName": "source",
       "fieldType": "EeriePointSource",
-      "fieldValues": "PURCHASE,MINIGAME,PROMOTION,OTHER"
+      "fieldValues": "PURCHASE,MENTI"
     },
     {
       "fieldName": "associatedId",

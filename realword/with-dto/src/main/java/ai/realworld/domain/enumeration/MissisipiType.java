@@ -6,9 +6,4 @@ package ai.realworld.domain.enumeration;
 public enum MissisipiType {
     CONTAINER,
     WEIGHT,
-    LENGTH,
-    AREA,
-    VOLUME,
-    TIME,
-    OTHER,
 }

@@ -1,6 +1,6 @@
 package ai.realworld.service.criteria;
 
-import ai.realworld.domain.enumeration.MiniGamePlayingTimeStatus;
+import ai.realworld.domain.enumeration.MaBooDragonBall;
 import java.io.Serializable;
 import java.util.Objects;
 import java.util.Optional;
@@ -22,19 +22,19 @@ import tech.jhipster.service.filter.*;
 public class AlLeandroPlayingTimeCriteria implements Serializable, Criteria {
 
     /**
-     * Class for filtering MiniGamePlayingTimeStatus
+     * Class for filtering MaBooDragonBall
      */
-    public static class MiniGamePlayingTimeStatusFilter extends Filter<MiniGamePlayingTimeStatus> {
+    public static class MaBooDragonBallFilter extends Filter<MaBooDragonBall> {
 
-        public MiniGamePlayingTimeStatusFilter() {}
+        public MaBooDragonBallFilter() {}
 
-        public MiniGamePlayingTimeStatusFilter(MiniGamePlayingTimeStatusFilter filter) {
+        public MaBooDragonBallFilter(MaBooDragonBallFilter filter) {
             super(filter);
         }
 
         @Override
-        public MiniGamePlayingTimeStatusFilter copy() {
-            return new MiniGamePlayingTimeStatusFilter(this);
+        public MaBooDragonBallFilter copy() {
+            return new MaBooDragonBallFilter(this);
         }
     }
 
@@ -42,7 +42,7 @@ public class AlLeandroPlayingTimeCriteria implements Serializable, Criteria {
 
     private UUIDFilter id;
 
-    private MiniGamePlayingTimeStatusFilter status;
+    private MaBooDragonBallFilter status;
 
     private InstantFilter wonDate;
 
@@ -54,7 +54,7 @@ public class AlLeandroPlayingTimeCriteria implements Serializable, Criteria {
 
     private StringFilter playSourceTime;
 
-    private UUIDFilter miniGameId;
+    private UUIDFilter maggiId;
 
     private UUIDFilter userId;
 
@@ -68,13 +68,13 @@ public class AlLeandroPlayingTimeCriteria implements Serializable, Criteria {
 
     public AlLeandroPlayingTimeCriteria(AlLeandroPlayingTimeCriteria other) {
         this.id = other.optionalId().map(UUIDFilter::copy).orElse(null);
-        this.status = other.optionalStatus().map(MiniGamePlayingTimeStatusFilter::copy).orElse(null);
+        this.status = other.optionalStatus().map(MaBooDragonBallFilter::copy).orElse(null);
         this.wonDate = other.optionalWonDate().map(InstantFilter::copy).orElse(null);
         this.sentAwardToPlayerAt = other.optionalSentAwardToPlayerAt().map(InstantFilter::copy).orElse(null);
         this.sentAwardToPlayerBy = other.optionalSentAwardToPlayerBy().map(StringFilter::copy).orElse(null);
         this.playerReceivedTheAwardAt = other.optionalPlayerReceivedTheAwardAt().map(InstantFilter::copy).orElse(null);
         this.playSourceTime = other.optionalPlaySourceTime().map(StringFilter::copy).orElse(null);
-        this.miniGameId = other.optionalMiniGameId().map(UUIDFilter::copy).orElse(null);
+        this.maggiId = other.optionalMaggiId().map(UUIDFilter::copy).orElse(null);
         this.userId = other.optionalUserId().map(UUIDFilter::copy).orElse(null);
         this.awardId = other.optionalAwardId().map(UUIDFilter::copy).orElse(null);
         this.applicationId = other.optionalApplicationId().map(UUIDFilter::copy).orElse(null);
@@ -105,22 +105,22 @@ public class AlLeandroPlayingTimeCriteria implements Serializable, Criteria {
         this.id = id;
     }
 
-    public MiniGamePlayingTimeStatusFilter getStatus() {
+    public MaBooDragonBallFilter getStatus() {
         return status;
     }
 
-    public Optional<MiniGamePlayingTimeStatusFilter> optionalStatus() {
+    public Optional<MaBooDragonBallFilter> optionalStatus() {
         return Optional.ofNullable(status);
     }
 
-    public MiniGamePlayingTimeStatusFilter status() {
+    public MaBooDragonBallFilter status() {
         if (status == null) {
-            setStatus(new MiniGamePlayingTimeStatusFilter());
+            setStatus(new MaBooDragonBallFilter());
         }
         return status;
     }
 
-    public void setStatus(MiniGamePlayingTimeStatusFilter status) {
+    public void setStatus(MaBooDragonBallFilter status) {
         this.status = status;
     }
 
@@ -219,23 +219,23 @@ public class AlLeandroPlayingTimeCriteria implements Serializable, Criteria {
         this.playSourceTime = playSourceTime;
     }
 
-    public UUIDFilter getMiniGameId() {
-        return miniGameId;
+    public UUIDFilter getMaggiId() {
+        return maggiId;
     }
 
-    public Optional<UUIDFilter> optionalMiniGameId() {
-        return Optional.ofNullable(miniGameId);
+    public Optional<UUIDFilter> optionalMaggiId() {
+        return Optional.ofNullable(maggiId);
     }
 
-    public UUIDFilter miniGameId() {
-        if (miniGameId == null) {
-            setMiniGameId(new UUIDFilter());
+    public UUIDFilter maggiId() {
+        if (maggiId == null) {
+            setMaggiId(new UUIDFilter());
         }
-        return miniGameId;
+        return maggiId;
     }
 
-    public void setMiniGameId(UUIDFilter miniGameId) {
-        this.miniGameId = miniGameId;
+    public void setMaggiId(UUIDFilter maggiId) {
+        this.maggiId = maggiId;
     }
 
     public UUIDFilter getUserId() {
@@ -331,7 +331,7 @@ public class AlLeandroPlayingTimeCriteria implements Serializable, Criteria {
             Objects.equals(sentAwardToPlayerBy, that.sentAwardToPlayerBy) &&
             Objects.equals(playerReceivedTheAwardAt, that.playerReceivedTheAwardAt) &&
             Objects.equals(playSourceTime, that.playSourceTime) &&
-            Objects.equals(miniGameId, that.miniGameId) &&
+            Objects.equals(maggiId, that.maggiId) &&
             Objects.equals(userId, that.userId) &&
             Objects.equals(awardId, that.awardId) &&
             Objects.equals(applicationId, that.applicationId) &&
@@ -349,7 +349,7 @@ public class AlLeandroPlayingTimeCriteria implements Serializable, Criteria {
             sentAwardToPlayerBy,
             playerReceivedTheAwardAt,
             playSourceTime,
-            miniGameId,
+            maggiId,
             userId,
             awardId,
             applicationId,
@@ -368,7 +368,7 @@ public class AlLeandroPlayingTimeCriteria implements Serializable, Criteria {
             optionalSentAwardToPlayerBy().map(f -> "sentAwardToPlayerBy=" + f + ", ").orElse("") +
             optionalPlayerReceivedTheAwardAt().map(f -> "playerReceivedTheAwardAt=" + f + ", ").orElse("") +
             optionalPlaySourceTime().map(f -> "playSourceTime=" + f + ", ").orElse("") +
-            optionalMiniGameId().map(f -> "miniGameId=" + f + ", ").orElse("") +
+            optionalMaggiId().map(f -> "maggiId=" + f + ", ").orElse("") +
             optionalUserId().map(f -> "userId=" + f + ", ").orElse("") +
             optionalAwardId().map(f -> "awardId=" + f + ", ").orElse("") +
             optionalApplicationId().map(f -> "applicationId=" + f + ", ").orElse("") +

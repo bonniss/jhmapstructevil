@@ -1,11 +1,11 @@
 id;data_source_mapping_type;keyword;property;title
-1;CUSTOMER_INFORMATION;close wise;everlasting sternly;compassionate huzzah
-2;CUSTOMER_INFORMATION;misreport mouser sprinkles;bah past;massage provided
+1;BOOKING_INFORMATION;close wise;everlasting sternly;compassionate huzzah
+2;BOOKING_INFORMATION;misreport mouser sprinkles;bah past;massage provided
 3;COMPLETED_ORDER;fondly kielbasa;between filter;unit
 4;BOOKING_INFORMATION;stupendous metabolise;wash restructure stage;birth
 5;BOOKING_INFORMATION;forsaken fooey provided;successfully;frightfully extent
-6;BOOKING_INFORMATION;eventually immediately uh-huh;chunter after;gee owlishly
-7;BOOKING_INFORMATION;tough meanwhile hungrily;however uh-huh atop;bourgeoisie liberalize whoever
-8;CUSTOMER_INFORMATION;steep;tinderbox whoa yin;however slope judicious
+6;COMPLETED_ORDER;eventually immediately uh-huh;chunter after;gee owlishly
+7;COMPLETED_ORDER;tough meanwhile hungrily;however uh-huh atop;bourgeoisie liberalize whoever
+8;BOOKING_INFORMATION;steep;tinderbox whoa yin;however slope judicious
 9;COMPLETED_ORDER;nor poppy ick;quarrelsomely completion;agreeable median now
 10;COMPLETED_ORDER;despite deduct weakly;duh;yesterday cruelty hotfoot

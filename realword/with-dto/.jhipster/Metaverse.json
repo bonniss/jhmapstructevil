@@ -2,7 +2,7 @@
   "annotations": {
     "cannotCreate": true,
     "cannotUpdate": true,
-    "changelogDate": "20241021171758"
+    "changelogDate": "20241021172220"
   },
   "applications": ["realworld"],
   "dto": "mapstruct",

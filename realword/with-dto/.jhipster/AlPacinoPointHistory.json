@@ -1,6 +1,6 @@
 {
   "annotations": {
-    "changelogDate": "20241021173858"
+    "changelogDate": "20241021174320"
   },
   "applications": ["realworld"],
   "dto": "mapstruct",
@@ -8,7 +8,7 @@
     {
       "fieldName": "source",
       "fieldType": "EeriePointSource",
-      "fieldValues": "PURCHASE,MINIGAME,PROMOTION,OTHER"
+      "fieldValues": "PURCHASE,MENTI"
     },
     {
       "fieldName": "associatedId",

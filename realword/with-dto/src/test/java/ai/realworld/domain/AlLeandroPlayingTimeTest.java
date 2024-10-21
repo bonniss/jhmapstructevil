@@ -27,15 +27,15 @@ class AlLeandroPlayingTimeTest {
     }
 
     @Test
-    void miniGameTest() {
+    void maggiTest() {
         AlLeandroPlayingTime alLeandroPlayingTime = getAlLeandroPlayingTimeRandomSampleGenerator();
         AlLeandro alLeandroBack = getAlLeandroRandomSampleGenerator();
 
-        alLeandroPlayingTime.setMiniGame(alLeandroBack);
-        assertThat(alLeandroPlayingTime.getMiniGame()).isEqualTo(alLeandroBack);
+        alLeandroPlayingTime.setMaggi(alLeandroBack);
+        assertThat(alLeandroPlayingTime.getMaggi()).isEqualTo(alLeandroBack);
 
-        alLeandroPlayingTime.miniGame(null);
-        assertThat(alLeandroPlayingTime.getMiniGame()).isNull();
+        alLeandroPlayingTime.maggi(null);
+        assertThat(alLeandroPlayingTime.getMaggi()).isNull();
     }
 
     @Test

@@ -1,6 +1,6 @@
 {
   "annotations": {
-    "changelogDate": "20241021171658"
+    "changelogDate": "20241021172120"
   },
   "applications": ["realworld"],
   "dto": "mapstruct",
@@ -22,7 +22,7 @@
     {
       "fieldName": "type",
       "fieldType": "MissisipiType",
-      "fieldValues": "CONTAINER,WEIGHT,LENGTH,AREA,VOLUME,TIME,OTHER"
+      "fieldValues": "CONTAINER,WEIGHT"
     }
   ],
   "jpaMetamodelFiltering": true,

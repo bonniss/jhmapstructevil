@@ -6,7 +6,4 @@ package ai.realworld.domain.enumeration;
 public enum PaulBargainStatus {
     PENDING,
     RESERVED,
-    BOOKED,
-    COMPLETE,
-    CANCELLED,
 }

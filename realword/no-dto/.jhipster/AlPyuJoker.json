@@ -1,6 +1,6 @@
 {
   "annotations": {
-    "changelogDate": "20241021173132"
+    "changelogDate": "20241021173505"
   },
   "applications": ["realworld"],
   "fields": [
@@ -73,7 +73,7 @@
     {
       "fieldName": "bookingStatus",
       "fieldType": "PaulBargainStatus",
-      "fieldValues": "PENDING,RESERVED,BOOKED,COMPLETE,CANCELLED"
+      "fieldValues": "PENDING,RESERVED"
     },
     {
       "fieldName": "historyRefJason",

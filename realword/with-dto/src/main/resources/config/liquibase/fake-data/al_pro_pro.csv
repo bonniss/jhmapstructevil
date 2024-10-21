@@ -1,11 +1,11 @@
 id;name;description_heitiga;property_type;area_in_square_meter;number_of_adults;number_of_preschoolers;number_of_children;number_of_rooms;number_of_floors;bed_size;is_enabled
-d34d724d-9d91-460c-9dd9-d95920c1a106;oof gadzooks;lest per geez;HOUSE;1543.24;26199;3738;2791;4384;13412;KING;true
-d5c87b39-749f-452f-8a48-043d993b0de6;sick aside navigate;save;HOTEL;2865.42;26911;22678;29863;30998;8675;QUEEN;false
-3f4c74b4-cc6d-4a5e-a35f-d34f1e0e309d;brr furthermore hutch;obvious for;VILLA;14801.29;23053;3975;22075;9391;14023;DOUBLE;false
-21fba6ca-5eb5-4c41-b9f3-77347ebb0ea6;instead;psst;VILLA;6512.63;7463;8374;10832;18766;10241;SUPER_KING;false
-37056eb3-0a12-4861-9dbe-7aa0fb804e0c;whether;wherever gratefully entwine;HOUSE;5061.06;26423;12722;8350;3591;19478;EXTRA_BED;true
-6eaecce6-053d-4eaf-b9cc-a1a6d793b0bc;meh rare;who loudly bah;BUNGALOW;11829.36;23301;23887;2369;4606;950;QUEEN;false
-32d3d348-28c1-4d12-aaf7-92cf9df2444f;offset save wherever;blah tankful well;HOTEL;15862.76;9337;25767;24708;1624;2272;KING;false
-de0f1dff-da96-41ee-bf82-c3fc75222f0a;brilliant unlike;steeple;APARTMENT;15721.83;30182;8021;18098;5992;19610;EXTRA_BED;true
-49b10803-905b-4be8-95ac-e23297641e89;till;phew forage repossess;ROOM;15665.86;14442;30918;5593;11403;677;KING;true
-47939112-d92c-4438-ad22-d610d733230a;stormy carefree midst;minus;APARTMENT;15798.92;8940;30179;29307;11015;15860;CALIFORNIA_KING;false
+d34d724d-9d91-460c-9dd9-d95920c1a106;oof gadzooks;lest per geez;ROOM;1543.24;26199;3738;2791;4384;13412;SINGLE;true
+d5c87b39-749f-452f-8a48-043d993b0de6;sick aside navigate;save;VILLA;2865.42;26911;22678;29863;30998;8675;SINGLE;false
+3f4c74b4-cc6d-4a5e-a35f-d34f1e0e309d;brr furthermore hutch;obvious for;VILLA;14801.29;23053;3975;22075;9391;14023;SINGLE;false
+21fba6ca-5eb5-4c41-b9f3-77347ebb0ea6;instead;psst;VILLA;6512.63;7463;8374;10832;18766;10241;DOUBLE;false
+37056eb3-0a12-4861-9dbe-7aa0fb804e0c;whether;wherever gratefully entwine;ROOM;5061.06;26423;12722;8350;3591;19478;DOUBLE;true
+6eaecce6-053d-4eaf-b9cc-a1a6d793b0bc;meh rare;who loudly bah;ROOM;11829.36;23301;23887;2369;4606;950;SINGLE;false
+32d3d348-28c1-4d12-aaf7-92cf9df2444f;offset save wherever;blah tankful well;VILLA;15862.76;9337;25767;24708;1624;2272;SINGLE;false
+de0f1dff-da96-41ee-bf82-c3fc75222f0a;brilliant unlike;steeple;ROOM;15721.83;30182;8021;18098;5992;19610;DOUBLE;true
+49b10803-905b-4be8-95ac-e23297641e89;till;phew forage repossess;VILLA;15665.86;14442;30918;5593;11403;677;SINGLE;true
+47939112-d92c-4438-ad22-d610d733230a;stormy carefree midst;minus;ROOM;15798.92;8940;30179;29307;11015;15860;DOUBLE;false

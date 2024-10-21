@@ -730,24 +730,24 @@ class AlDesireResourceIT {
 
     @Test
     @Transactional
-    void getAllAlDesiresByMiniGameIsEqualToSomething() throws Exception {
-        AlLeandro miniGame;
+    void getAllAlDesiresByMaggiIsEqualToSomething() throws Exception {
+        AlLeandro maggi;
         if (TestUtil.findAll(em, AlLeandro.class).isEmpty()) {
             alDesireRepository.saveAndFlush(alDesire);
-            miniGame = AlLeandroResourceIT.createEntity();
+            maggi = AlLeandroResourceIT.createEntity();
         } else {
-            miniGame = TestUtil.findAll(em, AlLeandro.class).get(0);
+            maggi = TestUtil.findAll(em, AlLeandro.class).get(0);
         }
-        em.persist(miniGame);
+        em.persist(maggi);
         em.flush();
-        alDesire.setMiniGame(miniGame);
+        alDesire.setMaggi(maggi);
         alDesireRepository.saveAndFlush(alDesire);
-        UUID miniGameId = miniGame.getId();
-        // Get all the alDesireList where miniGame equals to miniGameId
-        defaultAlDesireShouldBeFound("miniGameId.equals=" + miniGameId);
+        UUID maggiId = maggi.getId();
+        // Get all the alDesireList where maggi equals to maggiId
+        defaultAlDesireShouldBeFound("maggiId.equals=" + maggiId);
 
-        // Get all the alDesireList where miniGame equals to UUID.randomUUID()
-        defaultAlDesireShouldNotBeFound("miniGameId.equals=" + UUID.randomUUID());
+        // Get all the alDesireList where maggi equals to UUID.randomUUID()
+        defaultAlDesireShouldNotBeFound("maggiId.equals=" + UUID.randomUUID());
     }
 
     @Test

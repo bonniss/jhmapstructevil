@@ -1,6 +1,6 @@
 {
   "annotations": {
-    "changelogDate": "20241021174758"
+    "changelogDate": "20241021175220"
   },
   "applications": ["realworld"],
   "dto": "mapstruct",
@@ -32,7 +32,7 @@
     {
       "fieldName": "businessType",
       "fieldType": "OlBakeryType",
-      "fieldValues": "CLIENT_COMPANY,CLIENT_INDIVIDUAL,PARTNER,OTHER"
+      "fieldValues": "CLIENT_COMPANY,CLIENT_INDIVIDUAL"
     },
     {
       "fieldName": "email",

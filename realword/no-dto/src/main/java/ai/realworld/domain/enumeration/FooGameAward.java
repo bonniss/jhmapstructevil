@@ -6,7 +6,4 @@ package ai.realworld.domain.enumeration;
 public enum FooGameAward {
     LOST,
     PLAY_TIMES,
-    DISCOUNT_CODE,
-    PRODUCT,
-    OTHER,
 }

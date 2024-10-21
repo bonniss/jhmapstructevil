@@ -1,6 +1,6 @@
 {
   "annotations": {
-    "changelogDate": "20241021174832"
+    "changelogDate": "20241021175205"
   },
   "applications": ["realworld"],
   "fields": [
@@ -31,7 +31,7 @@
     {
       "fieldName": "businessType",
       "fieldType": "OlBakeryType",
-      "fieldValues": "CLIENT_COMPANY,CLIENT_INDIVIDUAL,PARTNER,OTHER"
+      "fieldValues": "CLIENT_COMPANY,CLIENT_INDIVIDUAL"
     },
     {
       "fieldName": "email",

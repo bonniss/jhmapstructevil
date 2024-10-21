@@ -1,6 +1,6 @@
 package ai.realworld.service.dto;
 
-import ai.realworld.domain.enumeration.MiniGamePlayingTimeStatus;
+import ai.realworld.domain.enumeration.MaBooDragonBall;
 import java.io.Serializable;
 import java.time.Instant;
 import java.util.Objects;
@@ -14,7 +14,7 @@ public class AlLeandroPlayingTimeDTO implements Serializable {
 
     private UUID id;
 
-    private MiniGamePlayingTimeStatus status;
+    private MaBooDragonBall status;
 
     private Instant wonDate;
 
@@ -26,7 +26,7 @@ public class AlLeandroPlayingTimeDTO implements Serializable {
 
     private String playSourceTime;
 
-    private AlLeandroDTO miniGame;
+    private AlLeandroDTO maggi;
 
     private AlPacinoDTO user;
 
@@ -42,11 +42,11 @@ public class AlLeandroPlayingTimeDTO implements Serializable {
         this.id = id;
     }
 
-    public MiniGamePlayingTimeStatus getStatus() {
+    public MaBooDragonBall getStatus() {
         return status;
     }
 
-    public void setStatus(MiniGamePlayingTimeStatus status) {
+    public void setStatus(MaBooDragonBall status) {
         this.status = status;
     }
 
@@ -90,12 +90,12 @@ public class AlLeandroPlayingTimeDTO implements Serializable {
         this.playSourceTime = playSourceTime;
     }
 
-    public AlLeandroDTO getMiniGame() {
-        return miniGame;
+    public AlLeandroDTO getMaggi() {
+        return maggi;
     }
 
-    public void setMiniGame(AlLeandroDTO miniGame) {
-        this.miniGame = miniGame;
+    public void setMaggi(AlLeandroDTO maggi) {
+        this.maggi = maggi;
     }
 
     public AlPacinoDTO getUser() {
@@ -154,7 +154,7 @@ public class AlLeandroPlayingTimeDTO implements Serializable {
             ", sentAwardToPlayerBy='" + getSentAwardToPlayerBy() + "'" +
             ", playerReceivedTheAwardAt='" + getPlayerReceivedTheAwardAt() + "'" +
             ", playSourceTime='" + getPlaySourceTime() + "'" +
-            ", miniGame=" + getMiniGame() +
+            ", maggi=" + getMaggi() +
             ", user=" + getUser() +
             ", award=" + getAward() +
             ", application=" + getApplication() +

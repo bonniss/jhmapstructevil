@@ -1,6 +1,6 @@
 {
   "annotations": {
-    "changelogDate": "20241021173258"
+    "changelogDate": "20241021173720"
   },
   "applications": ["realworld"],
   "dto": "mapstruct",
@@ -25,7 +25,7 @@
     {
       "fieldName": "propertyType",
       "fieldType": "PeteType",
-      "fieldValues": "VILLA,ROOM,HOTEL,BUNGALOW,HOUSE,APARTMENT"
+      "fieldValues": "VILLA,ROOM"
     },
     {
       "fieldName": "areaInSquareMeter",
@@ -60,7 +60,7 @@
     {
       "fieldName": "bedSize",
       "fieldType": "BenedictToy",
-      "fieldValues": "SINGLE,DOUBLE,QUEEN,KING,SUPER_KING,CALIFORNIA_KING,EXTRA_BED"
+      "fieldValues": "SINGLE,DOUBLE"
     },
     {
       "fieldName": "isEnabled",

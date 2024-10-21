@@ -70,18 +70,18 @@ class AlLeandroTest {
 
         alLeandro.addAwards(alDesireBack);
         assertThat(alLeandro.getAwards()).containsOnly(alDesireBack);
-        assertThat(alDesireBack.getMiniGame()).isEqualTo(alLeandro);
+        assertThat(alDesireBack.getMaggi()).isEqualTo(alLeandro);
 
         alLeandro.removeAwards(alDesireBack);
         assertThat(alLeandro.getAwards()).doesNotContain(alDesireBack);
-        assertThat(alDesireBack.getMiniGame()).isNull();
+        assertThat(alDesireBack.getMaggi()).isNull();
 
         alLeandro.awards(new HashSet<>(Set.of(alDesireBack)));
         assertThat(alLeandro.getAwards()).containsOnly(alDesireBack);
-        assertThat(alDesireBack.getMiniGame()).isEqualTo(alLeandro);
+        assertThat(alDesireBack.getMaggi()).isEqualTo(alLeandro);
 
         alLeandro.setAwards(new HashSet<>());
         assertThat(alLeandro.getAwards()).doesNotContain(alDesireBack);
-        assertThat(alDesireBack.getMiniGame()).isNull();
+        assertThat(alDesireBack.getMaggi()).isNull();
     }
 }

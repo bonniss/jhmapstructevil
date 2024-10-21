@@ -13,7 +13,7 @@ import ai.realworld.domain.AlLeandro;
 import ai.realworld.domain.AlLeandroPlayingTime;
 import ai.realworld.domain.AlPacino;
 import ai.realworld.domain.JohnLennon;
-import ai.realworld.domain.enumeration.MiniGamePlayingTimeStatus;
+import ai.realworld.domain.enumeration.MaBooDragonBall;
 import ai.realworld.repository.AlLeandroPlayingTimeRepository;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import jakarta.persistence.EntityManager;
@@ -38,8 +38,8 @@ import org.springframework.transaction.annotation.Transactional;
 @WithMockUser
 class AlLeandroPlayingTimeResourceIT {
 
-    private static final MiniGamePlayingTimeStatus DEFAULT_STATUS = MiniGamePlayingTimeStatus.READY_TO_PLAY;
-    private static final MiniGamePlayingTimeStatus UPDATED_STATUS = MiniGamePlayingTimeStatus.PLAYING;
+    private static final MaBooDragonBall DEFAULT_STATUS = MaBooDragonBall.READY_TO_PLAY;
+    private static final MaBooDragonBall UPDATED_STATUS = MaBooDragonBall.PLAYING;
 
     private static final Instant DEFAULT_WON_DATE = Instant.ofEpochMilli(0L);
     private static final Instant UPDATED_WON_DATE = Instant.now().truncatedTo(ChronoUnit.MILLIS);
@@ -471,24 +471,24 @@ class AlLeandroPlayingTimeResourceIT {
 
     @Test
     @Transactional
-    void getAllAlLeandroPlayingTimesByMiniGameIsEqualToSomething() throws Exception {
-        AlLeandro miniGame;
+    void getAllAlLeandroPlayingTimesByMaggiIsEqualToSomething() throws Exception {
+        AlLeandro maggi;
         if (TestUtil.findAll(em, AlLeandro.class).isEmpty()) {
             alLeandroPlayingTimeRepository.saveAndFlush(alLeandroPlayingTime);
-            miniGame = AlLeandroResourceIT.createEntity();
+            maggi = AlLeandroResourceIT.createEntity();
         } else {
-            miniGame = TestUtil.findAll(em, AlLeandro.class).get(0);
+            maggi = TestUtil.findAll(em, AlLeandro.class).get(0);
         }
-        em.persist(miniGame);
+        em.persist(maggi);
         em.flush();
-        alLeandroPlayingTime.setMiniGame(miniGame);
+        alLeandroPlayingTime.setMaggi(maggi);
         alLeandroPlayingTimeRepository.saveAndFlush(alLeandroPlayingTime);
-        UUID miniGameId = miniGame.getId();
-        // Get all the alLeandroPlayingTimeList where miniGame equals to miniGameId
-        defaultAlLeandroPlayingTimeShouldBeFound("miniGameId.equals=" + miniGameId);
+        UUID maggiId = maggi.getId();
+        // Get all the alLeandroPlayingTimeList where maggi equals to maggiId
+        defaultAlLeandroPlayingTimeShouldBeFound("maggiId.equals=" + maggiId);
 
-        // Get all the alLeandroPlayingTimeList where miniGame equals to UUID.randomUUID()
-        defaultAlLeandroPlayingTimeShouldNotBeFound("miniGameId.equals=" + UUID.randomUUID());
+        // Get all the alLeandroPlayingTimeList where maggi equals to UUID.randomUUID()
+        defaultAlLeandroPlayingTimeShouldNotBeFound("maggiId.equals=" + UUID.randomUUID());
     }
 
     @Test

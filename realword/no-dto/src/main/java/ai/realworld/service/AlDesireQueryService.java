@@ -103,9 +103,9 @@ public class AlDesireQueryService extends QueryService<AlDesire> {
                     buildSpecification(criteria.getImageId(), root -> root.join(AlDesire_.image, JoinType.LEFT).get(Metaverse_.id))
                 );
             }
-            if (criteria.getMiniGameId() != null) {
+            if (criteria.getMaggiId() != null) {
                 specification = specification.and(
-                    buildSpecification(criteria.getMiniGameId(), root -> root.join(AlDesire_.miniGame, JoinType.LEFT).get(AlLeandro_.id))
+                    buildSpecification(criteria.getMaggiId(), root -> root.join(AlDesire_.maggi, JoinType.LEFT).get(AlLeandro_.id))
                 );
             }
             if (criteria.getApplicationId() != null) {

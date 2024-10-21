@@ -1,6 +1,6 @@
 {
   "annotations": {
-    "changelogDate": "20241021170432"
+    "changelogDate": "20241021170805"
   },
   "applications": ["realworld"],
   "fields": [
@@ -50,7 +50,7 @@
     {
       "fieldName": "gender",
       "fieldType": "TyrantSex",
-      "fieldValues": "MALE,FEMALE,OTHER"
+      "fieldValues": "MALE,FEMALE"
     },
     {
       "fieldName": "phone",
