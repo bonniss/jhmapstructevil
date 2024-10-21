@@ -1,0 +1,93 @@
+application {
+  config {
+    baseName jhmapstruct
+    applicationType monolith
+    packageName xyz.jhmapstruct
+    authenticationType jwt
+    prodDatabaseType postgresql
+    devDatabaseType h2Disk
+    buildTool maven
+  }
+  entities *
+}
+service all with serviceImpl
+paginate Order, Product with pagination
+entity Customer {
+  firstName String required
+  lastName String required
+  email String required
+  phoneNumber String
+}
+entity Product {
+  name String required
+  price BigDecimal required
+  stock Integer required
+  description TextBlob
+}
+entity Order {
+  orderDate Instant required
+  totalPrice BigDecimal required
+  status OrderStatus
+}
+entity Employee {
+  firstName String required
+  lastName String required
+  email String required
+  hireDate Instant
+  position String
+}
+entity Category {
+  name String required
+  description String
+}
+entity Review {
+  rating Integer required min(1) max(5)
+  comment TextBlob
+  reviewDate Instant required
+}
+entity Payment {
+  amount BigDecimal required
+  paymentDate Instant required
+  paymentMethod PaymentMethod
+}
+entity Invoice {
+  invoiceNumber String required
+  issueDate Instant required
+  dueDate Instant
+  amount BigDecimal required
+}
+entity Shipment {
+  trackingNumber String required
+  shippedDate Instant
+  deliveryDate Instant
+}
+entity Supplier {
+  name String required
+  contactPerson String
+  email String
+  phoneNumber String
+}
+enum OrderStatus {
+  PENDING, SHIPPED, DELIVERED, CANCELLED
+}
+enum PaymentMethod {
+  CREDIT_CARD, PAYPAL, BANK_TRANSFER
+}
+relationship OneToMany {
+  Customer{orders} to Order{customer(email)} , Order{products} to Product{order}
+}
+relationship ManyToOne {
+  Product{category(name)} to Category
+}
+relationship ManyToOne {
+  Review{product(name)} to Product
+}
+relationship ManyToOne {
+  Order{payment} to Payment
+}
+relationship ManyToOne {
+  Order{shipment} to Shipment
+}
+relationship ManyToMany {
+  Supplier{products(name)} to Product{suppliers}
+}

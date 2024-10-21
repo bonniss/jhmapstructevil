@@ -1,0 +1,18 @@
+{
+  "generator-jhipster": {
+    "applicationType": "monolith",
+    "authenticationType": "jwt",
+    "baseName": "jhmapstruct",
+    "buildTool": "maven",
+    "devDatabaseType": "h2Disk",
+    "entities": ["Customer", "Product", "Order", "Employee", "Category", "Review", "Payment", "Invoice", "Shipment", "Supplier"],
+    "jhipsterVersion": "8.7.1",
+    "jwtSecretKey": "ZjdmYWE3NGZkNTVmZjgxNGQ1YjU3ZjViZjU3ZTU5ZGUyNTYwMDRlZTA1NzIyY2ZkYWUyMWMxMWJmZWM1NDkyMGRjOTViODI0MzlhMGQyNTZjMzQ2M2E0YzZjYWI5MzhlYzEwZDA2YjgxMTRlYTZmNzQwMWJjM2NjMjg0OTZlYmU=",
+    "languages": ["en"],
+    "lastLiquibaseTimestamp": 1729501156000,
+    "nativeLanguage": "en",
+    "packageName": "xyz.jhmapstruct",
+    "prodDatabaseType": "postgresql",
+    "skipClient": true
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "annotations": {
+    "changelogDate": "20241021090014"
+  },
+  "applications": ["jhmapstruct"],
+  "dto": "mapstruct",
+  "fields": [
+    {
+      "fieldName": "amount",
+      "fieldType": "BigDecimal",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "paymentDate",
+      "fieldType": "Instant",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "paymentMethod",
+      "fieldType": "PaymentMethod",
+      "fieldValues": "CREDIT_CARD,PAYPAL,BANK_TRANSFER"
+    }
+  ],
+  "name": "Payment",
+  "relationships": [],
+  "searchEngine": "no",
+  "service": "serviceImpl"
+}
