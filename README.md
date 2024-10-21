@@ -25,10 +25,12 @@ Folder names are self-explanatory.
 
 ```sh
 # At folder `no-dto`
-jhipster jdl ../main.jdl --skip-client --skip-install --skip-git
+cd no-dto && \
+  jhipster jdl ../main.jdl --skip-client --skip-install --skip-git
 
 # At folder `with-dto`
-jhipster jdl ../main.jdl --inline "dto * with mapstruct" --skip-client --skip-install --skip-git
+cd with-dto && \
+  jhipster jdl ../main.jdl --inline "dto * with mapstruct" --skip-client --skip-install --skip-git
 ```
 
 ## How to benchmark?
