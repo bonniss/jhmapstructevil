@@ -1,4 +1,19 @@
-#!/bin/bash
+#!/bin/sh
+
+get_timestamp_ms() {
+    if [[ "$OSTYPE" == "darwin"* ]]; then
+        # macOS, use gdate (GNU date installed via brew)
+        if command -v gdate >/dev/null 2>&1; then
+            gdate +%s%3N
+        else
+            echo "Error: gdate is not installed. Please install it using 'brew install coreutils'."
+            exit 1
+        fi
+    else
+        # Linux
+        date +%s%3N
+    fi
+}
 
 print_parent_folder() {
     local parent_folder=$(basename "$PWD")
@@ -17,7 +32,7 @@ calculate_average_time() {
     local runs=$1
     shift
     local times=("$@")
-    
+
     for time in "${times[@]}"; do
         total_time=$((total_time + time))
     done
@@ -36,14 +51,14 @@ measure_build_time() {
     echo "Measuring build time for $app_dir..."
 
     for ((i=1; i<=runs; i++)); do
-        start_time=$(date +%s%3N)
-        
+        start_time=$(get_timestamp_ms)
+
         # Run the build (skip tests and use cached dependencies)
         cd "$app_dir" || exit
         ./mvnw clean install -Dmaven.test.skip=true > /dev/null 2>&1
         cd - > /dev/null 2>&1
-        
-        end_time=$(date +%s%3N)
+
+        end_time=$(get_timestamp_ms)
 
         # build time in milliseconds
         build_time=$(($end_time - $start_time))
