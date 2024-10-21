@@ -1,0 +1,60 @@
+{
+  "annotations": {
+    "changelogDate": "20241021174458"
+  },
+  "applications": ["realworld"],
+  "dto": "mapstruct",
+  "fields": [
+    {
+      "fieldName": "znsAction",
+      "fieldType": "KnsIction",
+      "fieldValues": "SEND_ZNS_TO_CUSTOMER_AFTER_BOOKING,SEND_ZNS_TO_HOUSEKEEPING_AFTER_BOOKING"
+    },
+    {
+      "fieldName": "name",
+      "fieldType": "String",
+      "fieldValidateRules": ["required", "minlength", "maxlength"],
+      "fieldValidateRulesMaxlength": "256",
+      "fieldValidateRulesMinlength": "2"
+    },
+    {
+      "fieldName": "templateId",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "dataSourceMappingType",
+      "fieldType": "AlphaSourceType",
+      "fieldValues": "COMPLETED_ORDER,BOOKING_INFORMATION,CUSTOMER_INFORMATION"
+    },
+    {
+      "fieldName": "templateDataMapping",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "targetUrls",
+      "fieldType": "String"
+    }
+  ],
+  "jpaMetamodelFiltering": true,
+  "name": "AppZnsTemplate",
+  "pagination": "pagination",
+  "relationships": [
+    {
+      "otherEntityName": "metaverse",
+      "relationshipName": "thumbnail",
+      "relationshipSide": "left",
+      "relationshipType": "many-to-one"
+    },
+    {
+      "options": {
+        "onDelete": "CASCADE"
+      },
+      "otherEntityName": "johnLennon",
+      "relationshipName": "application",
+      "relationshipSide": "left",
+      "relationshipType": "many-to-one"
+    }
+  ],
+  "searchEngine": "no",
+  "service": "serviceClass"
+}

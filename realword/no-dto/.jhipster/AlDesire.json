@@ -1,0 +1,77 @@
+{
+  "annotations": {
+    "changelogDate": "20241021171032"
+  },
+  "applications": ["realworld"],
+  "fields": [
+    {
+      "fieldName": "id",
+      "fieldType": "UUID"
+    },
+    {
+      "fieldName": "name",
+      "fieldType": "String",
+      "fieldValidateRules": ["required", "minlength", "maxlength"],
+      "fieldValidateRulesMaxlength": "256",
+      "fieldValidateRulesMinlength": "2"
+    },
+    {
+      "fieldName": "weight",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "probabilityOfWinning",
+      "fieldType": "Float"
+    },
+    {
+      "fieldName": "maximumWinningTime",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "isWinningTimeLimited",
+      "fieldType": "Boolean"
+    },
+    {
+      "fieldName": "awardResultType",
+      "fieldType": "FooGameAward",
+      "fieldValues": "LOST,PLAY_TIMES,DISCOUNT_CODE,PRODUCT,OTHER"
+    },
+    {
+      "fieldName": "awardReference",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "isDefault",
+      "fieldType": "Boolean"
+    }
+  ],
+  "jpaMetamodelFiltering": true,
+  "name": "AlDesire",
+  "pagination": "pagination",
+  "relationships": [
+    {
+      "otherEntityName": "metaverse",
+      "relationshipName": "image",
+      "relationshipSide": "left",
+      "relationshipType": "many-to-one"
+    },
+    {
+      "otherEntityName": "alLeandro",
+      "otherEntityRelationshipName": "awards",
+      "relationshipName": "miniGame",
+      "relationshipSide": "left",
+      "relationshipType": "many-to-one"
+    },
+    {
+      "options": {
+        "onDelete": "CASCADE"
+      },
+      "otherEntityName": "johnLennon",
+      "relationshipName": "application",
+      "relationshipSide": "left",
+      "relationshipType": "many-to-one"
+    }
+  ],
+  "searchEngine": "no",
+  "service": "serviceClass"
+}

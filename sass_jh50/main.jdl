@@ -10,8 +10,10 @@ application {
   }
   entities *
 }
-service all with serviceImpl
-paginate Order, Product with pagination
+service * with serviceClass
+paginate all with pagination
+filter all
+
 entity Customer {
   firstName String required
   lastName String required
@@ -411,54 +413,54 @@ entity MasterTenant {
   code String unique required
 }
 relationship ManyToOne {
-  Customer{tenant} to MasterTenant
-  Product{tenant} to MasterTenant
-  Order{tenant} to MasterTenant
-  Employee{tenant} to MasterTenant
-  Category{tenant} to MasterTenant
-  Review{tenant} to MasterTenant
-  Payment{tenant} to MasterTenant
-  Invoice{tenant} to MasterTenant
-  Shipment{tenant} to MasterTenant
-  Supplier{tenant} to MasterTenant
-  CustomerVi{tenant} to MasterTenant
-  ProductVi{tenant} to MasterTenant
-  OrderVi{tenant} to MasterTenant
-  EmployeeVi{tenant} to MasterTenant
-  CategoryVi{tenant} to MasterTenant
-  ReviewVi{tenant} to MasterTenant
-  PaymentVi{tenant} to MasterTenant
-  InvoiceVi{tenant} to MasterTenant
-  ShipmentVi{tenant} to MasterTenant
-  SupplierVi{tenant} to MasterTenant
-  CustomerViVi{tenant} to MasterTenant
-  ProductViVi{tenant} to MasterTenant
-  OrderViVi{tenant} to MasterTenant
-  EmployeeViVi{tenant} to MasterTenant
-  CategoryViVi{tenant} to MasterTenant
-  ReviewViVi{tenant} to MasterTenant
-  PaymentViVi{tenant} to MasterTenant
-  InvoiceViVi{tenant} to MasterTenant
-  ShipmentViVi{tenant} to MasterTenant
-  SupplierViVi{tenant} to MasterTenant
-  CustomerMi{tenant} to MasterTenant
-  ProductMi{tenant} to MasterTenant
-  OrderMi{tenant} to MasterTenant
-  EmployeeMi{tenant} to MasterTenant
-  CategoryMi{tenant} to MasterTenant
-  ReviewMi{tenant} to MasterTenant
-  PaymentMi{tenant} to MasterTenant
-  InvoiceMi{tenant} to MasterTenant
-  ShipmentMi{tenant} to MasterTenant
-  SupplierMi{tenant} to MasterTenant
-  CustomerMiMi{tenant} to MasterTenant
-  ProductMiMi{tenant} to MasterTenant
-  OrderMiMi{tenant} to MasterTenant
-  EmployeeMiMi{tenant} to MasterTenant
-  CategoryMiMi{tenant} to MasterTenant
-  ReviewMiMi{tenant} to MasterTenant
-  PaymentMiMi{tenant} to MasterTenant
-  InvoiceMiMi{tenant} to MasterTenant
-  ShipmentMiMi{tenant} to MasterTenant
-  SupplierMiMi{tenant} to MasterTenant
+  Customer{tenant} to @OnDelete("CASCADE") MasterTenant
+  Product{tenant} to @OnDelete("CASCADE") MasterTenant
+  Order{tenant} to @OnDelete("CASCADE") MasterTenant
+  Employee{tenant} to @OnDelete("CASCADE") MasterTenant
+  Category{tenant} to @OnDelete("CASCADE") MasterTenant
+  Review{tenant} to @OnDelete("CASCADE") MasterTenant
+  Payment{tenant} to @OnDelete("CASCADE") MasterTenant
+  Invoice{tenant} to @OnDelete("CASCADE") MasterTenant
+  Shipment{tenant} to @OnDelete("CASCADE") MasterTenant
+  Supplier{tenant} to @OnDelete("CASCADE") MasterTenant
+  CustomerVi{tenant} to @OnDelete("CASCADE") MasterTenant
+  ProductVi{tenant} to @OnDelete("CASCADE") MasterTenant
+  OrderVi{tenant} to @OnDelete("CASCADE") MasterTenant
+  EmployeeVi{tenant} to @OnDelete("CASCADE") MasterTenant
+  CategoryVi{tenant} to @OnDelete("CASCADE") MasterTenant
+  ReviewVi{tenant} to @OnDelete("CASCADE") MasterTenant
+  PaymentVi{tenant} to @OnDelete("CASCADE") MasterTenant
+  InvoiceVi{tenant} to @OnDelete("CASCADE") MasterTenant
+  ShipmentVi{tenant} to @OnDelete("CASCADE") MasterTenant
+  SupplierVi{tenant} to @OnDelete("CASCADE") MasterTenant
+  CustomerViVi{tenant} to @OnDelete("CASCADE") MasterTenant
+  ProductViVi{tenant} to @OnDelete("CASCADE") MasterTenant
+  OrderViVi{tenant} to @OnDelete("CASCADE") MasterTenant
+  EmployeeViVi{tenant} to @OnDelete("CASCADE") MasterTenant
+  CategoryViVi{tenant} to @OnDelete("CASCADE") MasterTenant
+  ReviewViVi{tenant} to @OnDelete("CASCADE") MasterTenant
+  PaymentViVi{tenant} to @OnDelete("CASCADE") MasterTenant
+  InvoiceViVi{tenant} to @OnDelete("CASCADE") MasterTenant
+  ShipmentViVi{tenant} to @OnDelete("CASCADE") MasterTenant
+  SupplierViVi{tenant} to @OnDelete("CASCADE") MasterTenant
+  CustomerMi{tenant} to @OnDelete("CASCADE") MasterTenant
+  ProductMi{tenant} to @OnDelete("CASCADE") MasterTenant
+  OrderMi{tenant} to @OnDelete("CASCADE") MasterTenant
+  EmployeeMi{tenant} to @OnDelete("CASCADE") MasterTenant
+  CategoryMi{tenant} to @OnDelete("CASCADE") MasterTenant
+  ReviewMi{tenant} to @OnDelete("CASCADE") MasterTenant
+  PaymentMi{tenant} to @OnDelete("CASCADE") MasterTenant
+  InvoiceMi{tenant} to @OnDelete("CASCADE") MasterTenant
+  ShipmentMi{tenant} to @OnDelete("CASCADE") MasterTenant
+  SupplierMi{tenant} to @OnDelete("CASCADE") MasterTenant
+  CustomerMiMi{tenant} to @OnDelete("CASCADE") MasterTenant
+  ProductMiMi{tenant} to @OnDelete("CASCADE") MasterTenant
+  OrderMiMi{tenant} to @OnDelete("CASCADE") MasterTenant
+  EmployeeMiMi{tenant} to @OnDelete("CASCADE") MasterTenant
+  CategoryMiMi{tenant} to @OnDelete("CASCADE") MasterTenant
+  ReviewMiMi{tenant} to @OnDelete("CASCADE") MasterTenant
+  PaymentMiMi{tenant} to @OnDelete("CASCADE") MasterTenant
+  InvoiceMiMi{tenant} to @OnDelete("CASCADE") MasterTenant
+  ShipmentMiMi{tenant} to @OnDelete("CASCADE") MasterTenant
+  SupplierMiMi{tenant} to @OnDelete("CASCADE") MasterTenant
 }

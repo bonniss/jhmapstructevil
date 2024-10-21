@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd
+                        http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+    <!--
+        Added the constraints for entity JohnLennon.
+    -->
+    <changeSet id="20241021174732-2" author="jhipster">
+
+        <addForeignKeyConstraint baseColumnNames="logo_id"
+                                 baseTableName="john_lennon"
+                                 constraintName="fk_john_lennon__logo_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="metaverse"
+                                 />
+
+        <addForeignKeyConstraint baseColumnNames="app_manager_id"
+                                 baseTableName="john_lennon"
+                                 constraintName="fk_john_lennon__app_manager_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="ol_almantino_milo"
+                                 />
+
+        <addForeignKeyConstraint baseColumnNames="organization_id"
+                                 baseTableName="john_lennon"
+                                 constraintName="fk_john_lennon__organization_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="ol_master"
+                                 />
+
+        <addForeignKeyConstraint baseColumnNames="jello_initium_id"
+                                 baseTableName="john_lennon"
+                                 constraintName="fk_john_lennon__jello_initium_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="initium"
+                                 />
+
+        <addForeignKeyConstraint baseColumnNames="inhouse_initium_id"
+                                 baseTableName="john_lennon"
+                                 constraintName="fk_john_lennon__inhouse_initium_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="initium"
+                                 />
+    </changeSet>
+</databaseChangeLog>

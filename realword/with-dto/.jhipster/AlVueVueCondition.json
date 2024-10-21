@@ -1,0 +1,52 @@
+{
+  "annotations": {
+    "changelogDate": "20241021174058"
+  },
+  "applications": ["realworld"],
+  "dto": "mapstruct",
+  "fields": [
+    {
+      "fieldName": "subjectType",
+      "fieldType": "AlcountSubjectivity",
+      "fieldValues": "PRODUCT,CATEGORY"
+    },
+    {
+      "fieldName": "subject",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "action",
+      "fieldType": "NeonEction",
+      "fieldValues": "INCLUDE,EXCLUDE"
+    },
+    {
+      "fieldName": "note",
+      "fieldType": "String",
+      "fieldValidateRules": ["maxlength"],
+      "fieldValidateRulesMaxlength": "65535"
+    }
+  ],
+  "jpaMetamodelFiltering": true,
+  "name": "AlVueVueCondition",
+  "pagination": "pagination",
+  "relationships": [
+    {
+      "otherEntityName": "alVueVue",
+      "otherEntityRelationshipName": "conditions",
+      "relationshipName": "parent",
+      "relationshipSide": "left",
+      "relationshipType": "many-to-one"
+    },
+    {
+      "options": {
+        "onDelete": "CASCADE"
+      },
+      "otherEntityName": "johnLennon",
+      "relationshipName": "application",
+      "relationshipSide": "left",
+      "relationshipType": "many-to-one"
+    }
+  ],
+  "searchEngine": "no",
+  "service": "serviceClass"
+}

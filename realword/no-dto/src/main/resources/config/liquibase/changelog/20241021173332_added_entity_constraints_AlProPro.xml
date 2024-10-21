@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd
+                        http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+    <!--
+        Added the constraints for entity AlProPro.
+    -->
+    <changeSet id="20241021173332-2" author="jhipster">
+
+        <addForeignKeyConstraint baseColumnNames="parent_id"
+                                 baseTableName="al_pro_pro"
+                                 constraintName="fk_al_pro_pro__parent_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="al_pro_pro"
+                                 onDelete="CASCADE"
+                                 />
+
+        <addForeignKeyConstraint baseColumnNames="project_id"
+                                 baseTableName="al_pro_pro"
+                                 constraintName="fk_al_pro_pro__project_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="al_lady_gaga"
+                                 />
+
+        <addForeignKeyConstraint baseColumnNames="avatar_id"
+                                 baseTableName="al_pro_pro"
+                                 constraintName="fk_al_pro_pro__avatar_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="metaverse"
+                                 />
+
+        <addForeignKeyConstraint baseColumnNames="application_id"
+                                 baseTableName="al_pro_pro"
+                                 constraintName="fk_al_pro_pro__application_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="john_lennon"
+                                 onDelete="CASCADE"
+                                 />
+
+        <addForeignKeyConstraint baseColumnNames="al_pro_pro_id"
+                                 baseTableName="rel_al_pro_pro__amenity"
+                                 constraintName="fk_rel_al_pro_pro__amenity__al_pro_pro_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="al_pro_pro"
+                                 />
+
+        <addForeignKeyConstraint baseColumnNames="amenity_id"
+                                 baseTableName="rel_al_pro_pro__amenity"
+                                 constraintName="fk_rel_al_pro_pro__amenity__amenity_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="al_menity"
+                                 />
+
+        <addForeignKeyConstraint baseColumnNames="al_pro_pro_id"
+                                 baseTableName="rel_al_pro_pro__image"
+                                 constraintName="fk_rel_al_pro_pro__image__al_pro_pro_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="al_pro_pro"
+                                 />
+
+        <addForeignKeyConstraint baseColumnNames="image_id"
+                                 baseTableName="rel_al_pro_pro__image"
+                                 constraintName="fk_rel_al_pro_pro__image__image_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="metaverse"
+                                 />
+    </changeSet>
+</databaseChangeLog>

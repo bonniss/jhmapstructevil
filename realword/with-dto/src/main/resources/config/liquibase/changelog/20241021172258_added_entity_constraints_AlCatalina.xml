@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd
+                        http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+    <!--
+        Added the constraints for entity AlCatalina.
+    -->
+    <changeSet id="20241021172258-2" author="jhipster">
+
+        <addForeignKeyConstraint baseColumnNames="parent_id"
+                                 baseTableName="al_catalina"
+                                 constraintName="fk_al_catalina__parent_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="al_catalina"
+                                 />
+
+        <addForeignKeyConstraint baseColumnNames="avatar_id"
+                                 baseTableName="al_catalina"
+                                 constraintName="fk_al_catalina__avatar_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="metaverse"
+                                 />
+
+        <addForeignKeyConstraint baseColumnNames="application_id"
+                                 baseTableName="al_catalina"
+                                 constraintName="fk_al_catalina__application_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="john_lennon"
+                                 onDelete="CASCADE"
+                                 />
+    </changeSet>
+</databaseChangeLog>

@@ -1,0 +1,831 @@
+application {
+  config {
+    baseName realworld
+    applicationType monolith
+    packageName ai.realworld
+    authenticationType jwt
+    prodDatabaseType postgresql
+    devDatabaseType postgresql
+    buildTool maven
+  }
+  entities *
+}
+MIN_LENGTH_PERSON_NAME_DEFAULT = 1
+MAX_LENGTH_PERSON_NAME_DEFAULT = 256
+MIN_LENGTH_NAME_DEFAULT = 2
+MAX_LENGTH_NAME_DEFAULT = 256
+MIN_LENGTH_SLUG_DEFAULT = 2
+MAX_LENGTH_SLUG_DEFAULT = 160
+MAX_LENGTH_SUMMARY_DEFAULT = 1000
+MAX_LENGTH_DESC_DEFAULT = 65535
+MAX_LENGTH_API_KEY_DEFAULT = 1024
+MAX_LENGTH_VARCHAR = 10485760
+enum MiniGamePlayingTimeStatus {
+  READY_TO_PLAY, PLAYING, PLAYED, ALREADY_SENT_AWARD_TO_PLAYER, COMPLETED
+}
+enum FooGameAward {
+  LOST, PLAY_TIMES, DISCOUNT_CODE, PRODUCT, OTHER
+}
+enum Ivent {
+  CUSTOMER_JOINED, CUSTOMER_REGISTERED, CUSTOMER_REGISTERED_FEEDBACK, CUSTOMER_BIRTHDAY, INTRODUCED_MINI_APP, INTRODUCED_PRODUCT, COMPLETED_ORDER, ORDER_DELIVERING_TO_CUSTOMER, ORDER_DELIVERED_TO_CUSTOMER, ORDER_CANCELED_BY_CUSTOMER, ORDER_REJECTED, FOLLOW_OA, UP_LEVEL, GAIN_POINT, CUSTOMER_GAIN_MINI_GAME, CUSTOMER_PLAYED_MINI_GAME
+}
+enum Ection {
+  SEND_OA_MESSAGE_TO_CUSTOMER, SEND_OA_MESSAGE_TO_RECEIVER, SEND_OA_MESSAGE_TO_HOTLINE, SEND_OA_MESSAGE_TO_TASK_OWNER, SEND_ZNS_TO_CUSTOMER, SEND_ZNS_TO_RECEIVER, SEND_ZNS_TO_HOTLINE, SEND_ZNS_TO_TASK_OWNER, BONUS_MINIGAME_PLAYING_TIME, BONUS_PRODUCTION, BONUS_DISCOUNT_CODE, BONUS_POINT
+}
+enum KnsIction {
+  SEND_ZNS_TO_CUSTOMER_AFTER_BOOKING, SEND_ZNS_TO_HOUSEKEEPING_AFTER_BOOKING
+}
+enum AlphaSourceType {
+  COMPLETED_ORDER, BOOKING_INFORMATION, CUSTOMER_INFORMATION
+}
+enum EctionTargetType {
+  MINI_GAME, PRODUCT, DISCOUNT_CODE
+}
+enum EeriePointSource {
+  PURCHASE, MINIGAME, PROMOTION, OTHER
+}
+enum BarPointAction {
+  PURCHASE, MINIGAME, PROMOTION, OTHER
+}
+enum AcquisitionCanal {
+  JELLO, OFFLINE
+}
+enum AlcountTypo {
+  BY_FIXED_AMOUNT, BY_PERCENT, BY_PERCENT_UPPER_LIMIT_AMOUNT, FREE, OTHER
+}
+enum AlcountScopy {
+  ALL_PRODUCTS, SPECIFIED_PRODUCTS
+}
+enum AlcountSubjectivity {
+  PRODUCT, CATEGORY
+}
+enum NeonEction {
+  INCLUDE, EXCLUDE
+}
+enum EitherStatus {
+  SALE_OPEN, SALE_PROCESSING, SALE_CONFIRMED, INVENTORY_OPEN, INVENTORY_PROCESSING, INVENTORY_RESOLVED, DELIVERED_TO_SHIPPER, DELIVERY_PROVIDER_CONFIRMED, DELIVERY_PROCESSING, DELIVERING_TO_CUSTOMER, DELIVERED_TO_CUSTOMER, DELIVERY_FAILED, RETURNED
+}
+enum SigmaStatus {
+  PENDING, OPEN, PROCESSING, COMPLETED, CANCELLED, DECLINED, REFUNDING, REFUNDED
+}
+enum PeanutStatus {
+  WAITING, PAID, PARTIALLY_PAID, PAID_NOT_INCLUDED_SHIP_FEE, REFUNDING, REFUNDED
+}
+enum FerrariStatus {
+  ACTIVE, REFILL_WAITING, DISCONTINUED
+}
+enum ZentaoIdentifier {
+  IMEI, VIN, GTIN, HARDWARE_ID
+}
+enum RedmineStatus {
+  ACTIVE, EXPIRED
+}
+enum HulyType {
+  WARRANTY, RETURN_REFUND, SHIPMENT
+}
+enum KumaScope {
+  ALL, INDIVIDUALS, CATEGORY
+}
+enum KumaInvention {
+  REGULAR, SERIAL_TRACKED, BATCH_TRACKED
+}
+entity HandCraft {
+}
+relationship ManyToOne {
+  HandCraft{agent required} to EdSheeran{agentRoles}
+  HandCraft{role required} to Rihanna{agentRoles}
+}
+relationship ManyToOne {
+  HandCraft{application} to @OnDelete("CASCADE") JohnLennon
+}
+enum ReductionType {
+    SUPPLIER_CUSTOMER_B2B,
+    SUPPLIER_CUSTOMER_B2C
+}
+enum SitomutaType {
+    LOGIN_FAILED,
+    LOGIN_SUCCESS,
+    CLIENT_APP_IMPOSTER
+}
+enum EcmaScript {
+    JELLO,
+    OTHER
+}
+enum TyrantSex {
+    MALE,
+    FEMALE,
+    OTHER
+}
+enum MissisipiType {
+    CONTAINER,
+    WEIGHT,
+    LENGTH,
+    AREA,
+    VOLUME,
+    TIME,
+    OTHER
+}
+enum PaoloStatus {
+    DRAFT,
+    PUBLISHED
+}
+enum SeagateDisk {
+    POSTAL_SERVICE,
+    EXPRESS_SERVICE
+}
+enum TonyValdevan {
+    VAT
+}
+enum BenedictToy {
+    SINGLE,
+    DOUBLE,
+    QUEEN,
+    KING,
+    SUPER_KING,
+    CALIFORNIA_KING,
+    EXTRA_BED
+}
+enum BenedictType {
+    NIGHT,
+    DAYLIGHT
+}
+enum BenedictRiottaType {
+    NIGHT_WEEKDAY,
+    NIGHT_WEEKEND,
+    DAYLIGHT_WEEKDAY,
+    DAYLIGHT_WEEKEND
+}
+enum PaulBargainStatus {
+    PENDING,
+    RESERVED,
+    BOOKED,
+    COMPLETE,
+    CANCELLED
+}
+enum PeteStatus {
+    ACTIVE,
+    INACTIVE,
+    DISCONTINUED
+}
+enum PeteType {
+    VILLA,
+    ROOM,
+    HOTEL,
+    BUNGALOW,
+    HOUSE,
+    APARTMENT
+}
+enum OlBakeryType {
+    CLIENT_COMPANY,
+    CLIENT_INDIVIDUAL,
+    PARTNER,
+    OTHER
+}
+entity AlAlexType {
+  id UUID
+  name String required minlength(MIN_LENGTH_NAME_DEFAULT) maxlength(MAX_LENGTH_NAME_DEFAULT)
+  description String maxlength(MAX_LENGTH_DESC_DEFAULT)
+    canDoRetail Boolean
+    isOrgDivision Boolean
+    configJason String maxlength(MAX_LENGTH_VARCHAR)
+    treeDepth Integer
+}
+entity AlBetonamuRelation {
+  type ReductionType required
+}
+relationship ManyToOne {
+  AlBetonamuRelation{supplier required} to
+  AlAlexType{asSupplier}
+  AlBetonamuRelation{customer required} to
+  AlAlexType{asCustomer}
+}
+entity AlApple {
+  id UUID
+  name String required minlength(MIN_LENGTH_NAME_DEFAULT) maxlength(MAX_LENGTH_NAME_DEFAULT)
+  description String maxlength(MAX_LENGTH_DESC_DEFAULT)
+    hotline String
+    taxCode String
+    contactsJason String maxlength(MAX_LENGTH_VARCHAR)
+    extensionJason String maxlength(MAX_LENGTH_VARCHAR)
+    isEnabled Boolean
+}
+relationship ManyToOne {
+    AlApple{address} to AndreiRightHand
+}
+entity Rihanna {
+  name String required minlength(MIN_LENGTH_NAME_DEFAULT) maxlength(MAX_LENGTH_NAME_DEFAULT)
+  description String maxlength(MAX_LENGTH_DESC_DEFAULT)
+    permissionGridJason String maxlength(MAX_LENGTH_VARCHAR)
+}
+entity EdSheeran {
+    familyName String required minlength(MIN_LENGTH_PERSON_NAME_DEFAULT) maxlength(MAX_LENGTH_PERSON_NAME_DEFAULT)
+    givenName String required minlength(MIN_LENGTH_PERSON_NAME_DEFAULT) maxlength(MAX_LENGTH_PERSON_NAME_DEFAULT)
+    display String minlength(MIN_LENGTH_NAME_DEFAULT) maxlength(MAX_LENGTH_NAME_DEFAULT)
+    dob LocalDate
+  gender TyrantSex
+  phone String
+    contactsJason String maxlength(MAX_LENGTH_VARCHAR)
+    isEnabled Boolean
+}
+relationship ManyToOne {
+  AlApple{agencyType required} to
+  AlAlexType{agencies}
+  EdSheeran{agency required} to
+  AlApple{agents}
+}
+relationship ManyToOne {
+  AlApple{logo} to Metaverse
+  EdSheeran{avatar} to Metaverse
+}
+relationship ManyToOne {
+  EdSheeran{internalUser(login)} to User with builtInEntity
+}
+relationship ManyToOne {
+  EdSheeran{appUser} to AlPacino
+}
+relationship ManyToOne {
+  AlAlexType{application} to @OnDelete("CASCADE") JohnLennon
+  AlApple{application} to @OnDelete("CASCADE") JohnLennon
+  EdSheeran{application} to @OnDelete("CASCADE") JohnLennon
+  AlBetonamuRelation{application} to @OnDelete("CASCADE") JohnLennon
+  Rihanna{application} to @OnDelete("CASCADE") JohnLennon
+}
+entity AlPacino {
+  id UUID
+    platformCode String maxlength(MAX_LENGTH_API_KEY_DEFAULT)
+    platformUsername String minlength(MIN_LENGTH_NAME_DEFAULT) maxlength(MAX_LENGTH_NAME_DEFAULT)
+    platformAvatarUrl String
+    isSensitive Boolean
+    familyName String minlength(MIN_LENGTH_PERSON_NAME_DEFAULT) maxlength(MAX_LENGTH_PERSON_NAME_DEFAULT)
+    givenName String minlength(MIN_LENGTH_PERSON_NAME_DEFAULT) maxlength(MAX_LENGTH_PERSON_NAME_DEFAULT)
+    dob LocalDate
+    gender TyrantSex
+    phone String
+    email String pattern(/^[^@\s]+@[^@\s]+\.[^@\s]+$/)
+    acquiredFrom AcquisitionCanal
+    currentPoints Integer
+    totalPoints Integer
+    isFollowing Boolean
+    isEnabled Boolean
+}
+entity AlPacinoAndreiRightHand {
+  name String required minlength(MIN_LENGTH_NAME_DEFAULT) maxlength(MAX_LENGTH_NAME_DEFAULT)
+  isDefault Boolean
+}
+relationship ManyToOne {
+  AlPacinoAndreiRightHand{user} to AlPacino
+  AlPacinoAndreiRightHand{address} to AndreiRightHand
+}
+relationship ManyToOne {
+  AlPacino{application} to @OnDelete("CASCADE") JohnLennon
+}
+entity AlActiso {
+    key String required minlength(MIN_LENGTH_NAME_DEFAULT) maxlength(MAX_LENGTH_NAME_DEFAULT)
+    valueJason String maxlength(MAX_LENGTH_VARCHAR)
+}
+relationship ManyToOne {
+  AlActiso{application} to @OnDelete("CASCADE") JohnLennon
+}
+entity AlGore {
+  name String minlength(MIN_LENGTH_NAME_DEFAULT) maxlength(MAX_LENGTH_NAME_DEFAULT)
+  discountType AlcountTypo
+  discountRate BigDecimal
+    scope AlcountScopy
+}
+entity AlGoreCondition {
+  subjectType AlcountSubjectivity
+    subject Long
+    action NeonEction
+  note String maxlength(MAX_LENGTH_DESC_DEFAULT)
+}
+relationship ManyToOne {
+  AlGoreCondition{parent} to @OnDelete("CASCADE")
+    AlGore{conditions}
+  AlGore{bizRelation} to
+    AlBetonamuRelation{discounts}
+}
+relationship ManyToOne {
+  AlGore{application} to @OnDelete("CASCADE") JohnLennon
+  AlGoreCondition{application} to @OnDelete("CASCADE") JohnLennon
+}
+entity AlLeandro {
+  id UUID
+    name String required minlength(MIN_LENGTH_NAME_DEFAULT) maxlength(MAX_LENGTH_NAME_DEFAULT)
+    weight Integer
+    description String maxlength(MAX_LENGTH_DESC_DEFAULT)
+    fromDate LocalDate
+    toDate LocalDate
+    isEnabled Boolean
+    separateWinningByPeriods Boolean
+}
+relationship ManyToOne {
+    AlLeandro{programBackground} to Metaverse
+    AlLeandro{wheelBackground} to Metaverse
+}
+entity AlDesire {
+  id UUID
+    name String required minlength(MIN_LENGTH_NAME_DEFAULT) maxlength(MAX_LENGTH_NAME_DEFAULT)
+    weight Integer
+    probabilityOfWinning Float
+    maximumWinningTime Integer
+    isWinningTimeLimited Boolean
+    awardResultType FooGameAward
+    awardReference String
+    isDefault Boolean
+}
+relationship ManyToOne {
+  AlDesire{image} to Metaverse
+  AlDesire{miniGame} to AlLeandro{awards}
+}
+entity AlLeandroPlayingTime {
+  id UUID
+    status MiniGamePlayingTimeStatus
+    wonDate Instant
+    sentAwardToPlayerAt Instant
+    sentAwardToPlayerBy String
+    playerReceivedTheAwardAt Instant
+    playSourceTime String
+}
+relationship ManyToOne {
+  AlLeandroPlayingTime{miniGame} to AlLeandro
+  AlLeandroPlayingTime{user} to AlPacino
+  AlLeandroPlayingTime{award} to AlDesire
+}
+relationship ManyToOne {
+  AlLeandro{application} to @OnDelete("CASCADE") JohnLennon
+  AlDesire{application} to @OnDelete("CASCADE") JohnLennon
+  AlLeandroPlayingTime{application} to @OnDelete("CASCADE") JohnLennon
+}
+entity AndreiRightHand {
+    details String
+  lat Float
+  lon Float
+}
+relationship ManyToOne {
+    AndreiRightHand{country} to AntonioBanderas
+    AndreiRightHand{province} to AntonioBanderas
+    AndreiRightHand{district} to AntonioBanderas
+    AndreiRightHand{ward} to AntonioBanderas
+}
+entity AntonioBanderas {
+    level Integer
+    code String required minlength(MIN_LENGTH_SLUG_DEFAULT) maxlength(MAX_LENGTH_SLUG_DEFAULT) unique
+    name String
+    fullName String
+    nativeName String
+    officialCode String
+    divisionTerm String
+    isDeleted Boolean
+}
+relationship ManyToOne {
+  AntonioBanderas{parent(code)} to AntonioBanderas{children(code)}
+}
+relationship OneToOne {
+  AntonioBanderas{current} to AntonioBanderas
+}
+entity HexChar {
+    dob LocalDate
+  gender TyrantSex
+  phone String
+    bioHeitiga String maxlength(MAX_LENGTH_VARCHAR)
+    isEnabled Boolean
+}
+entity HashRoss {
+  name String required minlength(MIN_LENGTH_NAME_DEFAULT) maxlength(MAX_LENGTH_NAME_DEFAULT) unique
+  slug String required minlength(MIN_LENGTH_SLUG_DEFAULT) maxlength(MAX_LENGTH_SLUG_DEFAULT) unique
+  description String maxlength(MAX_LENGTH_DESC_DEFAULT)
+    permissionGridJason String maxlength(MAX_LENGTH_VARCHAR)
+}
+relationship OneToOne {
+  HexChar{internalUser(login) required} to User with builtInEntity
+}
+relationship ManyToOne {
+  HexChar{role} to HashRoss
+}
+entity Initium {
+  name String required minlength(MIN_LENGTH_NAME_DEFAULT) maxlength(MAX_LENGTH_NAME_DEFAULT) unique
+  slug String required minlength(MIN_LENGTH_SLUG_DEFAULT) maxlength(MAX_LENGTH_SLUG_DEFAULT) unique
+  description String maxlength(MAX_LENGTH_DESC_DEFAULT)
+    isJelloSupported Boolean
+}
+entity Magharetti {
+  name String required minlength(MIN_LENGTH_NAME_DEFAULT) maxlength(MAX_LENGTH_NAME_DEFAULT) unique
+  label String required minlength(MIN_LENGTH_NAME_DEFAULT) maxlength(MAX_LENGTH_NAME_DEFAULT) unique
+  type MissisipiType
+}
+@CannotCreate
+@CannotUpdate
+entity Metaverse {
+    filename String
+    contentType String
+    fileExt String
+    fileSize Long
+    fileUrl String
+    thumbnailUrl String
+    blurhash String
+    objectName String
+    objectMetaJason String maxlength(MAX_LENGTH_VARCHAR)
+    urlLifespanInSeconds Double
+    urlExpiredDate Instant
+    autoRenewUrl Boolean
+    isEnabled Boolean
+}
+entity PamelaLouis {
+  name String required minlength(MIN_LENGTH_NAME_DEFAULT) maxlength(MAX_LENGTH_NAME_DEFAULT) unique
+  configJason String maxlength(MAX_LENGTH_VARCHAR)
+}
+@CannotCreate
+@CannotUpdate
+@CannotDelete
+entity SicilyUmeto {
+    type SitomutaType
+    content String maxlength(MAX_LENGTH_VARCHAR)
+}
+entity SaisanCog {
+    key String required minlength(MIN_LENGTH_NAME_DEFAULT) maxlength(MAX_LENGTH_NAME_DEFAULT) unique
+    valueJason String maxlength(MAX_LENGTH_VARCHAR)
+}
+entity AlLexFerg {
+  title String required minlength(MIN_LENGTH_NAME_DEFAULT) maxlength(MAX_LENGTH_NAME_DEFAULT)
+    slug String required minlength(MIN_LENGTH_SLUG_DEFAULT) maxlength(MAX_LENGTH_SLUG_DEFAULT)
+    summary String maxlength(MAX_LENGTH_SUMMARY_DEFAULT)
+    contentHeitiga String maxlength(MAX_LENGTH_VARCHAR)
+    publicationStatus PaoloStatus
+    publishedDate Instant
+}
+entity AlCatalina {
+  name String required minlength(MIN_LENGTH_NAME_DEFAULT) maxlength(MAX_LENGTH_NAME_DEFAULT)
+  description String maxlength(MAX_LENGTH_DESC_DEFAULT)
+    treeDepth Integer
+}
+relationship ManyToOne {
+    AlCatalina{parent} to AlCatalina{children}
+}
+entity AlBestTooth {
+  name String required minlength(MIN_LENGTH_NAME_DEFAULT) maxlength(MAX_LENGTH_NAME_DEFAULT)
+}
+relationship ManyToOne {
+    AlLexFerg{avatar} to Metaverse
+    AlCatalina{avatar} to Metaverse
+}
+relationship ManyToOne {
+  AlLexFerg{category} to AlCatalina
+}
+relationship ManyToMany {
+  @CannotCreate
+  @CannotUpdate
+  AlLexFerg{tag} to AlBestTooth{article}
+}
+relationship ManyToOne {
+  AlLexFerg{application} to @OnDelete("CASCADE") JohnLennon
+  AlCatalina{application} to @OnDelete("CASCADE") JohnLennon
+  AlBestTooth{application} to @OnDelete("CASCADE") JohnLennon
+}
+entity AlMenity {
+  name String required minlength(MIN_LENGTH_NAME_DEFAULT) maxlength(MAX_LENGTH_NAME_DEFAULT)
+    iconSvg String
+    propertyType PeteType
+}
+entity AlPedroTax {
+    name String required minlength(MIN_LENGTH_NAME_DEFAULT) maxlength(MAX_LENGTH_NAME_DEFAULT)
+  description String maxlength(MAX_LENGTH_DESC_DEFAULT)
+    weight Integer
+    propertyType PeteType
+}
+entity AlPounder {
+    name String required minlength(MIN_LENGTH_NAME_DEFAULT) maxlength(MAX_LENGTH_NAME_DEFAULT)
+    weight Integer
+}
+relationship ManyToOne {
+  AlPounder{attributeTaxonomy required} to @OnDelete("CASCADE")
+    AlPedroTax{attributeTerms}
+}
+entity AlPowerShell {
+    value String
+}
+relationship ManyToOne {
+  AlPowerShell{propertyProfile} to AlProPro
+  AlPowerShell{attributeTerm} to AlPounder
+}
+relationship ManyToMany {
+  @CannotCreate
+  @CannotUpdate
+    AlProPro{amenity} to
+    AlMenity{propertyProfile}
+}
+relationship ManyToOne {
+  AlMenity{application} to @OnDelete("CASCADE") JohnLennon
+  AlPedroTax{application} to @OnDelete("CASCADE") JohnLennon
+  AlPounder{application} to @OnDelete("CASCADE") JohnLennon
+  AlPowerShell{application} to @OnDelete("CASCADE") JohnLennon
+}
+@CannotUpdate
+entity AlPyuDjibril {
+    rateType BenedictRiottaType
+    rate BigDecimal
+    isEnabled Boolean
+}
+relationship ManyToOne {
+  AlPyuDjibril{property} to AlProty
+}
+relationship ManyToOne {
+  AlPyuDjibril{application} to @OnDelete("CASCADE") JohnLennon
+}
+entity AlPyuThomasWayne {
+  rating Integer
+  comment String maxlength(MAX_LENGTH_DESC_DEFAULT)
+}
+relationship ManyToOne {
+  AlPyuThomasWayne{booking} to AlPyuJoker
+}
+entity AlPyuJoker {
+  id UUID
+    bookingNo String unique
+    noteHeitiga String maxlength(MAX_LENGTH_DESC_DEFAULT)
+    periodType BenedictType
+    fromDate Instant
+    toDate Instant
+    checkInDate Instant
+    checkOutDate Instant
+    numberOfAdults Integer min(1)
+    numberOfPreschoolers Integer min(0)
+    numberOfChildren Integer min(0)
+    bookingPrice BigDecimal
+    extraFee BigDecimal
+    totalPrice BigDecimal
+    bookingStatus PaulBargainStatus
+    @CannotList
+  @CannotShow
+  @CannotCreate
+  @CannotUpdate
+  historyRefJason String maxlength(MAX_LENGTH_VARCHAR)
+}
+relationship ManyToOne {
+  AlPyuJoker{customer} to AlPacino
+    AlPyuJoker{personInCharge} to EdSheeran
+}
+relationship ManyToMany {
+  @CannotCreate
+  @CannotUpdate
+    AlPyuJoker{property} to
+    AlProty{booking}
+}
+relationship ManyToOne {
+  AlPyuJoker{application} to @OnDelete("CASCADE") JohnLennon
+}
+entity AlLadyGaga {
+  id UUID
+  name String required minlength(MIN_LENGTH_NAME_DEFAULT) maxlength(MAX_LENGTH_NAME_DEFAULT)
+  descriptionHeitiga String maxlength(MAX_LENGTH_VARCHAR)
+}
+relationship ManyToOne {
+  AlLadyGaga{address} to AndreiRightHand
+}
+entity AlProPro {
+  id UUID
+  name String required minlength(MIN_LENGTH_NAME_DEFAULT) maxlength(MAX_LENGTH_NAME_DEFAULT)
+  descriptionHeitiga String maxlength(MAX_LENGTH_VARCHAR)
+    propertyType PeteType
+    areaInSquareMeter Float
+    numberOfAdults Integer min(1)
+    numberOfPreschoolers Integer min(0)
+    numberOfChildren Integer min(0)
+    numberOfRooms Integer
+    numberOfFloors Integer
+    bedSize BenedictToy
+    isEnabled Boolean
+}
+entity AlProty {
+  id UUID
+  name String required minlength(MIN_LENGTH_NAME_DEFAULT) maxlength(MAX_LENGTH_NAME_DEFAULT)
+  descriptionHeitiga String maxlength(MAX_LENGTH_VARCHAR)
+    coordinate String
+    code String
+    status PeteStatus
+    isEnabled Boolean
+}
+relationship ManyToOne {
+  AlProPro{parent} to @OnDelete("CASCADE") AlProPro{children}
+  AlProty{parent} to @OnDelete("CASCADE") AlProty{children}
+  AlProty{operator required} to @OnDelete("CASCADE") AlApple
+}
+relationship ManyToOne {
+  AlProty{propertyProfile} to AlProPro
+  AlProPro{project} to AlLadyGaga
+}
+relationship ManyToOne {
+  AlLadyGaga{avatar} to Metaverse
+  AlProPro{avatar} to Metaverse
+  AlProty{avatar} to Metaverse
+}
+relationship ManyToMany {
+  @CannotCreate
+  @CannotUpdate
+  AlProPro{image} to Metaverse
+  @CannotCreate
+  @CannotUpdate
+  AlProty{image} to Metaverse
+}
+relationship ManyToOne {
+  AlLadyGaga{application} to @OnDelete("CASCADE") JohnLennon
+  AlProPro{application} to @OnDelete("CASCADE") JohnLennon
+  AlProty{application} to @OnDelete("CASCADE") JohnLennon
+}
+entity AlSherMale {
+        dataSourceMappingType AlphaSourceType
+        keyword String
+        property String
+        title String
+}
+relationship ManyToOne {
+  AlSherMale{application} to @OnDelete("CASCADE") JohnLennon
+}
+entity AlInquiry {
+  id UUID
+    title String required minlength(MIN_LENGTH_NAME_DEFAULT) maxlength(MAX_LENGTH_NAME_DEFAULT)
+    body String maxlength(MAX_LENGTH_DESC_DEFAULT)
+    sender String required minlength(MIN_LENGTH_NAME_DEFAULT) maxlength(MAX_LENGTH_NAME_DEFAULT)
+    email String pattern(/^[^@\s]+@[^@\s]+\.[^@\s]+$/)
+    phone String
+    contentJason String maxlength(MAX_LENGTH_VARCHAR)
+}
+relationship ManyToOne {
+  AlInquiry{customer} to AlPacino
+  AlInquiry{agency} to AlApple
+  AlInquiry{personInCharge} to EdSheeran
+}
+relationship ManyToOne {
+  AlInquiry{application} to @OnDelete("CASCADE") JohnLennon
+}
+entity AlGoogleMeet {
+  id UUID
+    title String required minlength(MIN_LENGTH_NAME_DEFAULT) maxlength(MAX_LENGTH_NAME_DEFAULT)
+    description String maxlength(MAX_LENGTH_DESC_DEFAULT)
+    numberOfParticipants Integer
+    plannedDate Instant
+    plannedDurationInMinutes Double
+    actualDate Instant
+    actualDurationInMinutes Double
+    contentJason String maxlength(MAX_LENGTH_VARCHAR)
+}
+relationship ManyToOne {
+  AlGoogleMeet{customer} to AlPacino
+  AlGoogleMeet{agency} to AlApple
+  AlGoogleMeet{personInCharge} to EdSheeran
+}
+relationship ManyToOne {
+  AlGoogleMeet{application} to @OnDelete("CASCADE") JohnLennon
+}
+entity AlMemTier {
+    name String required minlength(MIN_LENGTH_NAME_DEFAULT) maxlength(MAX_LENGTH_NAME_DEFAULT)
+    description String maxlength(MAX_LENGTH_DESC_DEFAULT)
+    minPoint Integer
+}
+relationship ManyToOne {
+    AlPacino{membershipTier} to
+  AlMemTier
+}
+relationship ManyToOne {
+  AlMemTier{application} to @OnDelete("CASCADE") JohnLennon
+}
+entity AlPacinoPointHistory {
+    source EeriePointSource
+    associatedId String
+    pointAmount Integer
+}
+relationship ManyToOne {
+  AlPacinoPointHistory{customer} to AlPacino
+}
+relationship ManyToOne {
+  AlPacinoPointHistory{application} to @OnDelete("CASCADE") JohnLennon
+}
+entity AlVueVue {
+  id UUID
+    code String
+    name String required minlength(MIN_LENGTH_NAME_DEFAULT) maxlength(MAX_LENGTH_NAME_DEFAULT)
+    contentHeitiga String maxlength(MAX_LENGTH_VARCHAR)
+    discountType AlcountTypo
+    discountRate BigDecimal
+    scope AlcountScopy
+    isIndividuallyUsedOnly Boolean
+    usageLifeTimeLimit Integer
+    usageLimitPerUser Integer
+    usageQuantity Integer
+    minimumSpend BigDecimal
+    maximumSpend BigDecimal
+    canBeCollectedByUser Boolean
+    salePriceFromDate LocalDate
+    salePriceToDate LocalDate
+    publicationStatus PaoloStatus
+    publishedDate Instant
+}
+entity AlVueVueCondition {
+  subjectType AlcountSubjectivity
+    subject Long
+    action NeonEction
+  note String maxlength(MAX_LENGTH_DESC_DEFAULT)
+}
+relationship ManyToOne {
+  AlVueVueCondition{parent} to
+    AlVueVue{conditions}
+    AlVueVue{image} to Metaverse
+}
+entity AlPacinoVoucher {
+  id UUID
+    sourceTitle String
+    sourceUrl String
+    collectedDate Instant
+}
+relationship ManyToOne {
+  AlPacinoVoucher{user} to AlPacino
+  AlPacinoVoucher{voucher} to AlVueVue
+}
+entity AlVueVueUsage {
+  id UUID
+}
+relationship ManyToOne {
+  AlVueVue to
+    AlVueVueUsage{voucher}
+  AlPacino to
+    AlVueVueUsage{customer}
+}
+relationship ManyToOne {
+  AlVueVue{application} to @OnDelete("CASCADE") JohnLennon
+  AlVueVueCondition{application} to @OnDelete("CASCADE") JohnLennon
+  AlPacinoVoucher{application} to @OnDelete("CASCADE") JohnLennon
+  AlVueVueUsage{application} to @OnDelete("CASCADE") JohnLennon
+}
+entity AppMessageTemplate {
+    title String required minlength(MIN_LENGTH_NAME_DEFAULT) maxlength(MAX_LENGTH_NAME_DEFAULT)
+    topContent String
+    content String
+    bottomContent String
+    propTitleMappingJason String
+    dataSourceMappingType AlphaSourceType
+    targetUrls String
+}
+entity AppZnsTemplate {
+    znsAction KnsIction
+    name String required minlength(MIN_LENGTH_NAME_DEFAULT) maxlength(MAX_LENGTH_NAME_DEFAULT)
+    templateId String
+    dataSourceMappingType AlphaSourceType
+    templateDataMapping String
+    targetUrls String
+}
+relationship ManyToOne {
+  AppMessageTemplate {thumbnail} to Metaverse
+  AppZnsTemplate {thumbnail} to Metaverse
+}
+relationship ManyToOne {
+  AppMessageTemplate{application} to @OnDelete("CASCADE") JohnLennon
+  AppZnsTemplate{application} to @OnDelete("CASCADE") JohnLennon
+}
+entity OlAlmantinoMilo {
+  id UUID
+    provider EcmaScript required
+    providerAppManagerId String required maxlength(MAX_LENGTH_API_KEY_DEFAULT)
+  name String required minlength(MIN_LENGTH_NAME_DEFAULT) maxlength(MAX_LENGTH_NAME_DEFAULT) unique
+    @CannotList
+  providerSecretKey String maxlength(MAX_LENGTH_API_KEY_DEFAULT)
+    providerToken String maxlength(MAX_LENGTH_API_KEY_DEFAULT)
+    providerRefreshToken String maxlength(MAX_LENGTH_API_KEY_DEFAULT)
+}
+relationship ManyToOne {
+  OlAlmantinoMilo{organization} to OlMaster
+}
+entity JohnLennon {
+  id UUID
+    provider EcmaScript
+    providerAppId String
+  name String required minlength(MIN_LENGTH_NAME_DEFAULT) maxlength(MAX_LENGTH_NAME_DEFAULT) unique
+  slug String required minlength(MIN_LENGTH_SLUG_DEFAULT) maxlength(MAX_LENGTH_SLUG_DEFAULT) unique
+    isEnabled Boolean
+}
+relationship ManyToOne {
+  JohnLennon{logo} to Metaverse
+  JohnLennon{appManager} to OlAlmantinoMilo{applications}
+  JohnLennon{organization} to OlMaster{applications}
+}
+entity OlMaster {
+  id UUID
+  name String required minlength(MIN_LENGTH_NAME_DEFAULT) maxlength(MAX_LENGTH_NAME_DEFAULT) unique
+  slug String required minlength(MIN_LENGTH_SLUG_DEFAULT) maxlength(MAX_LENGTH_SLUG_DEFAULT) unique
+  descriptionHeitiga String maxlength(MAX_LENGTH_VARCHAR)
+    businessType OlBakeryType
+    email String
+    hotline String
+    taxCode String
+    contactsJason String maxlength(MAX_LENGTH_VARCHAR)
+    extensionJason String maxlength(MAX_LENGTH_VARCHAR)
+    isEnabled Boolean
+}
+relationship ManyToOne {
+  OlMaster{address} to AndreiRightHand
+}
+relationship ManyToOne {
+    JohnLennon{jelloInitium} to Initium
+    JohnLennon{inhouseInitium} to Initium
+}
+service * with serviceClass
+paginate all with pagination
+filter all

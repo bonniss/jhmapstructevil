@@ -1,0 +1,29 @@
+{
+  "annotations": {
+    "cannotCreate": true,
+    "cannotDelete": true,
+    "cannotUpdate": true,
+    "changelogDate": "20241021171958"
+  },
+  "applications": ["realworld"],
+  "dto": "mapstruct",
+  "fields": [
+    {
+      "fieldName": "type",
+      "fieldType": "SitomutaType",
+      "fieldValues": "LOGIN_FAILED,LOGIN_SUCCESS,CLIENT_APP_IMPOSTER"
+    },
+    {
+      "fieldName": "content",
+      "fieldType": "String",
+      "fieldValidateRules": ["maxlength"],
+      "fieldValidateRulesMaxlength": "10485760"
+    }
+  ],
+  "jpaMetamodelFiltering": true,
+  "name": "SicilyUmeto",
+  "pagination": "pagination",
+  "relationships": [],
+  "searchEngine": "no",
+  "service": "serviceClass"
+}

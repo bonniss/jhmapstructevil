@@ -1,0 +1,39 @@
+{
+  "annotations": {
+    "changelogDate": "20241021165832"
+  },
+  "applications": ["realworld"],
+  "fields": [],
+  "jpaMetamodelFiltering": true,
+  "name": "HandCraft",
+  "pagination": "pagination",
+  "relationships": [
+    {
+      "otherEntityName": "edSheeran",
+      "otherEntityRelationshipName": "agentRoles",
+      "relationshipName": "agent",
+      "relationshipSide": "left",
+      "relationshipType": "many-to-one",
+      "relationshipValidateRules": "required"
+    },
+    {
+      "otherEntityName": "rihanna",
+      "otherEntityRelationshipName": "agentRoles",
+      "relationshipName": "role",
+      "relationshipSide": "left",
+      "relationshipType": "many-to-one",
+      "relationshipValidateRules": "required"
+    },
+    {
+      "options": {
+        "onDelete": "CASCADE"
+      },
+      "otherEntityName": "johnLennon",
+      "relationshipName": "application",
+      "relationshipSide": "left",
+      "relationshipType": "many-to-one"
+    }
+  ],
+  "searchEngine": "no",
+  "service": "serviceClass"
+}

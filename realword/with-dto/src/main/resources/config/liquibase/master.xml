@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd">
+    <property name="now" value="current_timestamp" dbms="postgresql"/>
+    <property name="floatType" value="float4" dbms="postgresql"/>
+    <property name="clobType" value="clob" dbms="postgresql"/>
+    <property name="blobType" value="blob" dbms="postgresql"/>
+    <property name="uuidType" value="uuid" dbms="postgresql"/>
+    <property name="datetimeType" value="datetime" dbms="postgresql"/>
+
+    <include file="config/liquibase/changelog/00000000000000_initial_schema.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20241021165758_added_entity_HandCraft.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20241021165858_added_entity_AlAlexType.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20241021165958_added_entity_AlBetonamuRelation.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20241021170058_added_entity_AlApple.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20241021170158_added_entity_Rihanna.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20241021170258_added_entity_EdSheeran.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20241021170358_added_entity_AlPacino.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20241021170458_added_entity_AlPacinoAndreiRightHand.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20241021170558_added_entity_AlActiso.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20241021170658_added_entity_AlGore.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20241021170758_added_entity_AlGoreCondition.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20241021170858_added_entity_AlLeandro.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20241021170958_added_entity_AlDesire.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20241021171058_added_entity_AlLeandroPlayingTime.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20241021171158_added_entity_AndreiRightHand.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20241021171258_added_entity_AntonioBanderas.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20241021171358_added_entity_HexChar.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20241021171458_added_entity_HashRoss.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20241021171558_added_entity_Initium.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20241021171658_added_entity_Magharetti.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20241021171758_added_entity_Metaverse.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20241021171858_added_entity_PamelaLouis.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20241021171958_added_entity_SicilyUmeto.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20241021172058_added_entity_SaisanCog.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20241021172158_added_entity_AlLexFerg.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20241021172258_added_entity_AlCatalina.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20241021172358_added_entity_AlBestTooth.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20241021172458_added_entity_AlMenity.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20241021172558_added_entity_AlPedroTax.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20241021172658_added_entity_AlPounder.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20241021172758_added_entity_AlPowerShell.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20241021172858_added_entity_AlPyuDjibril.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20241021172958_added_entity_AlPyuThomasWayne.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20241021173058_added_entity_AlPyuJoker.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20241021173158_added_entity_AlLadyGaga.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20241021173258_added_entity_AlProPro.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20241021173358_added_entity_AlProty.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20241021173458_added_entity_AlSherMale.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20241021173558_added_entity_AlInquiry.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20241021173658_added_entity_AlGoogleMeet.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20241021173758_added_entity_AlMemTier.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20241021173858_added_entity_AlPacinoPointHistory.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20241021173958_added_entity_AlVueVue.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20241021174058_added_entity_AlVueVueCondition.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20241021174158_added_entity_AlPacinoVoucher.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20241021174258_added_entity_AlVueVueUsage.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20241021174358_added_entity_AppMessageTemplate.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20241021174458_added_entity_AppZnsTemplate.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20241021174558_added_entity_OlAlmantinoMilo.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20241021174658_added_entity_JohnLennon.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20241021174758_added_entity_OlMaster.xml" relativeToChangelogFile="false"/>
+    <!-- jhipster-needle-liquibase-add-changelog - JHipster will add liquibase changelogs here -->
+    <include file="config/liquibase/changelog/20241021165758_added_entity_constraints_HandCraft.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20241021165858_added_entity_constraints_AlAlexType.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20241021165958_added_entity_constraints_AlBetonamuRelation.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20241021170058_added_entity_constraints_AlApple.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20241021170158_added_entity_constraints_Rihanna.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20241021170258_added_entity_constraints_EdSheeran.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20241021170358_added_entity_constraints_AlPacino.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20241021170458_added_entity_constraints_AlPacinoAndreiRightHand.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20241021170558_added_entity_constraints_AlActiso.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20241021170658_added_entity_constraints_AlGore.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20241021170758_added_entity_constraints_AlGoreCondition.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20241021170858_added_entity_constraints_AlLeandro.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20241021170958_added_entity_constraints_AlDesire.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20241021171058_added_entity_constraints_AlLeandroPlayingTime.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20241021171158_added_entity_constraints_AndreiRightHand.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20241021171258_added_entity_constraints_AntonioBanderas.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20241021171358_added_entity_constraints_HexChar.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20241021172158_added_entity_constraints_AlLexFerg.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20241021172258_added_entity_constraints_AlCatalina.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20241021172358_added_entity_constraints_AlBestTooth.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20241021172458_added_entity_constraints_AlMenity.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20241021172558_added_entity_constraints_AlPedroTax.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20241021172658_added_entity_constraints_AlPounder.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20241021172758_added_entity_constraints_AlPowerShell.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20241021172858_added_entity_constraints_AlPyuDjibril.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20241021172958_added_entity_constraints_AlPyuThomasWayne.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20241021173058_added_entity_constraints_AlPyuJoker.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20241021173158_added_entity_constraints_AlLadyGaga.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20241021173258_added_entity_constraints_AlProPro.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20241021173358_added_entity_constraints_AlProty.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20241021173458_added_entity_constraints_AlSherMale.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20241021173558_added_entity_constraints_AlInquiry.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20241021173658_added_entity_constraints_AlGoogleMeet.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20241021173758_added_entity_constraints_AlMemTier.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20241021173858_added_entity_constraints_AlPacinoPointHistory.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20241021173958_added_entity_constraints_AlVueVue.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20241021174058_added_entity_constraints_AlVueVueCondition.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20241021174158_added_entity_constraints_AlPacinoVoucher.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20241021174258_added_entity_constraints_AlVueVueUsage.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20241021174358_added_entity_constraints_AppMessageTemplate.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20241021174458_added_entity_constraints_AppZnsTemplate.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20241021174558_added_entity_constraints_OlAlmantinoMilo.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20241021174658_added_entity_constraints_JohnLennon.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20241021174758_added_entity_constraints_OlMaster.xml" relativeToChangelogFile="false"/>
+    <!-- jhipster-needle-liquibase-add-constraints-changelog - JHipster will add liquibase constraints changelogs here -->
+    <!-- jhipster-needle-liquibase-add-incremental-changelog - JHipster will add incremental liquibase changelogs here -->
+</databaseChangeLog>

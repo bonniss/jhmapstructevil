@@ -1,0 +1,54 @@
+{
+  "annotations": {
+    "changelogDate": "20241021170832"
+  },
+  "applications": ["realworld"],
+  "fields": [
+    {
+      "fieldName": "subjectType",
+      "fieldType": "AlcountSubjectivity",
+      "fieldValues": "PRODUCT,CATEGORY"
+    },
+    {
+      "fieldName": "subject",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "action",
+      "fieldType": "NeonEction",
+      "fieldValues": "INCLUDE,EXCLUDE"
+    },
+    {
+      "fieldName": "note",
+      "fieldType": "String",
+      "fieldValidateRules": ["maxlength"],
+      "fieldValidateRulesMaxlength": "65535"
+    }
+  ],
+  "jpaMetamodelFiltering": true,
+  "name": "AlGoreCondition",
+  "pagination": "pagination",
+  "relationships": [
+    {
+      "options": {
+        "onDelete": "CASCADE"
+      },
+      "otherEntityName": "alGore",
+      "otherEntityRelationshipName": "conditions",
+      "relationshipName": "parent",
+      "relationshipSide": "left",
+      "relationshipType": "many-to-one"
+    },
+    {
+      "options": {
+        "onDelete": "CASCADE"
+      },
+      "otherEntityName": "johnLennon",
+      "relationshipName": "application",
+      "relationshipSide": "left",
+      "relationshipType": "many-to-one"
+    }
+  ],
+  "searchEngine": "no",
+  "service": "serviceClass"
+}

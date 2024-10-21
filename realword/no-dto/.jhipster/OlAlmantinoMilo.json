@@ -1,0 +1,72 @@
+{
+  "annotations": {
+    "changelogDate": "20241021174632"
+  },
+  "applications": ["realworld"],
+  "fields": [
+    {
+      "fieldName": "id",
+      "fieldType": "UUID"
+    },
+    {
+      "fieldName": "provider",
+      "fieldType": "EcmaScript",
+      "fieldValidateRules": ["required"],
+      "fieldValues": "JELLO,OTHER"
+    },
+    {
+      "fieldName": "providerAppManagerId",
+      "fieldType": "String",
+      "fieldValidateRules": ["required", "maxlength"],
+      "fieldValidateRulesMaxlength": "1024"
+    },
+    {
+      "fieldName": "name",
+      "fieldType": "String",
+      "fieldValidateRules": ["required", "minlength", "maxlength", "unique"],
+      "fieldValidateRulesMaxlength": "256",
+      "fieldValidateRulesMinlength": "2"
+    },
+    {
+      "fieldName": "providerSecretKey",
+      "fieldType": "String",
+      "fieldValidateRules": ["maxlength"],
+      "fieldValidateRulesMaxlength": "1024",
+      "options": {
+        "cannotList": true
+      }
+    },
+    {
+      "fieldName": "providerToken",
+      "fieldType": "String",
+      "fieldValidateRules": ["maxlength"],
+      "fieldValidateRulesMaxlength": "1024"
+    },
+    {
+      "fieldName": "providerRefreshToken",
+      "fieldType": "String",
+      "fieldValidateRules": ["maxlength"],
+      "fieldValidateRulesMaxlength": "1024"
+    }
+  ],
+  "jpaMetamodelFiltering": true,
+  "name": "OlAlmantinoMilo",
+  "pagination": "pagination",
+  "relationships": [
+    {
+      "otherEntityName": "olMaster",
+      "relationshipName": "organization",
+      "relationshipSide": "left",
+      "relationshipType": "many-to-one"
+    },
+    {
+      "otherEntityName": "johnLennon",
+      "otherEntityRelationshipName": "appManager",
+      "relationshipName": "applications",
+      "relationshipSide": "right",
+      "relationshipType": "one-to-many"
+    }
+  ],
+  "searchEngine": "no",
+  "service": "serviceClass"
+}

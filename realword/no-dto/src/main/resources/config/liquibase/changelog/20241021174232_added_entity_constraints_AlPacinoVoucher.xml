@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd
+                        http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+    <!--
+        Added the constraints for entity AlPacinoVoucher.
+    -->
+    <changeSet id="20241021174232-2" author="jhipster">
+
+        <addForeignKeyConstraint baseColumnNames="user_id"
+                                 baseTableName="al_pacino_voucher"
+                                 constraintName="fk_al_pacino_voucher__user_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="al_pacino"
+                                 />
+
+        <addForeignKeyConstraint baseColumnNames="voucher_id"
+                                 baseTableName="al_pacino_voucher"
+                                 constraintName="fk_al_pacino_voucher__voucher_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="al_vue_vue"
+                                 />
+
+        <addForeignKeyConstraint baseColumnNames="application_id"
+                                 baseTableName="al_pacino_voucher"
+                                 constraintName="fk_al_pacino_voucher__application_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="john_lennon"
+                                 onDelete="CASCADE"
+                                 />
+    </changeSet>
+</databaseChangeLog>

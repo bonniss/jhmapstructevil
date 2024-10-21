@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd
+                        http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+    <!--
+        Added the constraints for entity OlMaster.
+    -->
+    <changeSet id="20241021174758-2" author="jhipster">
+
+        <addForeignKeyConstraint baseColumnNames="address_id"
+                                 baseTableName="ol_master"
+                                 constraintName="fk_ol_master__address_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="andrei_right_hand"
+                                 />
+    </changeSet>
+</databaseChangeLog>

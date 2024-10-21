@@ -115,3 +115,23 @@ Run 3: 15.310 seconds
 14.914 seconds
 ~~~~~~~~~~~~~~~~~~
 ```
+
+### Realworld app
+
+```txt
+==================
+realworld
+==================
+
+~~~~~~~~~~~~~~~~~~
+Measuring build time for no-dto...
+Run 1: 6.138 seconds
+6.138 seconds
+~~~~~~~~~~~~~~~~~~
+
+~~~~~~~~~~~~~~~~~~
+Measuring build time for with-dto...
+Run 1: 299.662 seconds
+299.662 seconds
+~~~~~~~~~~~~~~~~~~
+```
