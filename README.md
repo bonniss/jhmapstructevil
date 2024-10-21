@@ -92,3 +92,25 @@ Run 3: 12.055 seconds
 ```
 
 ### 50 entities
+
+```txt
+==================
+jh50
+==================
+
+~~~~~~~~~~~~~~~~~~
+Measuring build time for no-dto...
+Run 1: 11.083 seconds
+Run 2: 15.753 seconds
+Run 3: 9.414 seconds
+12.083 seconds
+~~~~~~~~~~~~~~~~~~
+
+~~~~~~~~~~~~~~~~~~
+Measuring build time for with-dto...
+Run 1: 16.191 seconds
+Run 2: 13.242 seconds
+Run 3: 15.310 seconds
+14.914 seconds
+~~~~~~~~~~~~~~~~~~
+```
