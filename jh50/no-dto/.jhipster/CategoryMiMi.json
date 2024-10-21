@@ -1,0 +1,21 @@
+{
+  "annotations": {
+    "changelogDate": "20241021112339"
+  },
+  "applications": ["jhmapstruct"],
+  "fields": [
+    {
+      "fieldName": "name",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "description",
+      "fieldType": "String"
+    }
+  ],
+  "name": "CategoryMiMi",
+  "relationships": [],
+  "searchEngine": "no",
+  "service": "serviceImpl"
+}

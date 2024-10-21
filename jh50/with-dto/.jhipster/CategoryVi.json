@@ -1,0 +1,22 @@
+{
+  "annotations": {
+    "changelogDate": "20241021105404"
+  },
+  "applications": ["jhmapstruct"],
+  "dto": "mapstruct",
+  "fields": [
+    {
+      "fieldName": "name",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "description",
+      "fieldType": "String"
+    }
+  ],
+  "name": "CategoryVi",
+  "relationships": [],
+  "searchEngine": "no",
+  "service": "serviceImpl"
+}

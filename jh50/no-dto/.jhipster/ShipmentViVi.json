@@ -1,0 +1,25 @@
+{
+  "annotations": {
+    "changelogDate": "20241021110739"
+  },
+  "applications": ["jhmapstruct"],
+  "fields": [
+    {
+      "fieldName": "trackingNumber",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "shippedDate",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "deliveryDate",
+      "fieldType": "Instant"
+    }
+  ],
+  "name": "ShipmentViVi",
+  "relationships": [],
+  "searchEngine": "no",
+  "service": "serviceImpl"
+}
