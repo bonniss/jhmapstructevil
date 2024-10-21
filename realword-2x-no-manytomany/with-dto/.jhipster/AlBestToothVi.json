@@ -1,0 +1,22 @@
+{
+  "annotations": {
+    "changelogDate": "20241021175246"
+  },
+  "applications": ["realworld"],
+  "dto": "mapstruct",
+  "fields": [
+    {
+      "fieldName": "name",
+      "fieldType": "String",
+      "fieldValidateRules": ["required", "minlength", "maxlength"],
+      "fieldValidateRulesMaxlength": "256",
+      "fieldValidateRulesMinlength": "2"
+    }
+  ],
+  "jpaMetamodelFiltering": true,
+  "name": "AlBestToothVi",
+  "pagination": "pagination",
+  "relationships": [],
+  "searchEngine": "no",
+  "service": "serviceClass"
+}

@@ -1,0 +1,62 @@
+{
+  "annotations": {
+    "changelogDate": "20241021175206"
+  },
+  "applications": ["realworld"],
+  "fields": [
+    {
+      "fieldName": "title",
+      "fieldType": "String",
+      "fieldValidateRules": ["required", "minlength", "maxlength"],
+      "fieldValidateRulesMaxlength": "256",
+      "fieldValidateRulesMinlength": "2"
+    },
+    {
+      "fieldName": "topContent",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "content",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "bottomContent",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "propTitleMappingJason",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "dataSourceMappingType",
+      "fieldType": "AlphaSourceType",
+      "fieldValues": "COMPLETED_ORDER,BOOKING_INFORMATION"
+    },
+    {
+      "fieldName": "targetUrls",
+      "fieldType": "String"
+    }
+  ],
+  "jpaMetamodelFiltering": true,
+  "name": "AllMassageThai",
+  "pagination": "pagination",
+  "relationships": [
+    {
+      "otherEntityName": "metaverse",
+      "relationshipName": "thumbnail",
+      "relationshipSide": "left",
+      "relationshipType": "many-to-one"
+    },
+    {
+      "options": {
+        "onDelete": "CASCADE"
+      },
+      "otherEntityName": "johnLennon",
+      "relationshipName": "application",
+      "relationshipSide": "left",
+      "relationshipType": "many-to-one"
+    }
+  ],
+  "searchEngine": "no",
+  "service": "serviceClass"
+}

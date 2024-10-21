@@ -1,0 +1,54 @@
+{
+  "annotations": {
+    "changelogDate": "20241021173020"
+  },
+  "applications": ["realworld"],
+  "dto": "mapstruct",
+  "fields": [
+    {
+      "fieldName": "name",
+      "fieldType": "String",
+      "fieldValidateRules": ["required", "minlength", "maxlength"],
+      "fieldValidateRulesMaxlength": "256",
+      "fieldValidateRulesMinlength": "2"
+    },
+    {
+      "fieldName": "description",
+      "fieldType": "String",
+      "fieldValidateRules": ["maxlength"],
+      "fieldValidateRulesMaxlength": "65535"
+    },
+    {
+      "fieldName": "weight",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "propertyType",
+      "fieldType": "PeteType",
+      "fieldValues": "VILLA,ROOM"
+    }
+  ],
+  "jpaMetamodelFiltering": true,
+  "name": "AlPedroTax",
+  "pagination": "pagination",
+  "relationships": [
+    {
+      "options": {
+        "onDelete": "CASCADE"
+      },
+      "otherEntityName": "johnLennon",
+      "relationshipName": "application",
+      "relationshipSide": "left",
+      "relationshipType": "many-to-one"
+    },
+    {
+      "otherEntityName": "alPounder",
+      "otherEntityRelationshipName": "attributeTaxonomy",
+      "relationshipName": "attributeTerms",
+      "relationshipSide": "right",
+      "relationshipType": "one-to-many"
+    }
+  ],
+  "searchEngine": "no",
+  "service": "serviceClass"
+}

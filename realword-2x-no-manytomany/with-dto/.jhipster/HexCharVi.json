@@ -1,0 +1,54 @@
+{
+  "annotations": {
+    "changelogDate": "20241021175237"
+  },
+  "applications": ["realworld"],
+  "dto": "mapstruct",
+  "fields": [
+    {
+      "fieldName": "dob",
+      "fieldType": "LocalDate"
+    },
+    {
+      "fieldName": "gender",
+      "fieldType": "TyrantSex",
+      "fieldValues": "MALE,FEMALE"
+    },
+    {
+      "fieldName": "phone",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "bioHeitiga",
+      "fieldType": "String",
+      "fieldValidateRules": ["maxlength"],
+      "fieldValidateRulesMaxlength": "10485760"
+    },
+    {
+      "fieldName": "isEnabled",
+      "fieldType": "Boolean"
+    }
+  ],
+  "jpaMetamodelFiltering": true,
+  "name": "HexCharVi",
+  "pagination": "pagination",
+  "relationships": [
+    {
+      "otherEntityField": "login",
+      "otherEntityName": "user",
+      "relationshipName": "internalUser",
+      "relationshipSide": "left",
+      "relationshipType": "one-to-one",
+      "relationshipValidateRules": "required",
+      "relationshipWithBuiltInEntity": true
+    },
+    {
+      "otherEntityName": "hashRossVi",
+      "relationshipName": "role",
+      "relationshipSide": "left",
+      "relationshipType": "many-to-one"
+    }
+  ],
+  "searchEngine": "no",
+  "service": "serviceClass"
+}

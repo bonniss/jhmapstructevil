@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd
+                        http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+    <!--
+        Added the constraints for entity AndreiRightHandVi.
+    -->
+    <changeSet id="20241021175220-2" author="jhipster">
+
+        <addForeignKeyConstraint baseColumnNames="country_id"
+                                 baseTableName="andrei_right_hand_vi"
+                                 constraintName="fk_andrei_right_hand_vi__country_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="antonio_banderas_vi"
+                                 />
+
+        <addForeignKeyConstraint baseColumnNames="province_id"
+                                 baseTableName="andrei_right_hand_vi"
+                                 constraintName="fk_andrei_right_hand_vi__province_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="antonio_banderas_vi"
+                                 />
+
+        <addForeignKeyConstraint baseColumnNames="district_id"
+                                 baseTableName="andrei_right_hand_vi"
+                                 constraintName="fk_andrei_right_hand_vi__district_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="antonio_banderas_vi"
+                                 />
+
+        <addForeignKeyConstraint baseColumnNames="ward_id"
+                                 baseTableName="andrei_right_hand_vi"
+                                 constraintName="fk_andrei_right_hand_vi__ward_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="antonio_banderas_vi"
+                                 />
+    </changeSet>
+</databaseChangeLog>

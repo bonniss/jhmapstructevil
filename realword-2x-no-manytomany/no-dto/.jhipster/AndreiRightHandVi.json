@@ -1,0 +1,51 @@
+{
+  "annotations": {
+    "changelogDate": "20241021175220"
+  },
+  "applications": ["realworld"],
+  "fields": [
+    {
+      "fieldName": "details",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "lat",
+      "fieldType": "Float"
+    },
+    {
+      "fieldName": "lon",
+      "fieldType": "Float"
+    }
+  ],
+  "jpaMetamodelFiltering": true,
+  "name": "AndreiRightHandVi",
+  "pagination": "pagination",
+  "relationships": [
+    {
+      "otherEntityName": "antonioBanderasVi",
+      "relationshipName": "country",
+      "relationshipSide": "left",
+      "relationshipType": "many-to-one"
+    },
+    {
+      "otherEntityName": "antonioBanderasVi",
+      "relationshipName": "province",
+      "relationshipSide": "left",
+      "relationshipType": "many-to-one"
+    },
+    {
+      "otherEntityName": "antonioBanderasVi",
+      "relationshipName": "district",
+      "relationshipSide": "left",
+      "relationshipType": "many-to-one"
+    },
+    {
+      "otherEntityName": "antonioBanderasVi",
+      "relationshipName": "ward",
+      "relationshipSide": "left",
+      "relationshipType": "many-to-one"
+    }
+  ],
+  "searchEngine": "no",
+  "service": "serviceClass"
+}

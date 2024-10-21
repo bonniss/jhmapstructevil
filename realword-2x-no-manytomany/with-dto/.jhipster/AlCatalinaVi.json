@@ -1,0 +1,53 @@
+{
+  "annotations": {
+    "changelogDate": "20241021175245"
+  },
+  "applications": ["realworld"],
+  "dto": "mapstruct",
+  "fields": [
+    {
+      "fieldName": "name",
+      "fieldType": "String",
+      "fieldValidateRules": ["required", "minlength", "maxlength"],
+      "fieldValidateRulesMaxlength": "256",
+      "fieldValidateRulesMinlength": "2"
+    },
+    {
+      "fieldName": "description",
+      "fieldType": "String",
+      "fieldValidateRules": ["maxlength"],
+      "fieldValidateRulesMaxlength": "65535"
+    },
+    {
+      "fieldName": "treeDepth",
+      "fieldType": "Integer"
+    }
+  ],
+  "jpaMetamodelFiltering": true,
+  "name": "AlCatalinaVi",
+  "pagination": "pagination",
+  "relationships": [
+    {
+      "otherEntityName": "alCatalinaVi",
+      "otherEntityRelationshipName": "children",
+      "relationshipName": "parent",
+      "relationshipSide": "left",
+      "relationshipType": "many-to-one"
+    },
+    {
+      "otherEntityName": "metaverse",
+      "relationshipName": "avatar",
+      "relationshipSide": "left",
+      "relationshipType": "many-to-one"
+    },
+    {
+      "otherEntityName": "alCatalinaVi",
+      "otherEntityRelationshipName": "parent",
+      "relationshipName": "children",
+      "relationshipSide": "right",
+      "relationshipType": "one-to-many"
+    }
+  ],
+  "searchEngine": "no",
+  "service": "serviceClass"
+}

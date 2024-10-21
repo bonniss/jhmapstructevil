@@ -1,0 +1,53 @@
+{
+  "annotations": {
+    "changelogDate": "20241021175304"
+  },
+  "applications": ["realworld"],
+  "dto": "mapstruct",
+  "fields": [
+    {
+      "fieldName": "id",
+      "fieldType": "UUID"
+    },
+    {
+      "fieldName": "sourceTitle",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "sourceUrl",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "collectedDate",
+      "fieldType": "Instant"
+    }
+  ],
+  "jpaMetamodelFiltering": true,
+  "name": "AlPacinoVoucherVi",
+  "pagination": "pagination",
+  "relationships": [
+    {
+      "otherEntityName": "alPacino",
+      "relationshipName": "user",
+      "relationshipSide": "left",
+      "relationshipType": "many-to-one"
+    },
+    {
+      "otherEntityName": "alVueVueVi",
+      "relationshipName": "voucher",
+      "relationshipSide": "left",
+      "relationshipType": "many-to-one"
+    },
+    {
+      "options": {
+        "onDelete": "CASCADE"
+      },
+      "otherEntityName": "johnLennon",
+      "relationshipName": "application",
+      "relationshipSide": "left",
+      "relationshipType": "many-to-one"
+    }
+  ],
+  "searchEngine": "no",
+  "service": "serviceClass"
+}

@@ -1,0 +1,40 @@
+{
+  "annotations": {
+    "changelogDate": "20241021175223"
+  },
+  "applications": ["realworld"],
+  "dto": "mapstruct",
+  "fields": [],
+  "jpaMetamodelFiltering": true,
+  "name": "HandCraftVi",
+  "pagination": "pagination",
+  "relationships": [
+    {
+      "otherEntityName": "edSheeranVi",
+      "otherEntityRelationshipName": "agentRoles",
+      "relationshipName": "agent",
+      "relationshipSide": "left",
+      "relationshipType": "many-to-one",
+      "relationshipValidateRules": "required"
+    },
+    {
+      "otherEntityName": "rihannaVi",
+      "otherEntityRelationshipName": "agentRoles",
+      "relationshipName": "role",
+      "relationshipSide": "left",
+      "relationshipType": "many-to-one",
+      "relationshipValidateRules": "required"
+    },
+    {
+      "options": {
+        "onDelete": "CASCADE"
+      },
+      "otherEntityName": "johnLennon",
+      "relationshipName": "application",
+      "relationshipSide": "left",
+      "relationshipType": "many-to-one"
+    }
+  ],
+  "searchEngine": "no",
+  "service": "serviceClass"
+}

@@ -44,9 +44,18 @@ chmod +x benchmark.sh && ./benchmark.sh
 
 ## Results
 
+> TL,DR;
+
+Tests are perform on 2 machines:
+
+1/ Windows desktop, Intel Core i7-9700 / RAM 16GB / SSD 512GB.
+2/ Macbook, M1 Pro 2021 RAM 16GB / SSD 512GB.
+
 ### 10 entities
 
 Simple relationship grid: mainly `ManyToOne`, only 1 `ManyToMany`.
+
+__Intel__:
 
 ```text
 ==================
@@ -70,9 +79,35 @@ Run 3: 8.964 seconds
 ~~~~~~~~~~~~~~~~~~
 ```
 
+__M1 Pro__:
+
+```txt
+==================
+jh10
+==================
+
+~~~~~~~~~~~~~~~~~~
+Measuring build time for no-dto...
+Run 1: 4.744 seconds
+Run 2: 4.001 seconds
+Run 3: 4.553 seconds
+4.432 seconds
+~~~~~~~~~~~~~~~~~~
+
+~~~~~~~~~~~~~~~~~~
+Measuring build time for with-dto...
+Run 1: 5.038 seconds
+Run 2: 4.934 seconds
+Run 3: 4.864 seconds
+4.945 seconds
+~~~~~~~~~~~~~~~~~~
+```
+
 ### 30 entities
 
 Triple the `10 entities` section.
+
+__Intel__:
 
 ```text
 ==================
@@ -96,9 +131,35 @@ Run 3: 12.055 seconds
 ~~~~~~~~~~~~~~~~~~
 ```
 
+__M1 Pro__:
+
+```txt
+==================
+jh30
+==================
+
+~~~~~~~~~~~~~~~~~~
+Measuring build time for no-dto...
+Run 1: 5.545 seconds
+Run 2: 4.837 seconds
+Run 3: 4.708 seconds
+5.030 seconds
+~~~~~~~~~~~~~~~~~~
+
+~~~~~~~~~~~~~~~~~~
+Measuring build time for with-dto...
+Run 1: 6.161 seconds
+Run 2: 6.002 seconds
+Run 3: 6.144 seconds
+6.102 seconds
+~~~~~~~~~~~~~~~~~~
+```
+
 ### 50 entities
 
 x5 the `10 entities` section.
+
+__Intel__:
 
 ```txt
 ==================
@@ -122,17 +183,91 @@ Run 3: 15.310 seconds
 ~~~~~~~~~~~~~~~~~~
 ```
 
+__M1 Pro__:
+
+```txt
+==================
+jh50
+==================
+
+~~~~~~~~~~~~~~~~~~
+Measuring build time for no-dto...
+Run 1: 6.320 seconds
+Run 2: 6.020 seconds
+Run 3: 5.843 seconds
+6.061 seconds
+~~~~~~~~~~~~~~~~~~
+
+~~~~~~~~~~~~~~~~~~
+Measuring build time for with-dto...
+Run 1: 7.249 seconds
+Run 2: 6.895 seconds
+Run 3: 6.906 seconds
+7.016 seconds
+~~~~~~~~~~~~~~~~~~
+```
+
 ### SaaS 30 entities
 
-Describe a SaaS (Software-as-a-service) business model: much the same as `jh30`, plus one "tenant entity" that link to every rest entity.
+Describe a simple SaaS (Software-as-a-service) model: much the same as `jh30`, plus one "tenant entity" that link to every rest entity as a data isolation indicator.
+
+__M1 Pro__:
+
+```txt
+==================
+saas_jh30
+==================
+
+~~~~~~~~~~~~~~~~~~
+Measuring build time for no-dto...
+Run 1: 5.644 seconds
+Run 2: 5.167 seconds
+Run 3: 4.934 seconds
+5.248 seconds
+~~~~~~~~~~~~~~~~~~
+
+~~~~~~~~~~~~~~~~~~
+Measuring build time for with-dto...
+Run 1: 6.514 seconds
+Run 2: 6.776 seconds
+Run 3: 6.817 seconds
+6.702 seconds
+~~~~~~~~~~~~~~~~~~
+```
 
 ### SaaS 50 entities
 
 `jh50` with SaaS.
 
+__M1 Pro__:
+
+```txt
+==================
+saas_jh50
+==================
+
+~~~~~~~~~~~~~~~~~~
+Measuring build time for no-dto...
+Run 1: 6.287 seconds
+Run 2: 5.697 seconds
+Run 3: 5.688 seconds
+5.890 seconds
+~~~~~~~~~~~~~~~~~~
+
+~~~~~~~~~~~~~~~~~~
+Measuring build time for with-dto...
+Run 1: 7.898 seconds
+Run 2: 8.378 seconds
+Run 3: 8.753 seconds
+8.343 seconds
+~~~~~~~~~~~~~~~~~~
+```
+
 ### Realworld app
 
-A real-world app design with a complex network of relationships, including multiple ManyToMany relationships, while also applying to the SaaS model.
+A real-world app design with a complex network of relationships (50+ entities), including multiple `ManyToMany` relationships, while also applying to the SaaS model.
+
+__M1 Pro__:
 
 ```txt
 ==================
@@ -156,6 +291,8 @@ Run 1: 326.540 seconds
 
 The same real world app, though stripped off `ManyToMany` relationships.
 
+__M1 Pro__:
+
 ```txt
 ==================
 realword-no-manytomany
@@ -178,6 +315,8 @@ Run 1: 13.497 seconds
 
 Double entities.
 
+__M1 Pro__:
+
 ```txt
 ==================
 realword-2x
@@ -199,3 +338,19 @@ Run 1: 8026.400 seconds
 2-hour build time 💀.
 
 ### Realworld app 2x without `ManyToMany` relationships
+
+__M1 Pro__:
+
+```txt
+~~~~~~~~~~~~~~~~~~
+Measuring build time for no-dto...
+Run 1: 8.658 seconds
+8.658 seconds
+~~~~~~~~~~~~~~~~~~
+
+~~~~~~~~~~~~~~~~~~
+Measuring build time for with-dto...
+Run 1: 32.518 seconds
+32.518 seconds
+~~~~~~~~~~~~~~~~~~
+```

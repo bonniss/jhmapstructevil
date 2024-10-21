@@ -1,0 +1,60 @@
+{
+  "annotations": {
+    "changelogDate": "20241021175307"
+  },
+  "applications": ["realworld"],
+  "dto": "mapstruct",
+  "fields": [
+    {
+      "fieldName": "zipAction",
+      "fieldType": "KnsIction",
+      "fieldValues": "SEND_ZIP_TO_CUSTOMER_AFTER_BOOKING"
+    },
+    {
+      "fieldName": "name",
+      "fieldType": "String",
+      "fieldValidateRules": ["required", "minlength", "maxlength"],
+      "fieldValidateRulesMaxlength": "256",
+      "fieldValidateRulesMinlength": "2"
+    },
+    {
+      "fieldName": "templateId",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "dataSourceMappingType",
+      "fieldType": "AlphaSourceType",
+      "fieldValues": "COMPLETED_ORDER,BOOKING_INFORMATION"
+    },
+    {
+      "fieldName": "templateDataMapping",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "targetUrls",
+      "fieldType": "String"
+    }
+  ],
+  "jpaMetamodelFiltering": true,
+  "name": "AlZorroTemptationVi",
+  "pagination": "pagination",
+  "relationships": [
+    {
+      "otherEntityName": "metaverse",
+      "relationshipName": "thumbnail",
+      "relationshipSide": "left",
+      "relationshipType": "many-to-one"
+    },
+    {
+      "options": {
+        "onDelete": "CASCADE"
+      },
+      "otherEntityName": "johnLennon",
+      "relationshipName": "application",
+      "relationshipSide": "left",
+      "relationshipType": "many-to-one"
+    }
+  ],
+  "searchEngine": "no",
+  "service": "serviceClass"
+}

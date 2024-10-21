@@ -1,0 +1,100 @@
+package ai.realworld.domain;
+
+import static ai.realworld.domain.AlLadyGagaViTestSamples.*;
+import static ai.realworld.domain.AlProProViTestSamples.*;
+import static ai.realworld.domain.AlProProViTestSamples.*;
+import static ai.realworld.domain.JohnLennonTestSamples.*;
+import static ai.realworld.domain.MetaverseTestSamples.*;
+import static org.assertj.core.api.Assertions.assertThat;
+
+import ai.realworld.web.rest.TestUtil;
+import java.util.HashSet;
+import java.util.Set;
+import org.junit.jupiter.api.Test;
+
+class AlProProViTest {
+
+    @Test
+    void equalsVerifier() throws Exception {
+        TestUtil.equalsVerifier(AlProProVi.class);
+        AlProProVi alProProVi1 = getAlProProViSample1();
+        AlProProVi alProProVi2 = new AlProProVi();
+        assertThat(alProProVi1).isNotEqualTo(alProProVi2);
+
+        alProProVi2.setId(alProProVi1.getId());
+        assertThat(alProProVi1).isEqualTo(alProProVi2);
+
+        alProProVi2 = getAlProProViSample2();
+        assertThat(alProProVi1).isNotEqualTo(alProProVi2);
+    }
+
+    @Test
+    void parentTest() {
+        AlProProVi alProProVi = getAlProProViRandomSampleGenerator();
+        AlProProVi alProProViBack = getAlProProViRandomSampleGenerator();
+
+        alProProVi.setParent(alProProViBack);
+        assertThat(alProProVi.getParent()).isEqualTo(alProProViBack);
+
+        alProProVi.parent(null);
+        assertThat(alProProVi.getParent()).isNull();
+    }
+
+    @Test
+    void projectTest() {
+        AlProProVi alProProVi = getAlProProViRandomSampleGenerator();
+        AlLadyGagaVi alLadyGagaViBack = getAlLadyGagaViRandomSampleGenerator();
+
+        alProProVi.setProject(alLadyGagaViBack);
+        assertThat(alProProVi.getProject()).isEqualTo(alLadyGagaViBack);
+
+        alProProVi.project(null);
+        assertThat(alProProVi.getProject()).isNull();
+    }
+
+    @Test
+    void avatarTest() {
+        AlProProVi alProProVi = getAlProProViRandomSampleGenerator();
+        Metaverse metaverseBack = getMetaverseRandomSampleGenerator();
+
+        alProProVi.setAvatar(metaverseBack);
+        assertThat(alProProVi.getAvatar()).isEqualTo(metaverseBack);
+
+        alProProVi.avatar(null);
+        assertThat(alProProVi.getAvatar()).isNull();
+    }
+
+    @Test
+    void applicationTest() {
+        AlProProVi alProProVi = getAlProProViRandomSampleGenerator();
+        JohnLennon johnLennonBack = getJohnLennonRandomSampleGenerator();
+
+        alProProVi.setApplication(johnLennonBack);
+        assertThat(alProProVi.getApplication()).isEqualTo(johnLennonBack);
+
+        alProProVi.application(null);
+        assertThat(alProProVi.getApplication()).isNull();
+    }
+
+    @Test
+    void childrenTest() {
+        AlProProVi alProProVi = getAlProProViRandomSampleGenerator();
+        AlProProVi alProProViBack = getAlProProViRandomSampleGenerator();
+
+        alProProVi.addChildren(alProProViBack);
+        assertThat(alProProVi.getChildren()).containsOnly(alProProViBack);
+        assertThat(alProProViBack.getParent()).isEqualTo(alProProVi);
+
+        alProProVi.removeChildren(alProProViBack);
+        assertThat(alProProVi.getChildren()).doesNotContain(alProProViBack);
+        assertThat(alProProViBack.getParent()).isNull();
+
+        alProProVi.children(new HashSet<>(Set.of(alProProViBack)));
+        assertThat(alProProVi.getChildren()).containsOnly(alProProViBack);
+        assertThat(alProProViBack.getParent()).isEqualTo(alProProVi);
+
+        alProProVi.setChildren(new HashSet<>());
+        assertThat(alProProVi.getChildren()).doesNotContain(alProProViBack);
+        assertThat(alProProViBack.getParent()).isNull();
+    }
+}

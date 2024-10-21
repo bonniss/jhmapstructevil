@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd
+                        http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+    <!--
+        Added the constraints for entity AlPyuThomasWayneVi.
+    -->
+    <changeSet id="20241021175237-2" author="jhipster">
+
+        <addForeignKeyConstraint baseColumnNames="booking_id"
+                                 baseTableName="al_pyu_thomas_wayne_vi"
+                                 constraintName="fk_al_pyu_thomas_wayne_vi__booking_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="al_pyu_joker_vi"
+                                 />
+    </changeSet>
+</databaseChangeLog>

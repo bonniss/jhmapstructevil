@@ -1,0 +1,90 @@
+{
+  "annotations": {
+    "changelogDate": "20241021175105"
+  },
+  "applications": ["realworld"],
+  "fields": [
+    {
+      "fieldName": "id",
+      "fieldType": "UUID"
+    },
+    {
+      "fieldName": "provider",
+      "fieldType": "EcmaScript",
+      "fieldValues": "JELLO,OTHER"
+    },
+    {
+      "fieldName": "providerAppId",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "name",
+      "fieldType": "String",
+      "fieldValidateRules": ["required", "minlength", "maxlength", "unique"],
+      "fieldValidateRulesMaxlength": "256",
+      "fieldValidateRulesMinlength": "2"
+    },
+    {
+      "fieldName": "slug",
+      "fieldType": "String",
+      "fieldValidateRules": ["required", "minlength", "maxlength", "unique"],
+      "fieldValidateRulesMaxlength": "160",
+      "fieldValidateRulesMinlength": "2"
+    },
+    {
+      "fieldName": "isEnabled",
+      "fieldType": "Boolean"
+    }
+  ],
+  "jpaMetamodelFiltering": true,
+  "name": "JohnLennon",
+  "pagination": "pagination",
+  "relationships": [
+    {
+      "otherEntityName": "metaverse",
+      "relationshipName": "logo",
+      "relationshipSide": "left",
+      "relationshipType": "many-to-one"
+    },
+    {
+      "otherEntityName": "olAlmantinoMilo",
+      "otherEntityRelationshipName": "applications",
+      "relationshipName": "appManager",
+      "relationshipSide": "left",
+      "relationshipType": "many-to-one"
+    },
+    {
+      "otherEntityName": "olMaster",
+      "otherEntityRelationshipName": "applications",
+      "relationshipName": "organization",
+      "relationshipSide": "left",
+      "relationshipType": "many-to-one"
+    },
+    {
+      "otherEntityName": "initium",
+      "relationshipName": "jelloInitium",
+      "relationshipSide": "left",
+      "relationshipType": "many-to-one"
+    },
+    {
+      "otherEntityName": "initium",
+      "relationshipName": "inhouseInitium",
+      "relationshipSide": "left",
+      "relationshipType": "many-to-one"
+    },
+    {
+      "otherEntityName": "initiumVi",
+      "relationshipName": "jelloInitiumVi",
+      "relationshipSide": "left",
+      "relationshipType": "many-to-one"
+    },
+    {
+      "otherEntityName": "initiumVi",
+      "relationshipName": "inhouseInitiumVi",
+      "relationshipSide": "left",
+      "relationshipType": "many-to-one"
+    }
+  ],
+  "searchEngine": "no",
+  "service": "serviceClass"
+}

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd
+                        http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+    <!--
+        Added the constraints for entity AlGoogleMeetVi.
+    -->
+    <changeSet id="20241021175244-2" author="jhipster">
+
+        <addForeignKeyConstraint baseColumnNames="customer_id"
+                                 baseTableName="al_google_meet_vi"
+                                 constraintName="fk_al_google_meet_vi__customer_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="al_pacino"
+                                 />
+
+        <addForeignKeyConstraint baseColumnNames="agency_id"
+                                 baseTableName="al_google_meet_vi"
+                                 constraintName="fk_al_google_meet_vi__agency_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="al_apple_vi"
+                                 />
+
+        <addForeignKeyConstraint baseColumnNames="person_in_charge_id"
+                                 baseTableName="al_google_meet_vi"
+                                 constraintName="fk_al_google_meet_vi__person_in_charge_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="ed_sheeran_vi"
+                                 />
+
+        <addForeignKeyConstraint baseColumnNames="application_id"
+                                 baseTableName="al_google_meet_vi"
+                                 constraintName="fk_al_google_meet_vi__application_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="john_lennon"
+                                 onDelete="CASCADE"
+                                 />
+    </changeSet>
+</databaseChangeLog>

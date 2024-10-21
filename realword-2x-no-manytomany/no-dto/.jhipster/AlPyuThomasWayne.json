@@ -1,0 +1,31 @@
+{
+  "annotations": {
+    "changelogDate": "20241021173405"
+  },
+  "applications": ["realworld"],
+  "fields": [
+    {
+      "fieldName": "rating",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "comment",
+      "fieldType": "String",
+      "fieldValidateRules": ["maxlength"],
+      "fieldValidateRulesMaxlength": "65535"
+    }
+  ],
+  "jpaMetamodelFiltering": true,
+  "name": "AlPyuThomasWayne",
+  "pagination": "pagination",
+  "relationships": [
+    {
+      "otherEntityName": "alPyuJoker",
+      "relationshipName": "booking",
+      "relationshipSide": "left",
+      "relationshipType": "many-to-one"
+    }
+  ],
+  "searchEngine": "no",
+  "service": "serviceClass"
+}

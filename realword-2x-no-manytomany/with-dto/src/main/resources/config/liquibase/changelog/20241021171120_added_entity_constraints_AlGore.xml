@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd
+                        http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+    <!--
+        Added the constraints for entity AlGore.
+    -->
+    <changeSet id="20241021171120-2" author="jhipster">
+
+        <addForeignKeyConstraint baseColumnNames="biz_relation_id"
+                                 baseTableName="al_gore"
+                                 constraintName="fk_al_gore__biz_relation_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="al_betonamu_relation"
+                                 />
+
+        <addForeignKeyConstraint baseColumnNames="application_id"
+                                 baseTableName="al_gore"
+                                 constraintName="fk_al_gore__application_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="john_lennon"
+                                 onDelete="CASCADE"
+                                 />
+
+        <addForeignKeyConstraint baseColumnNames="biz_relation_vi_id"
+                                 baseTableName="al_gore"
+                                 constraintName="fk_al_gore__biz_relation_vi_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="al_betonamu_relation_vi"
+                                 />
+    </changeSet>
+</databaseChangeLog>

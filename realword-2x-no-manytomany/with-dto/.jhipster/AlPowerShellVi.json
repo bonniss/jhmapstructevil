@@ -1,0 +1,41 @@
+{
+  "annotations": {
+    "changelogDate": "20241021175250"
+  },
+  "applications": ["realworld"],
+  "dto": "mapstruct",
+  "fields": [
+    {
+      "fieldName": "value",
+      "fieldType": "String"
+    }
+  ],
+  "jpaMetamodelFiltering": true,
+  "name": "AlPowerShellVi",
+  "pagination": "pagination",
+  "relationships": [
+    {
+      "otherEntityName": "alProProVi",
+      "relationshipName": "propertyProfile",
+      "relationshipSide": "left",
+      "relationshipType": "many-to-one"
+    },
+    {
+      "otherEntityName": "alPounderVi",
+      "relationshipName": "attributeTerm",
+      "relationshipSide": "left",
+      "relationshipType": "many-to-one"
+    },
+    {
+      "options": {
+        "onDelete": "CASCADE"
+      },
+      "otherEntityName": "johnLennon",
+      "relationshipName": "application",
+      "relationshipSide": "left",
+      "relationshipType": "many-to-one"
+    }
+  ],
+  "searchEngine": "no",
+  "service": "serviceClass"
+}
