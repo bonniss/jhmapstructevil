@@ -1,0 +1,464 @@
+application {
+  config {
+    baseName jhmapstruct
+    applicationType monolith
+    packageName xyz.jhmapstruct
+    authenticationType jwt
+    prodDatabaseType postgresql
+    devDatabaseType h2Disk
+    buildTool maven
+  }
+  entities *
+}
+service all with serviceImpl
+paginate Order, Product with pagination
+entity Customer {
+  firstName String required
+  lastName String required
+  email String required
+  phoneNumber String
+}
+entity Product {
+  name String required
+  price BigDecimal required
+  stock Integer required
+  description TextBlob
+}
+entity Order {
+  orderDate Instant required
+  totalPrice BigDecimal required
+  status OrderStatus
+}
+entity Employee {
+  firstName String required
+  lastName String required
+  email String required
+  hireDate Instant
+  position String
+}
+entity Category {
+  name String required
+  description String
+}
+entity Review {
+  rating Integer required min(1) max(5)
+  comment TextBlob
+  reviewDate Instant required
+}
+entity Payment {
+  amount BigDecimal required
+  paymentDate Instant required
+  paymentMethod PaymentMethod
+}
+entity Invoice {
+  invoiceNumber String required
+  issueDate Instant required
+  dueDate Instant
+  amount BigDecimal required
+}
+entity Shipment {
+  trackingNumber String required
+  shippedDate Instant
+  deliveryDate Instant
+}
+entity Supplier {
+  name String required
+  contactPerson String
+  email String
+  phoneNumber String
+}
+enum OrderStatus {
+  PENDING, SHIPPED, DELIVERED, CANCELLED
+}
+enum PaymentMethod {
+  CREDIT_CARD, PAYPAL, BANK_TRANSFER
+}
+relationship OneToMany {
+  Customer{orders} to Order{customer(email)} , Order{products} to Product{order}
+}
+relationship ManyToOne {
+  Product{category(name)} to Category
+}
+relationship ManyToOne {
+  Review{product(name)} to Product
+}
+relationship ManyToOne {
+  Order{payment} to Payment
+}
+relationship ManyToOne {
+  Order{shipment} to Shipment
+}
+relationship ManyToMany {
+  Supplier{products(name)} to Product{suppliers}
+}
+entity CustomerVi {
+  firstName String required
+  lastName String required
+  email String required
+  phoneNumber String
+}
+entity ProductVi {
+  name String required
+  price BigDecimal required
+  stock Integer required
+  description TextBlob
+}
+entity OrderVi {
+  orderDate Instant required
+  totalPrice BigDecimal required
+  status OrderViStatus
+}
+entity EmployeeVi {
+  firstName String required
+  lastName String required
+  email String required
+  hireDate Instant
+  position String
+}
+entity CategoryVi {
+  name String required
+  description String
+}
+entity ReviewVi {
+  rating Integer required min(1) max(5)
+  comment TextBlob
+  reviewDate Instant required
+}
+entity PaymentVi {
+  amount BigDecimal required
+  paymentDate Instant required
+  paymentMethod PaymentViMethod
+}
+entity InvoiceVi {
+  invoiceNumber String required
+  issueDate Instant required
+  dueDate Instant
+  amount BigDecimal required
+}
+entity ShipmentVi {
+  trackingNumber String required
+  shippedDate Instant
+  deliveryDate Instant
+}
+entity SupplierVi {
+  name String required
+  contactPerson String
+  email String
+  phoneNumber String
+}
+enum OrderViStatus {
+  PENDING, SHIPPED, DELIVERED, CANCELLED
+}
+enum PaymentViMethod {
+  CREDIT_CARD, PAYPAL, BANK_TRANSFER
+}
+relationship OneToMany {
+  CustomerVi{orders} to OrderVi{customer(email)} , OrderVi{products} to ProductVi{order}
+}
+relationship ManyToOne {
+  ProductVi{category(name)} to CategoryVi
+}
+relationship ManyToOne {
+  ReviewVi{product(name)} to ProductVi
+}
+relationship ManyToOne {
+  OrderVi{payment} to PaymentVi
+}
+relationship ManyToOne {
+  OrderVi{shipment} to ShipmentVi
+}
+relationship ManyToMany {
+  SupplierVi{products(name)} to ProductVi{suppliers}
+}
+entity CustomerViVi {
+  firstName String required
+  lastName String required
+  email String required
+  phoneNumber String
+}
+entity ProductViVi {
+  name String required
+  price BigDecimal required
+  stock Integer required
+  description TextBlob
+}
+entity OrderViVi {
+  orderDate Instant required
+  totalPrice BigDecimal required
+  status OrderViViStatus
+}
+entity EmployeeViVi {
+  firstName String required
+  lastName String required
+  email String required
+  hireDate Instant
+  position String
+}
+entity CategoryViVi {
+  name String required
+  description String
+}
+entity ReviewViVi {
+  rating Integer required min(1) max(5)
+  comment TextBlob
+  reviewDate Instant required
+}
+entity PaymentViVi {
+  amount BigDecimal required
+  paymentDate Instant required
+  paymentMethod PaymentViViMethod
+}
+entity InvoiceViVi {
+  invoiceNumber String required
+  issueDate Instant required
+  dueDate Instant
+  amount BigDecimal required
+}
+entity ShipmentViVi {
+  trackingNumber String required
+  shippedDate Instant
+  deliveryDate Instant
+}
+entity SupplierViVi {
+  name String required
+  contactPerson String
+  email String
+  phoneNumber String
+}
+enum OrderViViStatus {
+  PENDING, SHIPPED, DELIVERED, CANCELLED
+}
+enum PaymentViViMethod {
+  CREDIT_CARD, PAYPAL, BANK_TRANSFER
+}
+relationship OneToMany {
+  CustomerViVi{orders} to OrderViVi{customer(email)} , OrderViVi{products} to ProductViVi{order}
+}
+relationship ManyToOne {
+  ProductViVi{category(name)} to CategoryViVi
+}
+relationship ManyToOne {
+  ReviewViVi{product(name)} to ProductViVi
+}
+relationship ManyToOne {
+  OrderViVi{payment} to PaymentViVi
+}
+relationship ManyToOne {
+  OrderViVi{shipment} to ShipmentViVi
+}
+relationship ManyToMany {
+  SupplierViVi{products(name)} to ProductViVi{suppliers}
+}
+entity CustomerMi {
+  firstName String required
+  lastName String required
+  email String required
+  phoneNumber String
+}
+entity ProductMi {
+  name String required
+  price BigDecimal required
+  stock Integer required
+  description TextBlob
+}
+entity OrderMi {
+  orderDate Instant required
+  totalPrice BigDecimal required
+  status OrderMiStatus
+}
+entity EmployeeMi {
+  firstName String required
+  lastName String required
+  email String required
+  hireDate Instant
+  position String
+}
+entity CategoryMi {
+  name String required
+  description String
+}
+entity ReviewMi {
+  rating Integer required min(1) max(5)
+  comment TextBlob
+  reviewDate Instant required
+}
+entity PaymentMi {
+  amount BigDecimal required
+  paymentDate Instant required
+  paymentMethod PaymentMiMethod
+}
+entity InvoiceMi {
+  invoiceNumber String required
+  issueDate Instant required
+  dueDate Instant
+  amount BigDecimal required
+}
+entity ShipmentMi {
+  trackingNumber String required
+  shippedDate Instant
+  deliveryDate Instant
+}
+entity SupplierMi {
+  name String required
+  contactPerson String
+  email String
+  phoneNumber String
+}
+enum OrderMiStatus {
+  PENDING, SHIPPED, DELIVERED, CANCELLED
+}
+enum PaymentMiMethod {
+  CREDIT_CARD, PAYPAL, BANK_TRANSFER
+}
+relationship OneToMany {
+  CustomerMi{orders} to OrderMi{customer(email)} , OrderMi{products} to ProductMi{order}
+}
+relationship ManyToOne {
+  ProductMi{category(name)} to CategoryMi
+}
+relationship ManyToOne {
+  ReviewMi{product(name)} to ProductMi
+}
+relationship ManyToOne {
+  OrderMi{payment} to PaymentMi
+}
+relationship ManyToOne {
+  OrderMi{shipment} to ShipmentMi
+}
+relationship ManyToMany {
+  SupplierMi{products(name)} to ProductMi{suppliers}
+}
+entity CustomerMiMi {
+  firstName String required
+  lastName String required
+  email String required
+  phoneNumber String
+}
+entity ProductMiMi {
+  name String required
+  price BigDecimal required
+  stock Integer required
+  description TextBlob
+}
+entity OrderMiMi {
+  orderDate Instant required
+  totalPrice BigDecimal required
+  status OrderMiMiStatus
+}
+entity EmployeeMiMi {
+  firstName String required
+  lastName String required
+  email String required
+  hireDate Instant
+  position String
+}
+entity CategoryMiMi {
+  name String required
+  description String
+}
+entity ReviewMiMi {
+  rating Integer required min(1) max(5)
+  comment TextBlob
+  reviewDate Instant required
+}
+entity PaymentMiMi {
+  amount BigDecimal required
+  paymentDate Instant required
+  paymentMethod PaymentMiMiMethod
+}
+entity InvoiceMiMi {
+  invoiceNumber String required
+  issueDate Instant required
+  dueDate Instant
+  amount BigDecimal required
+}
+entity ShipmentMiMi {
+  trackingNumber String required
+  shippedDate Instant
+  deliveryDate Instant
+}
+entity SupplierMiMi {
+  name String required
+  contactPerson String
+  email String
+  phoneNumber String
+}
+enum OrderMiMiStatus {
+  PENDING, SHIPPED, DELIVERED, CANCELLED
+}
+enum PaymentMiMiMethod {
+  CREDIT_CARD, PAYPAL, BANK_TRANSFER
+}
+relationship OneToMany {
+  CustomerMiMi{orders} to OrderMiMi{customer(email)} , OrderMiMi{products} to ProductMiMi{order}
+}
+relationship ManyToOne {
+  ProductMiMi{category(name)} to CategoryMiMi
+}
+relationship ManyToOne {
+  ReviewMiMi{product(name)} to ProductMiMi
+}
+relationship ManyToOne {
+  OrderMiMi{payment} to PaymentMiMi
+}
+relationship ManyToOne {
+  OrderMiMi{shipment} to ShipmentMiMi
+}
+relationship ManyToMany {
+  SupplierMiMi{products(name)} to ProductMiMi{suppliers}
+}
+entity MasterTenant {
+  code String unique required
+}
+relationship ManyToOne {
+  Customer{tenant} to MasterTenant
+  Product{tenant} to MasterTenant
+  Order{tenant} to MasterTenant
+  Employee{tenant} to MasterTenant
+  Category{tenant} to MasterTenant
+  Review{tenant} to MasterTenant
+  Payment{tenant} to MasterTenant
+  Invoice{tenant} to MasterTenant
+  Shipment{tenant} to MasterTenant
+  Supplier{tenant} to MasterTenant
+  CustomerVi{tenant} to MasterTenant
+  ProductVi{tenant} to MasterTenant
+  OrderVi{tenant} to MasterTenant
+  EmployeeVi{tenant} to MasterTenant
+  CategoryVi{tenant} to MasterTenant
+  ReviewVi{tenant} to MasterTenant
+  PaymentVi{tenant} to MasterTenant
+  InvoiceVi{tenant} to MasterTenant
+  ShipmentVi{tenant} to MasterTenant
+  SupplierVi{tenant} to MasterTenant
+  CustomerViVi{tenant} to MasterTenant
+  ProductViVi{tenant} to MasterTenant
+  OrderViVi{tenant} to MasterTenant
+  EmployeeViVi{tenant} to MasterTenant
+  CategoryViVi{tenant} to MasterTenant
+  ReviewViVi{tenant} to MasterTenant
+  PaymentViVi{tenant} to MasterTenant
+  InvoiceViVi{tenant} to MasterTenant
+  ShipmentViVi{tenant} to MasterTenant
+  SupplierViVi{tenant} to MasterTenant
+  CustomerMi{tenant} to MasterTenant
+  ProductMi{tenant} to MasterTenant
+  OrderMi{tenant} to MasterTenant
+  EmployeeMi{tenant} to MasterTenant
+  CategoryMi{tenant} to MasterTenant
+  ReviewMi{tenant} to MasterTenant
+  PaymentMi{tenant} to MasterTenant
+  InvoiceMi{tenant} to MasterTenant
+  ShipmentMi{tenant} to MasterTenant
+  SupplierMi{tenant} to MasterTenant
+  CustomerMiMi{tenant} to MasterTenant
+  ProductMiMi{tenant} to MasterTenant
+  OrderMiMi{tenant} to MasterTenant
+  EmployeeMiMi{tenant} to MasterTenant
+  CategoryMiMi{tenant} to MasterTenant
+  ReviewMiMi{tenant} to MasterTenant
+  PaymentMiMi{tenant} to MasterTenant
+  InvoiceMiMi{tenant} to MasterTenant
+  ShipmentMiMi{tenant} to MasterTenant
+  SupplierMiMi{tenant} to MasterTenant
+}

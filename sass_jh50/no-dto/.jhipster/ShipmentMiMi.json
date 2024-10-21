@@ -1,0 +1,32 @@
+{
+  "annotations": {
+    "changelogDate": "20241021154405"
+  },
+  "applications": ["jhmapstruct"],
+  "fields": [
+    {
+      "fieldName": "trackingNumber",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "shippedDate",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "deliveryDate",
+      "fieldType": "Instant"
+    }
+  ],
+  "name": "ShipmentMiMi",
+  "relationships": [
+    {
+      "otherEntityName": "masterTenant",
+      "relationshipName": "tenant",
+      "relationshipSide": "left",
+      "relationshipType": "many-to-one"
+    }
+  ],
+  "searchEngine": "no",
+  "service": "serviceImpl"
+}

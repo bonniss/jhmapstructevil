@@ -1,0 +1,18 @@
+{
+  "annotations": {
+    "changelogDate": "20241021154619"
+  },
+  "applications": ["jhmapstruct"],
+  "dto": "mapstruct",
+  "fields": [
+    {
+      "fieldName": "code",
+      "fieldType": "String",
+      "fieldValidateRules": ["unique", "required"]
+    }
+  ],
+  "name": "MasterTenant",
+  "relationships": [],
+  "searchEngine": "no",
+  "service": "serviceImpl"
+}

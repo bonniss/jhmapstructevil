@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd">
+    <property name="now" value="now()" dbms="h2"/>
+    <property name="floatType" value="float4" dbms="h2"/>
+    <property name="uuidType" value="uuid" dbms="h2"/>
+    <property name="datetimeType" value="datetime(6)" dbms="h2"/>
+    <property name="clobType" value="longvarchar" dbms="h2"/>
+    <property name="blobType" value="blob" dbms="h2"/>
+    <property name="now" value="current_timestamp" dbms="postgresql"/>
+    <property name="floatType" value="float4" dbms="postgresql"/>
+    <property name="clobType" value="clob" dbms="postgresql"/>
+    <property name="blobType" value="blob" dbms="postgresql"/>
+    <property name="uuidType" value="uuid" dbms="postgresql"/>
+    <property name="datetimeType" value="datetime" dbms="postgresql"/>
+
+    <include file="config/liquibase/changelog/00000000000000_initial_schema.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20241021145605_added_entity_Customer.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20241021145705_added_entity_Product.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20241021145805_added_entity_Order.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20241021145905_added_entity_Employee.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20241021150005_added_entity_Category.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20241021150105_added_entity_Review.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20241021150205_added_entity_Payment.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20241021150305_added_entity_Invoice.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20241021150405_added_entity_Shipment.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20241021150505_added_entity_Supplier.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20241021150605_added_entity_CustomerVi.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20241021150705_added_entity_ProductVi.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20241021150805_added_entity_OrderVi.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20241021150905_added_entity_EmployeeVi.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20241021151005_added_entity_CategoryVi.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20241021151105_added_entity_ReviewVi.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20241021151205_added_entity_PaymentVi.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20241021151305_added_entity_InvoiceVi.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20241021151405_added_entity_ShipmentVi.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20241021151505_added_entity_SupplierVi.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20241021151605_added_entity_CustomerViVi.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20241021151705_added_entity_ProductViVi.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20241021151805_added_entity_OrderViVi.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20241021151905_added_entity_EmployeeViVi.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20241021152005_added_entity_CategoryViVi.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20241021152105_added_entity_ReviewViVi.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20241021152205_added_entity_PaymentViVi.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20241021152305_added_entity_InvoiceViVi.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20241021152405_added_entity_ShipmentViVi.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20241021152505_added_entity_SupplierViVi.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20241021152605_added_entity_CustomerMi.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20241021152705_added_entity_ProductMi.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20241021152805_added_entity_OrderMi.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20241021152905_added_entity_EmployeeMi.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20241021153005_added_entity_CategoryMi.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20241021153105_added_entity_ReviewMi.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20241021153205_added_entity_PaymentMi.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20241021153305_added_entity_InvoiceMi.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20241021153405_added_entity_ShipmentMi.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20241021153505_added_entity_SupplierMi.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20241021153605_added_entity_CustomerMiMi.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20241021153705_added_entity_ProductMiMi.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20241021153805_added_entity_OrderMiMi.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20241021153905_added_entity_EmployeeMiMi.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20241021154005_added_entity_CategoryMiMi.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20241021154105_added_entity_ReviewMiMi.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20241021154205_added_entity_PaymentMiMi.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20241021154305_added_entity_InvoiceMiMi.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20241021154405_added_entity_ShipmentMiMi.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20241021154505_added_entity_SupplierMiMi.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20241021154605_added_entity_MasterTenant.xml" relativeToChangelogFile="false"/>
+    <!-- jhipster-needle-liquibase-add-changelog - JHipster will add liquibase changelogs here -->
+    <include file="config/liquibase/changelog/20241021145605_added_entity_constraints_Customer.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20241021145705_added_entity_constraints_Product.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20241021145805_added_entity_constraints_Order.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20241021145905_added_entity_constraints_Employee.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20241021150005_added_entity_constraints_Category.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20241021150105_added_entity_constraints_Review.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20241021150205_added_entity_constraints_Payment.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20241021150305_added_entity_constraints_Invoice.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20241021150405_added_entity_constraints_Shipment.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20241021150505_added_entity_constraints_Supplier.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20241021150605_added_entity_constraints_CustomerVi.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20241021150705_added_entity_constraints_ProductVi.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20241021150805_added_entity_constraints_OrderVi.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20241021150905_added_entity_constraints_EmployeeVi.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20241021151005_added_entity_constraints_CategoryVi.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20241021151105_added_entity_constraints_ReviewVi.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20241021151205_added_entity_constraints_PaymentVi.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20241021151305_added_entity_constraints_InvoiceVi.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20241021151405_added_entity_constraints_ShipmentVi.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20241021151505_added_entity_constraints_SupplierVi.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20241021151605_added_entity_constraints_CustomerViVi.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20241021151705_added_entity_constraints_ProductViVi.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20241021151805_added_entity_constraints_OrderViVi.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20241021151905_added_entity_constraints_EmployeeViVi.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20241021152005_added_entity_constraints_CategoryViVi.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20241021152105_added_entity_constraints_ReviewViVi.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20241021152205_added_entity_constraints_PaymentViVi.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20241021152305_added_entity_constraints_InvoiceViVi.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20241021152405_added_entity_constraints_ShipmentViVi.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20241021152505_added_entity_constraints_SupplierViVi.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20241021152605_added_entity_constraints_CustomerMi.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20241021152705_added_entity_constraints_ProductMi.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20241021152805_added_entity_constraints_OrderMi.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20241021152905_added_entity_constraints_EmployeeMi.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20241021153005_added_entity_constraints_CategoryMi.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20241021153105_added_entity_constraints_ReviewMi.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20241021153205_added_entity_constraints_PaymentMi.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20241021153305_added_entity_constraints_InvoiceMi.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20241021153405_added_entity_constraints_ShipmentMi.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20241021153505_added_entity_constraints_SupplierMi.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20241021153605_added_entity_constraints_CustomerMiMi.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20241021153705_added_entity_constraints_ProductMiMi.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20241021153805_added_entity_constraints_OrderMiMi.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20241021153905_added_entity_constraints_EmployeeMiMi.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20241021154005_added_entity_constraints_CategoryMiMi.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20241021154105_added_entity_constraints_ReviewMiMi.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20241021154205_added_entity_constraints_PaymentMiMi.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20241021154305_added_entity_constraints_InvoiceMiMi.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20241021154405_added_entity_constraints_ShipmentMiMi.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20241021154505_added_entity_constraints_SupplierMiMi.xml" relativeToChangelogFile="false"/>
+    <!-- jhipster-needle-liquibase-add-constraints-changelog - JHipster will add liquibase constraints changelogs here -->
+    <!-- jhipster-needle-liquibase-add-incremental-changelog - JHipster will add incremental liquibase changelogs here -->
+</databaseChangeLog>
