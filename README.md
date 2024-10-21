@@ -42,3 +42,53 @@ chmod +x benchmark.sh
 ```
 
 ## Results
+
+### 10 entities
+
+```text
+==================
+jh10
+==================
+
+~~~~~~~~~~~~~~~~~~
+Measuring build time for no-dto...
+Run 1: 7.325 seconds
+Run 2: 8.091 seconds
+Run 3: 8.418 seconds
+7.944 seconds
+~~~~~~~~~~~~~~~~~~
+
+~~~~~~~~~~~~~~~~~~
+Measuring build time for with-dto...
+Run 1: 9.124 seconds
+Run 2: 9.248 seconds
+Run 3: 8.964 seconds
+9.112 seconds
+~~~~~~~~~~~~~~~~~~
+```
+
+### 30 entities
+
+```text
+==================
+jh30
+==================
+
+~~~~~~~~~~~~~~~~~~
+Measuring build time for no-dto...
+Run 1: 8.561 seconds
+Run 2: 8.719 seconds
+Run 3: 9.079 seconds
+8.786 seconds
+~~~~~~~~~~~~~~~~~~
+
+~~~~~~~~~~~~~~~~~~
+Measuring build time for with-dto...
+Run 1: 11.292 seconds
+Run 2: 12.067 seconds
+Run 3: 12.055 seconds
+11.804 seconds
+~~~~~~~~~~~~~~~~~~
+```
+
+### 50 entities

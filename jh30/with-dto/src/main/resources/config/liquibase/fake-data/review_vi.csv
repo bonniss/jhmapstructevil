@@ -1,0 +1,11 @@
+id;rating;comment;review_date
+1;4;../fake-data/blob/hipster.txt;2024-10-20T21:37:46
+2;1;../fake-data/blob/hipster.txt;2024-10-20T17:07:09
+3;4;../fake-data/blob/hipster.txt;2024-10-20T18:20:02
+4;2;../fake-data/blob/hipster.txt;2024-10-20T17:31:32
+5;2;../fake-data/blob/hipster.txt;2024-10-20T17:37:45
+6;2;../fake-data/blob/hipster.txt;2024-10-20T23:44:36
+7;4;../fake-data/blob/hipster.txt;2024-10-20T18:57:48
+8;1;../fake-data/blob/hipster.txt;2024-10-20T15:54:49
+9;5;../fake-data/blob/hipster.txt;2024-10-20T20:24:56
+10;1;../fake-data/blob/hipster.txt;2024-10-21T01:05:39
