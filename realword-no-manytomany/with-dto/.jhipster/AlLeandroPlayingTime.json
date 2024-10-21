@@ -1,0 +1,72 @@
+{
+  "annotations": {
+    "changelogDate": "20241021171520"
+  },
+  "applications": ["realworld"],
+  "dto": "mapstruct",
+  "fields": [
+    {
+      "fieldName": "id",
+      "fieldType": "UUID"
+    },
+    {
+      "fieldName": "status",
+      "fieldType": "MaBooDragonBall",
+      "fieldValues": "READY_TO_PLAY,PLAYING"
+    },
+    {
+      "fieldName": "wonDate",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "sentAwardToPlayerAt",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "sentAwardToPlayerBy",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "playerReceivedTheAwardAt",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "playSourceTime",
+      "fieldType": "String"
+    }
+  ],
+  "jpaMetamodelFiltering": true,
+  "name": "AlLeandroPlayingTime",
+  "pagination": "pagination",
+  "relationships": [
+    {
+      "otherEntityName": "alLeandro",
+      "relationshipName": "maggi",
+      "relationshipSide": "left",
+      "relationshipType": "many-to-one"
+    },
+    {
+      "otherEntityName": "alPacino",
+      "relationshipName": "user",
+      "relationshipSide": "left",
+      "relationshipType": "many-to-one"
+    },
+    {
+      "otherEntityName": "alDesire",
+      "relationshipName": "award",
+      "relationshipSide": "left",
+      "relationshipType": "many-to-one"
+    },
+    {
+      "options": {
+        "onDelete": "CASCADE"
+      },
+      "otherEntityName": "johnLennon",
+      "relationshipName": "application",
+      "relationshipSide": "left",
+      "relationshipType": "many-to-one"
+    }
+  ],
+  "searchEngine": "no",
+  "service": "serviceClass"
+}

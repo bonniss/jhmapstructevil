@@ -1,0 +1,60 @@
+{
+  "annotations": {
+    "changelogDate": "20241021171120"
+  },
+  "applications": ["realworld"],
+  "dto": "mapstruct",
+  "fields": [
+    {
+      "fieldName": "name",
+      "fieldType": "String",
+      "fieldValidateRules": ["minlength", "maxlength"],
+      "fieldValidateRulesMaxlength": "256",
+      "fieldValidateRulesMinlength": "2"
+    },
+    {
+      "fieldName": "discountType",
+      "fieldType": "AlcountTypo",
+      "fieldValues": "BY_FIXED_AMOUNT,BY_PERCENT"
+    },
+    {
+      "fieldName": "discountRate",
+      "fieldType": "BigDecimal"
+    },
+    {
+      "fieldName": "scope",
+      "fieldType": "AlcountScopy",
+      "fieldValues": "ALL_PRODUCTS,SPECIFIED_PRODUCTS"
+    }
+  ],
+  "jpaMetamodelFiltering": true,
+  "name": "AlGore",
+  "pagination": "pagination",
+  "relationships": [
+    {
+      "otherEntityName": "alBetonamuRelation",
+      "otherEntityRelationshipName": "discounts",
+      "relationshipName": "bizRelation",
+      "relationshipSide": "left",
+      "relationshipType": "many-to-one"
+    },
+    {
+      "options": {
+        "onDelete": "CASCADE"
+      },
+      "otherEntityName": "johnLennon",
+      "relationshipName": "application",
+      "relationshipSide": "left",
+      "relationshipType": "many-to-one"
+    },
+    {
+      "otherEntityName": "alGoreCondition",
+      "otherEntityRelationshipName": "parent",
+      "relationshipName": "conditions",
+      "relationshipSide": "right",
+      "relationshipType": "one-to-many"
+    }
+  ],
+  "searchEngine": "no",
+  "service": "serviceClass"
+}

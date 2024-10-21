@@ -135,3 +135,23 @@ Run 1: 326.540 seconds
 326.540 seconds
 ~~~~~~~~~~~~~~~~~~
 ```
+
+### Realworld app stripped off `ManyToMany`
+
+```txt
+==================
+realword-no-manytomany
+==================
+
+~~~~~~~~~~~~~~~~~~
+Measuring build time for no-dto...
+Run 1: 6.412 seconds
+6.412 seconds
+~~~~~~~~~~~~~~~~~~
+
+~~~~~~~~~~~~~~~~~~
+Measuring build time for with-dto...
+Run 1: 13.497 seconds
+13.497 seconds
+~~~~~~~~~~~~~~~~~~
+```
