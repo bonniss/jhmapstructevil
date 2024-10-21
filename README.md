@@ -1,6 +1,6 @@
 # Examine JHipster with Mapstruct
 
-> [!IMPORTANT]  
+> [!IMPORTANT]
 > JHispter v8.7.1
 
 ## Can Mapstruct be evil?
@@ -37,8 +37,7 @@ It's no-brainer: Build each folder for X times (typically 5) and display the ave
 
 ```sh
 # At folder `jh-10`
-chmod +x benchmark.sh
-./benchmark.sh
+chmod +x benchmark.sh && ./benchmark.sh
 ```
 
 ## Results

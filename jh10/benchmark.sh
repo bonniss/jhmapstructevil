@@ -55,6 +55,7 @@ measure_build_time() {
 
         # Run the build (skip tests and use cached dependencies)
         cd "$app_dir" || exit
+        chmod +x ./mvnw
         ./mvnw clean install -Dmaven.test.skip=true > /dev/null 2>&1
         cd - > /dev/null 2>&1
 
