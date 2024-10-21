@@ -1,0 +1,43 @@
+{
+  "annotations": {
+    "changelogDate": "20241021172820"
+  },
+  "applications": ["realworld"],
+  "dto": "mapstruct",
+  "fields": [
+    {
+      "fieldName": "name",
+      "fieldType": "String",
+      "fieldValidateRules": ["required", "minlength", "maxlength"],
+      "fieldValidateRulesMaxlength": "256",
+      "fieldValidateRulesMinlength": "2"
+    }
+  ],
+  "jpaMetamodelFiltering": true,
+  "name": "AlBestTooth",
+  "pagination": "pagination",
+  "relationships": [
+    {
+      "options": {
+        "onDelete": "CASCADE"
+      },
+      "otherEntityName": "johnLennon",
+      "relationshipName": "application",
+      "relationshipSide": "left",
+      "relationshipType": "many-to-one"
+    },
+    {
+      "options": {
+        "cannotCreate": true,
+        "cannotUpdate": true
+      },
+      "otherEntityName": "alLexFerg",
+      "otherEntityRelationshipName": "tag",
+      "relationshipName": "article",
+      "relationshipSide": "right",
+      "relationshipType": "many-to-many"
+    }
+  ],
+  "searchEngine": "no",
+  "service": "serviceClass"
+}

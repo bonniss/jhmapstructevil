@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd
+                        http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+    <!--
+        Added the constraints for entity AlLeandroPlayingTimeVi.
+    -->
+    <changeSet id="20241021175219-2" author="jhipster">
+
+        <addForeignKeyConstraint baseColumnNames="maggi_id"
+                                 baseTableName="al_leandro_playing_time_vi"
+                                 constraintName="fk_al_leandro_playing_time_vi__maggi_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="al_leandro"
+                                 />
+
+        <addForeignKeyConstraint baseColumnNames="user_id"
+                                 baseTableName="al_leandro_playing_time_vi"
+                                 constraintName="fk_al_leandro_playing_time_vi__user_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="al_pacino"
+                                 />
+
+        <addForeignKeyConstraint baseColumnNames="award_id"
+                                 baseTableName="al_leandro_playing_time_vi"
+                                 constraintName="fk_al_leandro_playing_time_vi__award_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="al_desire"
+                                 />
+
+        <addForeignKeyConstraint baseColumnNames="application_id"
+                                 baseTableName="al_leandro_playing_time_vi"
+                                 constraintName="fk_al_leandro_playing_time_vi__application_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="john_lennon"
+                                 onDelete="CASCADE"
+                                 />
+    </changeSet>
+</databaseChangeLog>

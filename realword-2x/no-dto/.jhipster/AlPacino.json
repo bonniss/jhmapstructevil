@@ -1,0 +1,129 @@
+{
+  "annotations": {
+    "changelogDate": "20241021170805"
+  },
+  "applications": ["realworld"],
+  "fields": [
+    {
+      "fieldName": "id",
+      "fieldType": "UUID"
+    },
+    {
+      "fieldName": "platformCode",
+      "fieldType": "String",
+      "fieldValidateRules": ["maxlength"],
+      "fieldValidateRulesMaxlength": "1024"
+    },
+    {
+      "fieldName": "platformUsername",
+      "fieldType": "String",
+      "fieldValidateRules": ["minlength", "maxlength"],
+      "fieldValidateRulesMaxlength": "256",
+      "fieldValidateRulesMinlength": "2"
+    },
+    {
+      "fieldName": "platformAvatarUrl",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "isSensitive",
+      "fieldType": "Boolean"
+    },
+    {
+      "fieldName": "familyName",
+      "fieldType": "String",
+      "fieldValidateRules": ["minlength", "maxlength"],
+      "fieldValidateRulesMaxlength": "256",
+      "fieldValidateRulesMinlength": "1"
+    },
+    {
+      "fieldName": "givenName",
+      "fieldType": "String",
+      "fieldValidateRules": ["minlength", "maxlength"],
+      "fieldValidateRulesMaxlength": "256",
+      "fieldValidateRulesMinlength": "1"
+    },
+    {
+      "fieldName": "dob",
+      "fieldType": "LocalDate"
+    },
+    {
+      "fieldName": "gender",
+      "fieldType": "TyrantSex",
+      "fieldValues": "MALE,FEMALE"
+    },
+    {
+      "fieldName": "phone",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "email",
+      "fieldType": "String",
+      "fieldValidateRules": ["pattern"],
+      "fieldValidateRulesPattern": "^[^@\\s]+@[^@\\s]+\\.[^@\\s]+$"
+    },
+    {
+      "fieldName": "acquiredFrom",
+      "fieldType": "AcquisitionCanal",
+      "fieldValues": "JELLO,OFFLINE"
+    },
+    {
+      "fieldName": "currentPoints",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "totalPoints",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "isFollowing",
+      "fieldType": "Boolean"
+    },
+    {
+      "fieldName": "isEnabled",
+      "fieldType": "Boolean"
+    }
+  ],
+  "jpaMetamodelFiltering": true,
+  "name": "AlPacino",
+  "pagination": "pagination",
+  "relationships": [
+    {
+      "options": {
+        "onDelete": "CASCADE"
+      },
+      "otherEntityName": "johnLennon",
+      "relationshipName": "application",
+      "relationshipSide": "left",
+      "relationshipType": "many-to-one"
+    },
+    {
+      "otherEntityName": "alMemTier",
+      "relationshipName": "membershipTier",
+      "relationshipSide": "left",
+      "relationshipType": "many-to-one"
+    },
+    {
+      "otherEntityName": "alVueVueUsage",
+      "otherEntityRelationshipName": "customer",
+      "relationshipName": "alVueVueUsage",
+      "relationshipSide": "left",
+      "relationshipType": "many-to-one"
+    },
+    {
+      "otherEntityName": "alMemTierVi",
+      "relationshipName": "membershipTierVi",
+      "relationshipSide": "left",
+      "relationshipType": "many-to-one"
+    },
+    {
+      "otherEntityName": "alVueVueViUsage",
+      "otherEntityRelationshipName": "customer",
+      "relationshipName": "alVueVueViUsage",
+      "relationshipSide": "left",
+      "relationshipType": "many-to-one"
+    }
+  ],
+  "searchEngine": "no",
+  "service": "serviceClass"
+}

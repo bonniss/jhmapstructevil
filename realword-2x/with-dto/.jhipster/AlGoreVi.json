@@ -1,0 +1,36 @@
+{
+  "annotations": {
+    "changelogDate": "20241021175231"
+  },
+  "applications": ["realworld"],
+  "dto": "mapstruct",
+  "fields": [
+    {
+      "fieldName": "name",
+      "fieldType": "String",
+      "fieldValidateRules": ["minlength", "maxlength"],
+      "fieldValidateRulesMaxlength": "256",
+      "fieldValidateRulesMinlength": "2"
+    },
+    {
+      "fieldName": "discountType",
+      "fieldType": "AlcountTypo",
+      "fieldValues": "BY_FIXED_AMOUNT,BY_PERCENT"
+    },
+    {
+      "fieldName": "discountRate",
+      "fieldType": "BigDecimal"
+    },
+    {
+      "fieldName": "scope",
+      "fieldType": "AlcountScopy",
+      "fieldValues": "ALL_PRODUCTS,SPECIFIED_PRODUCTS"
+    }
+  ],
+  "jpaMetamodelFiltering": true,
+  "name": "AlGoreVi",
+  "pagination": "pagination",
+  "relationships": [],
+  "searchEngine": "no",
+  "service": "serviceClass"
+}

@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd
+                        http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+    <!--
+        Added the constraints for entity AlProtyVi.
+    -->
+    <changeSet id="20241021175241-2" author="jhipster">
+
+        <addForeignKeyConstraint baseColumnNames="parent_id"
+                                 baseTableName="al_proty_vi"
+                                 constraintName="fk_al_proty_vi__parent_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="al_proty_vi"
+                                 onDelete="CASCADE"
+                                 />
+
+        <addForeignKeyConstraint baseColumnNames="operator_id"
+                                 baseTableName="al_proty_vi"
+                                 constraintName="fk_al_proty_vi__operator_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="al_apple_vi"
+                                 onDelete="CASCADE"
+                                 />
+
+        <addForeignKeyConstraint baseColumnNames="property_profile_id"
+                                 baseTableName="al_proty_vi"
+                                 constraintName="fk_al_proty_vi__property_profile_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="al_pro_pro_vi"
+                                 />
+
+        <addForeignKeyConstraint baseColumnNames="avatar_id"
+                                 baseTableName="al_proty_vi"
+                                 constraintName="fk_al_proty_vi__avatar_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="metaverse"
+                                 />
+
+        <addForeignKeyConstraint baseColumnNames="application_id"
+                                 baseTableName="al_proty_vi"
+                                 constraintName="fk_al_proty_vi__application_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="john_lennon"
+                                 onDelete="CASCADE"
+                                 />
+
+        <addForeignKeyConstraint baseColumnNames="al_proty_vi_id"
+                                 baseTableName="rel_al_proty_vi__image"
+                                 constraintName="fk_rel_al_proty_vi__image__al_proty_vi_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="al_proty_vi"
+                                 />
+
+        <addForeignKeyConstraint baseColumnNames="image_id"
+                                 baseTableName="rel_al_proty_vi__image"
+                                 constraintName="fk_rel_al_proty_vi__image__image_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="metaverse"
+                                 />
+    </changeSet>
+</databaseChangeLog>

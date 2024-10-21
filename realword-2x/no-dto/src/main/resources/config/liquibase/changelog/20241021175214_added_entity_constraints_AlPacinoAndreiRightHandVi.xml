@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd
+                        http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+    <!--
+        Added the constraints for entity AlPacinoAndreiRightHandVi.
+    -->
+    <changeSet id="20241021175214-2" author="jhipster">
+
+        <addForeignKeyConstraint baseColumnNames="user_id"
+                                 baseTableName="al_pacino_andrei_right_hand_vi"
+                                 constraintName="fk_al_pacino_andrei_right_hand_vi__user_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="al_pacino"
+                                 />
+
+        <addForeignKeyConstraint baseColumnNames="address_id"
+                                 baseTableName="al_pacino_andrei_right_hand_vi"
+                                 constraintName="fk_al_pacino_andrei_right_hand_vi__address_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="andrei_right_hand_vi"
+                                 />
+    </changeSet>
+</databaseChangeLog>

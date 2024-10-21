@@ -1,0 +1,53 @@
+{
+  "annotations": {
+    "changelogDate": "20241021175210"
+  },
+  "applications": ["realworld"],
+  "fields": [
+    {
+      "fieldName": "type",
+      "fieldType": "ReductionType",
+      "fieldValidateRules": ["required"],
+      "fieldValues": "SUPPLIER_CUSTOMER_B2B,SUPPLIER_CUSTOMER_B2C"
+    }
+  ],
+  "jpaMetamodelFiltering": true,
+  "name": "AlBetonamuRelationVi",
+  "pagination": "pagination",
+  "relationships": [
+    {
+      "otherEntityName": "alAlexTypeVi",
+      "otherEntityRelationshipName": "asSupplier",
+      "relationshipName": "supplier",
+      "relationshipSide": "left",
+      "relationshipType": "many-to-one",
+      "relationshipValidateRules": "required"
+    },
+    {
+      "otherEntityName": "alAlexTypeVi",
+      "otherEntityRelationshipName": "asCustomer",
+      "relationshipName": "customer",
+      "relationshipSide": "left",
+      "relationshipType": "many-to-one",
+      "relationshipValidateRules": "required"
+    },
+    {
+      "options": {
+        "onDelete": "CASCADE"
+      },
+      "otherEntityName": "johnLennon",
+      "relationshipName": "application",
+      "relationshipSide": "left",
+      "relationshipType": "many-to-one"
+    },
+    {
+      "otherEntityName": "alGore",
+      "otherEntityRelationshipName": "bizRelationVi",
+      "relationshipName": "discounts",
+      "relationshipSide": "right",
+      "relationshipType": "one-to-many"
+    }
+  ],
+  "searchEngine": "no",
+  "service": "serviceClass"
+}

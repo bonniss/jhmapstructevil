@@ -1,0 +1,125 @@
+{
+  "annotations": {
+    "changelogDate": "20241021175302"
+  },
+  "applications": ["realworld"],
+  "dto": "mapstruct",
+  "fields": [
+    {
+      "fieldName": "id",
+      "fieldType": "UUID"
+    },
+    {
+      "fieldName": "code",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "name",
+      "fieldType": "String",
+      "fieldValidateRules": ["required", "minlength", "maxlength"],
+      "fieldValidateRulesMaxlength": "256",
+      "fieldValidateRulesMinlength": "2"
+    },
+    {
+      "fieldName": "contentHeitiga",
+      "fieldType": "String",
+      "fieldValidateRules": ["maxlength"],
+      "fieldValidateRulesMaxlength": "10485760"
+    },
+    {
+      "fieldName": "discountType",
+      "fieldType": "AlcountTypo",
+      "fieldValues": "BY_FIXED_AMOUNT,BY_PERCENT"
+    },
+    {
+      "fieldName": "discountRate",
+      "fieldType": "BigDecimal"
+    },
+    {
+      "fieldName": "scope",
+      "fieldType": "AlcountScopy",
+      "fieldValues": "ALL_PRODUCTS,SPECIFIED_PRODUCTS"
+    },
+    {
+      "fieldName": "isIndividuallyUsedOnly",
+      "fieldType": "Boolean"
+    },
+    {
+      "fieldName": "usageLifeTimeLimit",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "usageLimitPerUser",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "usageQuantity",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "minimumSpend",
+      "fieldType": "BigDecimal"
+    },
+    {
+      "fieldName": "maximumSpend",
+      "fieldType": "BigDecimal"
+    },
+    {
+      "fieldName": "canBeCollectedByUser",
+      "fieldType": "Boolean"
+    },
+    {
+      "fieldName": "salePriceFromDate",
+      "fieldType": "LocalDate"
+    },
+    {
+      "fieldName": "salePriceToDate",
+      "fieldType": "LocalDate"
+    },
+    {
+      "fieldName": "publicationStatus",
+      "fieldType": "PaoloStatus",
+      "fieldValues": "DRAFT,PUBLISHED"
+    },
+    {
+      "fieldName": "publishedDate",
+      "fieldType": "Instant"
+    }
+  ],
+  "jpaMetamodelFiltering": true,
+  "name": "AlVueVueVi",
+  "pagination": "pagination",
+  "relationships": [
+    {
+      "otherEntityName": "metaverse",
+      "relationshipName": "image",
+      "relationshipSide": "left",
+      "relationshipType": "many-to-one"
+    },
+    {
+      "otherEntityName": "alVueVueViUsage",
+      "otherEntityRelationshipName": "voucher",
+      "relationshipName": "alVueVueViUsage",
+      "relationshipSide": "left",
+      "relationshipType": "many-to-one"
+    },
+    {
+      "options": {
+        "onDelete": "CASCADE"
+      },
+      "otherEntityName": "johnLennon",
+      "relationshipName": "application",
+      "relationshipSide": "left",
+      "relationshipType": "many-to-one"
+    },
+    {
+      "otherEntityName": "alVueVueViCondition",
+      "otherEntityRelationshipName": "parent",
+      "relationshipName": "conditions",
+      "relationshipSide": "right",
+      "relationshipType": "one-to-many"
+    }
+  ],
+  "searchEngine": "no",
+  "service": "serviceClass"
+}

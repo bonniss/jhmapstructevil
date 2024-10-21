@@ -1,0 +1,128 @@
+{
+  "annotations": {
+    "changelogDate": "20241021175240"
+  },
+  "applications": ["realworld"],
+  "fields": [
+    {
+      "fieldName": "id",
+      "fieldType": "UUID"
+    },
+    {
+      "fieldName": "name",
+      "fieldType": "String",
+      "fieldValidateRules": ["required", "minlength", "maxlength"],
+      "fieldValidateRulesMaxlength": "256",
+      "fieldValidateRulesMinlength": "2"
+    },
+    {
+      "fieldName": "descriptionHeitiga",
+      "fieldType": "String",
+      "fieldValidateRules": ["maxlength"],
+      "fieldValidateRulesMaxlength": "10485760"
+    },
+    {
+      "fieldName": "propertyType",
+      "fieldType": "PeteType",
+      "fieldValues": "VILLA,ROOM"
+    },
+    {
+      "fieldName": "areaInSquareMeter",
+      "fieldType": "Float"
+    },
+    {
+      "fieldName": "numberOfAdults",
+      "fieldType": "Integer",
+      "fieldValidateRules": ["min"],
+      "fieldValidateRulesMin": "1"
+    },
+    {
+      "fieldName": "numberOfPreschoolers",
+      "fieldType": "Integer",
+      "fieldValidateRules": ["min"],
+      "fieldValidateRulesMin": "0"
+    },
+    {
+      "fieldName": "numberOfChildren",
+      "fieldType": "Integer",
+      "fieldValidateRules": ["min"],
+      "fieldValidateRulesMin": "0"
+    },
+    {
+      "fieldName": "numberOfRooms",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "numberOfFloors",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "bedSize",
+      "fieldType": "BenedictToy",
+      "fieldValues": "SINGLE,DOUBLE"
+    },
+    {
+      "fieldName": "isEnabled",
+      "fieldType": "Boolean"
+    }
+  ],
+  "jpaMetamodelFiltering": true,
+  "name": "AlProProVi",
+  "pagination": "pagination",
+  "relationships": [
+    {
+      "options": {
+        "onDelete": "CASCADE"
+      },
+      "otherEntityName": "alProProVi",
+      "otherEntityRelationshipName": "children",
+      "relationshipName": "parent",
+      "relationshipSide": "left",
+      "relationshipType": "many-to-one"
+    },
+    {
+      "otherEntityName": "alLadyGagaVi",
+      "relationshipName": "project",
+      "relationshipSide": "left",
+      "relationshipType": "many-to-one"
+    },
+    {
+      "otherEntityName": "metaverse",
+      "relationshipName": "avatar",
+      "relationshipSide": "left",
+      "relationshipType": "many-to-one"
+    },
+    {
+      "options": {
+        "onDelete": "CASCADE"
+      },
+      "otherEntityName": "johnLennon",
+      "relationshipName": "application",
+      "relationshipSide": "left",
+      "relationshipType": "many-to-one"
+    },
+    {
+      "otherEntityName": "alMenityVi",
+      "otherEntityRelationshipName": "propertyProfile",
+      "relationshipName": "amenity",
+      "relationshipSide": "left",
+      "relationshipType": "many-to-many"
+    },
+    {
+      "otherEntityName": "metaverse",
+      "otherEntityRelationshipName": "alProProVi",
+      "relationshipName": "image",
+      "relationshipSide": "left",
+      "relationshipType": "many-to-many"
+    },
+    {
+      "otherEntityName": "alProProVi",
+      "otherEntityRelationshipName": "parent",
+      "relationshipName": "children",
+      "relationshipSide": "right",
+      "relationshipType": "one-to-many"
+    }
+  ],
+  "searchEngine": "no",
+  "service": "serviceClass"
+}

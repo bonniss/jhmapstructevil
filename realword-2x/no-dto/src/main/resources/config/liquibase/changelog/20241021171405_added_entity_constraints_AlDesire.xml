@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd
+                        http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+    <!--
+        Added the constraints for entity AlDesire.
+    -->
+    <changeSet id="20241021171405-2" author="jhipster">
+
+        <addForeignKeyConstraint baseColumnNames="image_id"
+                                 baseTableName="al_desire"
+                                 constraintName="fk_al_desire__image_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="metaverse"
+                                 />
+
+        <addForeignKeyConstraint baseColumnNames="maggi_id"
+                                 baseTableName="al_desire"
+                                 constraintName="fk_al_desire__maggi_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="al_leandro"
+                                 />
+
+        <addForeignKeyConstraint baseColumnNames="application_id"
+                                 baseTableName="al_desire"
+                                 constraintName="fk_al_desire__application_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="john_lennon"
+                                 onDelete="CASCADE"
+                                 />
+    </changeSet>
+</databaseChangeLog>

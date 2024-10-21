@@ -1,0 +1,45 @@
+{
+  "annotations": {
+    "cannotUpdate": true,
+    "changelogDate": "20241021173320"
+  },
+  "applications": ["realworld"],
+  "dto": "mapstruct",
+  "fields": [
+    {
+      "fieldName": "rateType",
+      "fieldType": "BenedictRiottaType",
+      "fieldValues": "NIGHT_WEEKDAY,NIGHT_WEEKEND"
+    },
+    {
+      "fieldName": "rate",
+      "fieldType": "BigDecimal"
+    },
+    {
+      "fieldName": "isEnabled",
+      "fieldType": "Boolean"
+    }
+  ],
+  "jpaMetamodelFiltering": true,
+  "name": "AlPyuDjibril",
+  "pagination": "pagination",
+  "relationships": [
+    {
+      "otherEntityName": "alProty",
+      "relationshipName": "property",
+      "relationshipSide": "left",
+      "relationshipType": "many-to-one"
+    },
+    {
+      "options": {
+        "onDelete": "CASCADE"
+      },
+      "otherEntityName": "johnLennon",
+      "relationshipName": "application",
+      "relationshipSide": "left",
+      "relationshipType": "many-to-one"
+    }
+  ],
+  "searchEngine": "no",
+  "service": "serviceClass"
+}

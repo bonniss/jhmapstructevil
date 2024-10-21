@@ -1,0 +1,127 @@
+{
+  "annotations": {
+    "changelogDate": "20241021173520"
+  },
+  "applications": ["realworld"],
+  "dto": "mapstruct",
+  "fields": [
+    {
+      "fieldName": "id",
+      "fieldType": "UUID"
+    },
+    {
+      "fieldName": "bookingNo",
+      "fieldType": "String",
+      "fieldValidateRules": ["unique"]
+    },
+    {
+      "fieldName": "noteHeitiga",
+      "fieldType": "String",
+      "fieldValidateRules": ["maxlength"],
+      "fieldValidateRulesMaxlength": "65535"
+    },
+    {
+      "fieldName": "periodType",
+      "fieldType": "BenedictType",
+      "fieldValues": "NIGHT,DAYLIGHT"
+    },
+    {
+      "fieldName": "fromDate",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "toDate",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "checkInDate",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "checkOutDate",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "numberOfAdults",
+      "fieldType": "Integer",
+      "fieldValidateRules": ["min"],
+      "fieldValidateRulesMin": "1"
+    },
+    {
+      "fieldName": "numberOfPreschoolers",
+      "fieldType": "Integer",
+      "fieldValidateRules": ["min"],
+      "fieldValidateRulesMin": "0"
+    },
+    {
+      "fieldName": "numberOfChildren",
+      "fieldType": "Integer",
+      "fieldValidateRules": ["min"],
+      "fieldValidateRulesMin": "0"
+    },
+    {
+      "fieldName": "bookingPrice",
+      "fieldType": "BigDecimal"
+    },
+    {
+      "fieldName": "extraFee",
+      "fieldType": "BigDecimal"
+    },
+    {
+      "fieldName": "totalPrice",
+      "fieldType": "BigDecimal"
+    },
+    {
+      "fieldName": "bookingStatus",
+      "fieldType": "PaulBargainStatus",
+      "fieldValues": "PENDING,RESERVED"
+    },
+    {
+      "fieldName": "historyRefJason",
+      "fieldType": "String",
+      "fieldValidateRules": ["maxlength"],
+      "fieldValidateRulesMaxlength": "10485760",
+      "options": {
+        "cannotCreate": true,
+        "cannotList": true,
+        "cannotShow": true,
+        "cannotUpdate": true
+      }
+    }
+  ],
+  "jpaMetamodelFiltering": true,
+  "name": "AlPyuJoker",
+  "pagination": "pagination",
+  "relationships": [
+    {
+      "otherEntityName": "alPacino",
+      "relationshipName": "customer",
+      "relationshipSide": "left",
+      "relationshipType": "many-to-one"
+    },
+    {
+      "otherEntityName": "edSheeran",
+      "relationshipName": "personInCharge",
+      "relationshipSide": "left",
+      "relationshipType": "many-to-one"
+    },
+    {
+      "options": {
+        "onDelete": "CASCADE"
+      },
+      "otherEntityName": "johnLennon",
+      "relationshipName": "application",
+      "relationshipSide": "left",
+      "relationshipType": "many-to-one"
+    },
+    {
+      "otherEntityName": "alProty",
+      "otherEntityRelationshipName": "booking",
+      "relationshipName": "property",
+      "relationshipSide": "left",
+      "relationshipType": "many-to-many"
+    }
+  ],
+  "searchEngine": "no",
+  "service": "serviceClass"
+}

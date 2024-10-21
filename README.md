@@ -35,7 +35,7 @@ cd with-dto && \
 
 ## How to benchmark?
 
-It's no-brainer: Build each folder for X times (typically 5) and display the average build time.
+It's no-brainer: Build each folder (`mvnw clean install -Dmaven.test.skip=true`) for X times (1-5) and display the average build time.
 
 ```sh
 # At folder `jh-10`
@@ -45,6 +45,8 @@ chmod +x benchmark.sh && ./benchmark.sh
 ## Results
 
 ### 10 entities
+
+Simple relationship grid: mainly `ManyToOne`, only 1 `ManyToMany`.
 
 ```text
 ==================
@@ -70,6 +72,8 @@ Run 3: 8.964 seconds
 
 ### 30 entities
 
+Triple the `10 entities` section.
+
 ```text
 ==================
 jh30
@@ -94,6 +98,8 @@ Run 3: 12.055 seconds
 
 ### 50 entities
 
+x5 the `10 entities` section.
+
 ```txt
 ==================
 jh50
@@ -116,7 +122,17 @@ Run 3: 15.310 seconds
 ~~~~~~~~~~~~~~~~~~
 ```
 
+### SaaS 30 entities
+
+Describe a SaaS (Software-as-a-service) business model: much the same as `jh30`, plus one "tenant entity" that link to every rest entity.
+
+### SaaS 50 entities
+
+`jh50` with SaaS.
+
 ### Realworld app
+
+A real-world app design with a complex network of relationships, including multiple ManyToMany relationships, while also applying to the SaaS model.
 
 ```txt
 ==================
@@ -136,7 +152,9 @@ Run 1: 326.540 seconds
 ~~~~~~~~~~~~~~~~~~
 ```
 
-### Realworld app stripped off `ManyToMany`
+### Realworld app without `ManyToMany` relationships
+
+The same real world app, though stripped off `ManyToMany` relationships.
 
 ```txt
 ==================
@@ -155,3 +173,29 @@ Run 1: 13.497 seconds
 13.497 seconds
 ~~~~~~~~~~~~~~~~~~
 ```
+
+### Realworld app 2x
+
+Double entities.
+
+```txt
+==================
+realword-2x
+==================
+
+~~~~~~~~~~~~~~~~~~
+Measuring build time for no-dto...
+Run 1: 8.935 seconds
+8.935 seconds
+~~~~~~~~~~~~~~~~~~
+
+~~~~~~~~~~~~~~~~~~
+Measuring build time for with-dto...
+Run 1: 8026.400 seconds
+8026.400 seconds
+~~~~~~~~~~~~~~~~~~
+```
+
+2-hour build time 💀.
+
+### Realworld app 2x without `ManyToMany` relationships

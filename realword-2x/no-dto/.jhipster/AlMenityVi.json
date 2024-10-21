@@ -1,0 +1,51 @@
+{
+  "annotations": {
+    "changelogDate": "20241021175232"
+  },
+  "applications": ["realworld"],
+  "fields": [
+    {
+      "fieldName": "name",
+      "fieldType": "String",
+      "fieldValidateRules": ["required", "minlength", "maxlength"],
+      "fieldValidateRulesMaxlength": "256",
+      "fieldValidateRulesMinlength": "2"
+    },
+    {
+      "fieldName": "iconSvg",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "propertyType",
+      "fieldType": "PeteType",
+      "fieldValues": "VILLA,ROOM"
+    }
+  ],
+  "jpaMetamodelFiltering": true,
+  "name": "AlMenityVi",
+  "pagination": "pagination",
+  "relationships": [
+    {
+      "options": {
+        "onDelete": "CASCADE"
+      },
+      "otherEntityName": "johnLennon",
+      "relationshipName": "application",
+      "relationshipSide": "left",
+      "relationshipType": "many-to-one"
+    },
+    {
+      "options": {
+        "cannotCreate": true,
+        "cannotUpdate": true
+      },
+      "otherEntityName": "alProProVi",
+      "otherEntityRelationshipName": "amenity",
+      "relationshipName": "propertyProfile",
+      "relationshipSide": "right",
+      "relationshipType": "many-to-many"
+    }
+  ],
+  "searchEngine": "no",
+  "service": "serviceClass"
+}
