@@ -5,9 +5,9 @@
 
 ## Can Mapstruct be evil?
 
-Mapstruct is preferable as it move dirty mapping work to build phase therefore mapper code are simple and clean. But surely it comes with build time cost. This repo is an experiment of using Mapstruct in Jhipster with different entities size to see how far Mapstruct will become an obstruction to development experience.
+MapStruct is a powerful tool that delegates the heavy lifting of mapping logic to the build phase, resulting in cleaner and simpler mapper code. However, this comes at a cost: increased build time. This repository serves as an experiment to evaluate the impact of MapStruct on JHipster projects, focusing on how the number of entities influences the development experience and build time.
 
-The repo is a collection of multiple `jh<number_of_entities>` folder with same structure inside. For example, folder with 10 entities:
+The repository contains multiple folders named `jh<number_of_entities>`, each following the same structure. For example, the folder with 10 entities looks like:
 
 ```text
 jh10/
