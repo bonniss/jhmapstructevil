@@ -35,7 +35,7 @@ cd with-dto && \
 
 ## How to benchmark?
 
-It's no-brainer: Build each folder (`mvnw clean install -Dmaven.test.skip=true`) for X times (1-5) and display the average build time.
+It's no-brainer: build each folder (`mvnw clean install -Dmaven.test.skip=true`) for X times (1-5) and display the average build time.
 
 ```sh
 # At folder `jh-10`
@@ -46,16 +46,16 @@ chmod +x benchmark.sh && ./benchmark.sh
 
 > TL,DR;
 
-Tests are perform on 2 machines:
+Tests are performed on 2 machines:
 
-1/ Windows desktop, Intel Core i7-9700 / RAM 16GB / SSD 512GB.
-2/ Macbook, M1 Pro 2021 RAM 16GB / SSD 512GB.
+1/ Windows desktop, Intel core i7-12700 / RAM 16GB / SSD 512GB.
+2/ Macbook, Apple silicon M1 Pro 2021 / RAM 16GB / SSD 512GB.
 
 ### 10 entities
 
 Simple relationship grid: mainly `ManyToOne`, only 1 `ManyToMany`.
 
-__Intel__:
+**Intel**:
 
 ```text
 ==================
@@ -79,7 +79,7 @@ Run 3: 8.964 seconds
 ~~~~~~~~~~~~~~~~~~
 ```
 
-__M1 Pro__:
+**M1 Pro**:
 
 ```txt
 ==================
@@ -107,7 +107,7 @@ Run 3: 4.864 seconds
 
 Triple the `10 entities` section.
 
-__Intel__:
+**Intel**:
 
 ```text
 ==================
@@ -131,7 +131,7 @@ Run 3: 12.055 seconds
 ~~~~~~~~~~~~~~~~~~
 ```
 
-__M1 Pro__:
+**M1 Pro**:
 
 ```txt
 ==================
@@ -159,7 +159,7 @@ Run 3: 6.144 seconds
 
 x5 the `10 entities` section.
 
-__Intel__:
+**Intel**:
 
 ```txt
 ==================
@@ -183,7 +183,7 @@ Run 3: 15.310 seconds
 ~~~~~~~~~~~~~~~~~~
 ```
 
-__M1 Pro__:
+**M1 Pro**:
 
 ```txt
 ==================
@@ -211,7 +211,7 @@ Run 3: 6.906 seconds
 
 Describe a simple SaaS (Software-as-a-service) model: much the same as `jh30`, plus one "tenant entity" that link to every rest entity as a data isolation indicator.
 
-__M1 Pro__:
+**M1 Pro**:
 
 ```txt
 ==================
@@ -239,7 +239,7 @@ Run 3: 6.817 seconds
 
 `jh50` with SaaS.
 
-__M1 Pro__:
+**M1 Pro**:
 
 ```txt
 ==================
@@ -267,7 +267,7 @@ Run 3: 8.753 seconds
 
 A real-world app design with a complex network of relationships (50+ entities), including multiple `ManyToMany` relationships, while also applying to the SaaS model.
 
-__M1 Pro__:
+**M1 Pro**:
 
 ```txt
 ==================
@@ -291,7 +291,7 @@ Run 1: 326.540 seconds
 
 The same real world app, though stripped off `ManyToMany` relationships.
 
-__M1 Pro__:
+**M1 Pro**:
 
 ```txt
 ==================
@@ -315,7 +315,7 @@ Run 1: 13.497 seconds
 
 Double entities.
 
-__M1 Pro__:
+**M1 Pro**:
 
 ```txt
 ==================
@@ -339,7 +339,7 @@ Run 1: 8026.400 seconds
 
 ### Realworld app 2x without `ManyToMany` relationships
 
-__M1 Pro__:
+**M1 Pro**:
 
 ```txt
 ~~~~~~~~~~~~~~~~~~
