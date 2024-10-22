@@ -3,39 +3,48 @@
 > [!IMPORTANT]
 > JHispter v8.7.1
 
-## Can Mapstruct be evil?
+This repository hosts an experiment to evaluate the impact of MapStruct on JHipster projects, particularly how the number of entities and the relationships between them affect build time.
 
-MapStruct is a powerful tool that delegates the heavy lifting of mapping logic to the build phase, resulting in cleaner and simpler mapper code. However, this comes at a cost: increased build time. This repository serves as an experiment to evaluate the impact of MapStruct on JHipster projects, focusing on how the number of entities influences the development experience and build time.
+MapStruct simplifies mapping logic by moving it to the build phase, which leads to cleaner and more maintainable code. However, this convenience may come at the cost of longer build times. This experiment compares projects with and without MapStruct-generated DTOs to measure the trade-offs in build performance.
 
-The repository contains multiple folders named `jh<number_of_entities>`, each following the same structure. For example, the folder with 10 entities looks like:
+## Scenario structure
+
+Scenarios are organized into folders representing different numbers of entities. For example, the `jh10` folder contains a JHipster project with 10 entities:
 
 ```text
 jh10/
-├── no-dto/
+├── no-dto
 │   └── .jhipster
-├── with-dto/
+├── with-dto
 │   └── .jhipster
-├── jh10.jdl
+├── main.jdl
 └── benchmark.sh
 ```
+
+- `main.jdl`: The JHipster Domain Language (JDL) file defining the application's design and entities. Learn more about [JDL](https://www.jhipster.tech/jdl/intro/).
+- `no-dto`: Contains code generated from `main.jdl` **without** using DTOs.
+- `with-dto`: Contains code generated from `main.jdl` **with** DTOs.
+- `benchmark.sh`: A script to benchmark the build times for both `no-dto` and `with-dto` scenarios.
 
 ## How code are generated?
 
 Folder names are self-explanatory.
 
 ```sh
-# At folder `no-dto`
+# At scenario root, for e.g, `jh10`
+# Without Mapstruct DTOs
 cd no-dto && \
   jhipster jdl ../main.jdl --skip-client --skip-install --skip-git
 
-# At folder `with-dto`
+# At scenario root, for e.g, `jh10`
+# With Mapstruct DTOs
 cd with-dto && \
   jhipster jdl ../main.jdl --inline "dto * with mapstruct" --skip-client --skip-install --skip-git
 ```
 
 ## How to benchmark?
 
-It's no-brainer: build each folder (`mvnw clean install -Dmaven.test.skip=true`) for X times (1-5) and display the average build time.
+It's no-brainer: build each folder (`mvnw clean install -Dmaven.test.skip=true`) for X times (1-5) and calculate the average build time.
 
 ```sh
 # At folder `jh-10`
