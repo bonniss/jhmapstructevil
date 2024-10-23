@@ -1,0 +1,65 @@
+{
+  "annotations": {
+    "changelogDate": "20241023184404"
+  },
+  "applications": ["jhmapstruct"],
+  "dto": "mapstruct",
+  "fields": [
+    {
+      "fieldName": "name",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "price",
+      "fieldType": "BigDecimal",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "stock",
+      "fieldType": "Integer",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "description",
+      "fieldType": "TextBlob"
+    }
+  ],
+  "jpaMetamodelFiltering": true,
+  "name": "NextProductBeta",
+  "pagination": "pagination",
+  "relationships": [
+    {
+      "otherEntityField": "name",
+      "otherEntityName": "nextCategoryBeta",
+      "relationshipName": "category",
+      "relationshipSide": "left",
+      "relationshipType": "many-to-one"
+    },
+    {
+      "options": {
+        "onDelete": "CASCADE"
+      },
+      "otherEntityName": "masterTenant",
+      "relationshipName": "tenant",
+      "relationshipSide": "left",
+      "relationshipType": "many-to-one"
+    },
+    {
+      "otherEntityName": "nextOrderBeta",
+      "otherEntityRelationshipName": "products",
+      "relationshipName": "order",
+      "relationshipSide": "right",
+      "relationshipType": "many-to-one"
+    },
+    {
+      "otherEntityName": "nextSupplierBeta",
+      "otherEntityRelationshipName": "products",
+      "relationshipName": "suppliers",
+      "relationshipSide": "right",
+      "relationshipType": "many-to-many"
+    }
+  ],
+  "searchEngine": "no",
+  "service": "serviceClass"
+}

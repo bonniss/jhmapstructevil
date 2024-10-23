@@ -1,0 +1,64 @@
+{
+  "annotations": {
+    "changelogDate": "20241023162259"
+  },
+  "applications": ["jhmapstruct"],
+  "fields": [
+    {
+      "fieldName": "name",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "price",
+      "fieldType": "BigDecimal",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "stock",
+      "fieldType": "Integer",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "description",
+      "fieldType": "TextBlob"
+    }
+  ],
+  "jpaMetamodelFiltering": true,
+  "name": "ProductViVi",
+  "pagination": "pagination",
+  "relationships": [
+    {
+      "otherEntityField": "name",
+      "otherEntityName": "categoryViVi",
+      "relationshipName": "category",
+      "relationshipSide": "left",
+      "relationshipType": "many-to-one"
+    },
+    {
+      "options": {
+        "onDelete": "CASCADE"
+      },
+      "otherEntityName": "masterTenant",
+      "relationshipName": "tenant",
+      "relationshipSide": "left",
+      "relationshipType": "many-to-one"
+    },
+    {
+      "otherEntityName": "orderViVi",
+      "otherEntityRelationshipName": "products",
+      "relationshipName": "order",
+      "relationshipSide": "right",
+      "relationshipType": "many-to-one"
+    },
+    {
+      "otherEntityName": "supplierViVi",
+      "otherEntityRelationshipName": "products",
+      "relationshipName": "suppliers",
+      "relationshipSide": "right",
+      "relationshipType": "many-to-many"
+    }
+  ],
+  "searchEngine": "no",
+  "service": "serviceClass"
+}

@@ -1,0 +1,66 @@
+{
+  "annotations": {
+    "changelogDate": "20241023174359"
+  },
+  "applications": ["jhmapstruct"],
+  "fields": [
+    {
+      "fieldName": "orderDate",
+      "fieldType": "Instant",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "totalPrice",
+      "fieldType": "BigDecimal",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "status",
+      "fieldType": "OrderStatus",
+      "fieldValues": "PENDING,SHIPPED,DELIVERED,CANCELLED"
+    }
+  ],
+  "jpaMetamodelFiltering": true,
+  "name": "NextOrder",
+  "pagination": "pagination",
+  "relationships": [
+    {
+      "otherEntityName": "nextProduct",
+      "otherEntityRelationshipName": "order",
+      "relationshipName": "products",
+      "relationshipSide": "left",
+      "relationshipType": "one-to-many"
+    },
+    {
+      "otherEntityName": "nextPayment",
+      "relationshipName": "payment",
+      "relationshipSide": "left",
+      "relationshipType": "many-to-one"
+    },
+    {
+      "otherEntityName": "nextShipment",
+      "relationshipName": "shipment",
+      "relationshipSide": "left",
+      "relationshipType": "many-to-one"
+    },
+    {
+      "options": {
+        "onDelete": "CASCADE"
+      },
+      "otherEntityName": "masterTenant",
+      "relationshipName": "tenant",
+      "relationshipSide": "left",
+      "relationshipType": "many-to-one"
+    },
+    {
+      "otherEntityField": "email",
+      "otherEntityName": "nextCustomer",
+      "otherEntityRelationshipName": "orders",
+      "relationshipName": "customer",
+      "relationshipSide": "right",
+      "relationshipType": "many-to-one"
+    }
+  ],
+  "searchEngine": "no",
+  "service": "serviceClass"
+}

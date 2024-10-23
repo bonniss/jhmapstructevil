@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd
+                        http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+    <!--
+        Added the constraints for entity OrderAlpha.
+    -->
+    <changeSet id="20241023165504-2" author="jhipster">
+
+        <addForeignKeyConstraint baseColumnNames="payment_id"
+                                 baseTableName="order_alpha"
+                                 constraintName="fk_order_alpha__payment_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="payment_alpha"
+                                 />
+
+        <addForeignKeyConstraint baseColumnNames="shipment_id"
+                                 baseTableName="order_alpha"
+                                 constraintName="fk_order_alpha__shipment_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="shipment_alpha"
+                                 />
+
+        <addForeignKeyConstraint baseColumnNames="tenant_id"
+                                 baseTableName="order_alpha"
+                                 constraintName="fk_order_alpha__tenant_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="master_tenant"
+                                 onDelete="CASCADE"
+                                 />
+
+        <addForeignKeyConstraint baseColumnNames="customer_id"
+                                 baseTableName="order_alpha"
+                                 constraintName="fk_order_alpha__customer_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="customer_alpha"
+                                 />
+    </changeSet>
+</databaseChangeLog>

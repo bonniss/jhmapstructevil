@@ -1,0 +1,33 @@
+{
+  "annotations": {
+    "changelogDate": "20241023185559"
+  },
+  "applications": ["jhmapstruct"],
+  "fields": [
+    {
+      "fieldName": "name",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "description",
+      "fieldType": "String"
+    }
+  ],
+  "jpaMetamodelFiltering": true,
+  "name": "NextCategoryGamma",
+  "pagination": "pagination",
+  "relationships": [
+    {
+      "options": {
+        "onDelete": "CASCADE"
+      },
+      "otherEntityName": "masterTenant",
+      "relationshipName": "tenant",
+      "relationshipSide": "left",
+      "relationshipType": "many-to-one"
+    }
+  ],
+  "searchEngine": "no",
+  "service": "serviceClass"
+}

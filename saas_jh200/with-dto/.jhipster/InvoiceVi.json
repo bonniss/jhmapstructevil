@@ -1,0 +1,44 @@
+{
+  "annotations": {
+    "changelogDate": "20241023162004"
+  },
+  "applications": ["jhmapstruct"],
+  "dto": "mapstruct",
+  "fields": [
+    {
+      "fieldName": "invoiceNumber",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "issueDate",
+      "fieldType": "Instant",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "dueDate",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "amount",
+      "fieldType": "BigDecimal",
+      "fieldValidateRules": ["required"]
+    }
+  ],
+  "jpaMetamodelFiltering": true,
+  "name": "InvoiceVi",
+  "pagination": "pagination",
+  "relationships": [
+    {
+      "options": {
+        "onDelete": "CASCADE"
+      },
+      "otherEntityName": "masterTenant",
+      "relationshipName": "tenant",
+      "relationshipSide": "left",
+      "relationshipType": "many-to-one"
+    }
+  ],
+  "searchEngine": "no",
+  "service": "serviceClass"
+}

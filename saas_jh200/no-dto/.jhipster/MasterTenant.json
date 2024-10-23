@@ -1,0 +1,19 @@
+{
+  "annotations": {
+    "changelogDate": "20241023160059"
+  },
+  "applications": ["jhmapstruct"],
+  "fields": [
+    {
+      "fieldName": "code",
+      "fieldType": "String",
+      "fieldValidateRules": ["unique", "required"]
+    }
+  ],
+  "jpaMetamodelFiltering": true,
+  "name": "MasterTenant",
+  "pagination": "pagination",
+  "relationships": [],
+  "searchEngine": "no",
+  "service": "serviceClass"
+}

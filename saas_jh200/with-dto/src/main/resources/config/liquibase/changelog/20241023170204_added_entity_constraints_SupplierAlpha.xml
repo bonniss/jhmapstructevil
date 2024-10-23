@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd
+                        http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+    <!--
+        Added the constraints for entity SupplierAlpha.
+    -->
+    <changeSet id="20241023170204-2" author="jhipster">
+
+        <addForeignKeyConstraint baseColumnNames="tenant_id"
+                                 baseTableName="supplier_alpha"
+                                 constraintName="fk_supplier_alpha__tenant_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="master_tenant"
+                                 onDelete="CASCADE"
+                                 />
+
+        <addForeignKeyConstraint baseColumnNames="supplier_alpha_id"
+                                 baseTableName="rel_supplier_alpha__products"
+                                 constraintName="fk_rel_supplier_alpha__products__supplier_alpha_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="supplier_alpha"
+                                 />
+
+        <addForeignKeyConstraint baseColumnNames="products_id"
+                                 baseTableName="rel_supplier_alpha__products"
+                                 constraintName="fk_rel_supplier_alpha__products__products_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="product_alpha"
+                                 />
+    </changeSet>
+</databaseChangeLog>

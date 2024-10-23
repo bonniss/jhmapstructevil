@@ -1,0 +1,37 @@
+{
+  "annotations": {
+    "changelogDate": "20241023162959"
+  },
+  "applications": ["jhmapstruct"],
+  "fields": [
+    {
+      "fieldName": "trackingNumber",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "shippedDate",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "deliveryDate",
+      "fieldType": "Instant"
+    }
+  ],
+  "jpaMetamodelFiltering": true,
+  "name": "ShipmentViVi",
+  "pagination": "pagination",
+  "relationships": [
+    {
+      "options": {
+        "onDelete": "CASCADE"
+      },
+      "otherEntityName": "masterTenant",
+      "relationshipName": "tenant",
+      "relationshipSide": "left",
+      "relationshipType": "many-to-one"
+    }
+  ],
+  "searchEngine": "no",
+  "service": "serviceClass"
+}

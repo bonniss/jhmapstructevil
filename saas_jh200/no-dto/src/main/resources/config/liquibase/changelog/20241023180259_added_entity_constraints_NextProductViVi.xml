@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd
+                        http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+    <!--
+        Added the constraints for entity NextProductViVi.
+    -->
+    <changeSet id="20241023180259-2" author="jhipster">
+
+        <addForeignKeyConstraint baseColumnNames="category_id"
+                                 baseTableName="next_product_vi_vi"
+                                 constraintName="fk_next_product_vi_vi__category_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="next_category_vi_vi"
+                                 />
+
+        <addForeignKeyConstraint baseColumnNames="tenant_id"
+                                 baseTableName="next_product_vi_vi"
+                                 constraintName="fk_next_product_vi_vi__tenant_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="master_tenant"
+                                 onDelete="CASCADE"
+                                 />
+
+        <addForeignKeyConstraint baseColumnNames="order_id"
+                                 baseTableName="next_product_vi_vi"
+                                 constraintName="fk_next_product_vi_vi__order_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="next_order_vi_vi"
+                                 />
+    </changeSet>
+</databaseChangeLog>

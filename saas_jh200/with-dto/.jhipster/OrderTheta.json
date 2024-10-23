@@ -1,0 +1,67 @@
+{
+  "annotations": {
+    "changelogDate": "20241023173504"
+  },
+  "applications": ["jhmapstruct"],
+  "dto": "mapstruct",
+  "fields": [
+    {
+      "fieldName": "orderDate",
+      "fieldType": "Instant",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "totalPrice",
+      "fieldType": "BigDecimal",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "status",
+      "fieldType": "OrderThetaStatus",
+      "fieldValues": "PENDING,SHIPPED,DELIVERED,CANCELLED"
+    }
+  ],
+  "jpaMetamodelFiltering": true,
+  "name": "OrderTheta",
+  "pagination": "pagination",
+  "relationships": [
+    {
+      "otherEntityName": "productTheta",
+      "otherEntityRelationshipName": "order",
+      "relationshipName": "products",
+      "relationshipSide": "left",
+      "relationshipType": "one-to-many"
+    },
+    {
+      "otherEntityName": "paymentTheta",
+      "relationshipName": "payment",
+      "relationshipSide": "left",
+      "relationshipType": "many-to-one"
+    },
+    {
+      "otherEntityName": "shipmentTheta",
+      "relationshipName": "shipment",
+      "relationshipSide": "left",
+      "relationshipType": "many-to-one"
+    },
+    {
+      "options": {
+        "onDelete": "CASCADE"
+      },
+      "otherEntityName": "masterTenant",
+      "relationshipName": "tenant",
+      "relationshipSide": "left",
+      "relationshipType": "many-to-one"
+    },
+    {
+      "otherEntityField": "email",
+      "otherEntityName": "customerTheta",
+      "otherEntityRelationshipName": "orders",
+      "relationshipName": "customer",
+      "relationshipSide": "right",
+      "relationshipType": "many-to-one"
+    }
+  ],
+  "searchEngine": "no",
+  "service": "serviceClass"
+}

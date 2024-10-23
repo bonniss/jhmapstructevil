@@ -1,0 +1,38 @@
+{
+  "annotations": {
+    "changelogDate": "20241023164104"
+  },
+  "applications": ["jhmapstruct"],
+  "dto": "mapstruct",
+  "fields": [
+    {
+      "fieldName": "trackingNumber",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "shippedDate",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "deliveryDate",
+      "fieldType": "Instant"
+    }
+  ],
+  "jpaMetamodelFiltering": true,
+  "name": "ShipmentMi",
+  "pagination": "pagination",
+  "relationships": [
+    {
+      "options": {
+        "onDelete": "CASCADE"
+      },
+      "otherEntityName": "masterTenant",
+      "relationshipName": "tenant",
+      "relationshipSide": "left",
+      "relationshipType": "many-to-one"
+    }
+  ],
+  "searchEngine": "no",
+  "service": "serviceClass"
+}

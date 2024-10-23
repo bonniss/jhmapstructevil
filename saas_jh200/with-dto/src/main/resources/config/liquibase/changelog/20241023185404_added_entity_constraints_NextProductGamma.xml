@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd
+                        http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+    <!--
+        Added the constraints for entity NextProductGamma.
+    -->
+    <changeSet id="20241023185404-2" author="jhipster">
+
+        <addForeignKeyConstraint baseColumnNames="category_id"
+                                 baseTableName="next_product_gamma"
+                                 constraintName="fk_next_product_gamma__category_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="next_category_gamma"
+                                 />
+
+        <addForeignKeyConstraint baseColumnNames="tenant_id"
+                                 baseTableName="next_product_gamma"
+                                 constraintName="fk_next_product_gamma__tenant_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="master_tenant"
+                                 onDelete="CASCADE"
+                                 />
+
+        <addForeignKeyConstraint baseColumnNames="order_id"
+                                 baseTableName="next_product_gamma"
+                                 constraintName="fk_next_product_gamma__order_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="next_order_gamma"
+                                 />
+    </changeSet>
+</databaseChangeLog>

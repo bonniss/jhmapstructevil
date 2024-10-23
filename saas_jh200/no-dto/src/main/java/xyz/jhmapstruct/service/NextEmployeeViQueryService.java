@@ -1,0 +1,100 @@
+package xyz.jhmapstruct.service;
+
+import jakarta.persistence.criteria.JoinType;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.jpa.domain.Specification;
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
+import tech.jhipster.service.QueryService;
+import xyz.jhmapstruct.domain.*; // for static metamodels
+import xyz.jhmapstruct.domain.NextEmployeeVi;
+import xyz.jhmapstruct.repository.NextEmployeeViRepository;
+import xyz.jhmapstruct.service.criteria.NextEmployeeViCriteria;
+
+/**
+ * Service for executing complex queries for {@link NextEmployeeVi} entities in the database.
+ * The main input is a {@link NextEmployeeViCriteria} which gets converted to {@link Specification},
+ * in a way that all the filters must apply.
+ * It returns a {@link Page} of {@link NextEmployeeVi} which fulfills the criteria.
+ */
+@Service
+@Transactional(readOnly = true)
+public class NextEmployeeViQueryService extends QueryService<NextEmployeeVi> {
+
+    private static final Logger LOG = LoggerFactory.getLogger(NextEmployeeViQueryService.class);
+
+    private final NextEmployeeViRepository nextEmployeeViRepository;
+
+    public NextEmployeeViQueryService(NextEmployeeViRepository nextEmployeeViRepository) {
+        this.nextEmployeeViRepository = nextEmployeeViRepository;
+    }
+
+    /**
+     * Return a {@link Page} of {@link NextEmployeeVi} which matches the criteria from the database.
+     * @param criteria The object which holds all the filters, which the entities should match.
+     * @param page The page, which should be returned.
+     * @return the matching entities.
+     */
+    @Transactional(readOnly = true)
+    public Page<NextEmployeeVi> findByCriteria(NextEmployeeViCriteria criteria, Pageable page) {
+        LOG.debug("find by criteria : {}, page: {}", criteria, page);
+        final Specification<NextEmployeeVi> specification = createSpecification(criteria);
+        return nextEmployeeViRepository.findAll(specification, page);
+    }
+
+    /**
+     * Return the number of matching entities in the database.
+     * @param criteria The object which holds all the filters, which the entities should match.
+     * @return the number of matching entities.
+     */
+    @Transactional(readOnly = true)
+    public long countByCriteria(NextEmployeeViCriteria criteria) {
+        LOG.debug("count by criteria : {}", criteria);
+        final Specification<NextEmployeeVi> specification = createSpecification(criteria);
+        return nextEmployeeViRepository.count(specification);
+    }
+
+    /**
+     * Function to convert {@link NextEmployeeViCriteria} to a {@link Specification}
+     * @param criteria The object which holds all the filters, which the entities should match.
+     * @return the matching {@link Specification} of the entity.
+     */
+    protected Specification<NextEmployeeVi> createSpecification(NextEmployeeViCriteria criteria) {
+        Specification<NextEmployeeVi> specification = Specification.where(null);
+        if (criteria != null) {
+            // This has to be called first, because the distinct method returns null
+            if (criteria.getDistinct() != null) {
+                specification = specification.and(distinct(criteria.getDistinct()));
+            }
+            if (criteria.getId() != null) {
+                specification = specification.and(buildRangeSpecification(criteria.getId(), NextEmployeeVi_.id));
+            }
+            if (criteria.getFirstName() != null) {
+                specification = specification.and(buildStringSpecification(criteria.getFirstName(), NextEmployeeVi_.firstName));
+            }
+            if (criteria.getLastName() != null) {
+                specification = specification.and(buildStringSpecification(criteria.getLastName(), NextEmployeeVi_.lastName));
+            }
+            if (criteria.getEmail() != null) {
+                specification = specification.and(buildStringSpecification(criteria.getEmail(), NextEmployeeVi_.email));
+            }
+            if (criteria.getHireDate() != null) {
+                specification = specification.and(buildRangeSpecification(criteria.getHireDate(), NextEmployeeVi_.hireDate));
+            }
+            if (criteria.getPosition() != null) {
+                specification = specification.and(buildStringSpecification(criteria.getPosition(), NextEmployeeVi_.position));
+            }
+            if (criteria.getTenantId() != null) {
+                specification = specification.and(
+                    buildSpecification(criteria.getTenantId(), root ->
+                        root.join(NextEmployeeVi_.tenant, JoinType.LEFT).get(MasterTenant_.id)
+                    )
+                );
+            }
+        }
+        return specification;
+    }
+}

@@ -1,0 +1,1770 @@
+application {
+  config {
+    baseName jhmapstruct
+    applicationType monolith
+    packageName xyz.jhmapstruct
+    authenticationType jwt
+    prodDatabaseType postgresql
+    devDatabaseType h2Disk
+    buildTool maven
+  }
+  entities *
+}
+service * with serviceClass
+paginate all with pagination
+filter all
+entity MasterTenant {
+  code String unique required
+}
+entity Customer {
+  firstName String required
+  lastName String required
+  email String required
+  phoneNumber String
+}
+entity Product {
+  name String required
+  price BigDecimal required
+  stock Integer required
+  description TextBlob
+}
+entity Order {
+  orderDate Instant required
+  totalPrice BigDecimal required
+  status OrderStatus
+}
+entity Employee {
+  firstName String required
+  lastName String required
+  email String required
+  hireDate Instant
+  position String
+}
+entity Category {
+  name String required
+  description String
+}
+entity Review {
+  rating Integer required min(1) max(5)
+  comment TextBlob
+  reviewDate Instant required
+}
+entity Payment {
+  amount BigDecimal required
+  paymentDate Instant required
+  paymentMethod PaymentMethod
+}
+entity Invoice {
+  invoiceNumber String required
+  issueDate Instant required
+  dueDate Instant
+  amount BigDecimal required
+}
+entity Shipment {
+  trackingNumber String required
+  shippedDate Instant
+  deliveryDate Instant
+}
+entity Supplier {
+  name String required
+  contactPerson String
+  email String
+  phoneNumber String
+}
+enum OrderStatus {
+  PENDING, SHIPPED, DELIVERED, CANCELLED
+}
+enum PaymentMethod {
+  CREDIT_CARD, PAYPAL, BANK_TRANSFER
+}
+relationship OneToMany {
+  Customer{orders} to Order{customer(email)} , Order{products} to Product{order}
+}
+relationship ManyToOne {
+  Product{category(name)} to Category
+}
+relationship ManyToOne {
+  Review{product(name)} to Product
+}
+relationship ManyToOne {
+  Order{payment} to Payment
+}
+relationship ManyToOne {
+  Order{shipment} to Shipment
+}
+relationship ManyToMany {
+  Supplier{products(name)} to Product{suppliers}
+}
+entity CustomerVi {
+  firstName String required
+  lastName String required
+  email String required
+  phoneNumber String
+}
+entity ProductVi {
+  name String required
+  price BigDecimal required
+  stock Integer required
+  description TextBlob
+}
+entity OrderVi {
+  orderDate Instant required
+  totalPrice BigDecimal required
+  status OrderViStatus
+}
+entity EmployeeVi {
+  firstName String required
+  lastName String required
+  email String required
+  hireDate Instant
+  position String
+}
+entity CategoryVi {
+  name String required
+  description String
+}
+entity ReviewVi {
+  rating Integer required min(1) max(5)
+  comment TextBlob
+  reviewDate Instant required
+}
+entity PaymentVi {
+  amount BigDecimal required
+  paymentDate Instant required
+  paymentMethod PaymentViMethod
+}
+entity InvoiceVi {
+  invoiceNumber String required
+  issueDate Instant required
+  dueDate Instant
+  amount BigDecimal required
+}
+entity ShipmentVi {
+  trackingNumber String required
+  shippedDate Instant
+  deliveryDate Instant
+}
+entity SupplierVi {
+  name String required
+  contactPerson String
+  email String
+  phoneNumber String
+}
+enum OrderViStatus {
+  PENDING, SHIPPED, DELIVERED, CANCELLED
+}
+enum PaymentViMethod {
+  CREDIT_CARD, PAYPAL, BANK_TRANSFER
+}
+relationship OneToMany {
+  CustomerVi{orders} to OrderVi{customer(email)} , OrderVi{products} to ProductVi{order}
+}
+relationship ManyToOne {
+  ProductVi{category(name)} to CategoryVi
+}
+relationship ManyToOne {
+  ReviewVi{product(name)} to ProductVi
+}
+relationship ManyToOne {
+  OrderVi{payment} to PaymentVi
+}
+relationship ManyToOne {
+  OrderVi{shipment} to ShipmentVi
+}
+relationship ManyToMany {
+  SupplierVi{products(name)} to ProductVi{suppliers}
+}
+entity CustomerViVi {
+  firstName String required
+  lastName String required
+  email String required
+  phoneNumber String
+}
+entity ProductViVi {
+  name String required
+  price BigDecimal required
+  stock Integer required
+  description TextBlob
+}
+entity OrderViVi {
+  orderDate Instant required
+  totalPrice BigDecimal required
+  status OrderViViStatus
+}
+entity EmployeeViVi {
+  firstName String required
+  lastName String required
+  email String required
+  hireDate Instant
+  position String
+}
+entity CategoryViVi {
+  name String required
+  description String
+}
+entity ReviewViVi {
+  rating Integer required min(1) max(5)
+  comment TextBlob
+  reviewDate Instant required
+}
+entity PaymentViVi {
+  amount BigDecimal required
+  paymentDate Instant required
+  paymentMethod PaymentViViMethod
+}
+entity InvoiceViVi {
+  invoiceNumber String required
+  issueDate Instant required
+  dueDate Instant
+  amount BigDecimal required
+}
+entity ShipmentViVi {
+  trackingNumber String required
+  shippedDate Instant
+  deliveryDate Instant
+}
+entity SupplierViVi {
+  name String required
+  contactPerson String
+  email String
+  phoneNumber String
+}
+enum OrderViViStatus {
+  PENDING, SHIPPED, DELIVERED, CANCELLED
+}
+enum PaymentViViMethod {
+  CREDIT_CARD, PAYPAL, BANK_TRANSFER
+}
+relationship OneToMany {
+  CustomerViVi{orders} to OrderViVi{customer(email)} , OrderViVi{products} to ProductViVi{order}
+}
+relationship ManyToOne {
+  ProductViVi{category(name)} to CategoryViVi
+}
+relationship ManyToOne {
+  ReviewViVi{product(name)} to ProductViVi
+}
+relationship ManyToOne {
+  OrderViVi{payment} to PaymentViVi
+}
+relationship ManyToOne {
+  OrderViVi{shipment} to ShipmentViVi
+}
+relationship ManyToMany {
+  SupplierViVi{products(name)} to ProductViVi{suppliers}
+}
+entity CustomerMi {
+  firstName String required
+  lastName String required
+  email String required
+  phoneNumber String
+}
+entity ProductMi {
+  name String required
+  price BigDecimal required
+  stock Integer required
+  description TextBlob
+}
+entity OrderMi {
+  orderDate Instant required
+  totalPrice BigDecimal required
+  status OrderMiStatus
+}
+entity EmployeeMi {
+  firstName String required
+  lastName String required
+  email String required
+  hireDate Instant
+  position String
+}
+entity CategoryMi {
+  name String required
+  description String
+}
+entity ReviewMi {
+  rating Integer required min(1) max(5)
+  comment TextBlob
+  reviewDate Instant required
+}
+entity PaymentMi {
+  amount BigDecimal required
+  paymentDate Instant required
+  paymentMethod PaymentMiMethod
+}
+entity InvoiceMi {
+  invoiceNumber String required
+  issueDate Instant required
+  dueDate Instant
+  amount BigDecimal required
+}
+entity ShipmentMi {
+  trackingNumber String required
+  shippedDate Instant
+  deliveryDate Instant
+}
+entity SupplierMi {
+  name String required
+  contactPerson String
+  email String
+  phoneNumber String
+}
+enum OrderMiStatus {
+  PENDING, SHIPPED, DELIVERED, CANCELLED
+}
+enum PaymentMiMethod {
+  CREDIT_CARD, PAYPAL, BANK_TRANSFER
+}
+relationship OneToMany {
+  CustomerMi{orders} to NextOrderMi{customer(email)} , NextOrderMi{products} to NextProductMi{order}
+}
+relationship ManyToOne {
+  NextProductMi{category(name)} to CategoryMi
+}
+relationship ManyToOne {
+  ReviewMi{product(name)} to NextProductMi
+}
+relationship ManyToOne {
+  NextOrderMi{payment} to PaymentMi
+}
+relationship ManyToOne {
+  NextOrderMi{shipment} to ShipmentMi
+}
+relationship ManyToMany {
+  SupplierMi{products(name)} to NextProductMi{suppliers}
+}
+entity CustomerMiMi {
+  firstName String required
+  lastName String required
+  email String required
+  phoneNumber String
+}
+entity ProductMiMi {
+  name String required
+  price BigDecimal required
+  stock Integer required
+  description TextBlob
+}
+entity OrderMiMi {
+  orderDate Instant required
+  totalPrice BigDecimal required
+  status OrderMiMiStatus
+}
+entity EmployeeMiMi {
+  firstName String required
+  lastName String required
+  email String required
+  hireDate Instant
+  position String
+}
+entity CategoryMiMi {
+  name String required
+  description String
+}
+entity ReviewMiMi {
+  rating Integer required min(1) max(5)
+  comment TextBlob
+  reviewDate Instant required
+}
+entity PaymentMiMi {
+  amount BigDecimal required
+  paymentDate Instant required
+  paymentMethod PaymentMiMiMethod
+}
+entity InvoiceMiMi {
+  invoiceNumber String required
+  issueDate Instant required
+  dueDate Instant
+  amount BigDecimal required
+}
+entity ShipmentMiMi {
+  trackingNumber String required
+  shippedDate Instant
+  deliveryDate Instant
+}
+entity SupplierMiMi {
+  name String required
+  contactPerson String
+  email String
+  phoneNumber String
+}
+enum OrderMiMiStatus {
+  PENDING, SHIPPED, DELIVERED, CANCELLED
+}
+enum PaymentMiMiMethod {
+  CREDIT_CARD, PAYPAL, BANK_TRANSFER
+}
+relationship OneToMany {
+  CustomerMiMi{orders} to OrderMiMi{customer(email)} , OrderMiMi{products} to ProductMiMi{order}
+}
+relationship ManyToOne {
+  ProductMiMi{category(name)} to CategoryMiMi
+}
+relationship ManyToOne {
+  ReviewMiMi{product(name)} to ProductMiMi
+}
+relationship ManyToOne {
+  OrderMiMi{payment} to PaymentMiMi
+}
+relationship ManyToOne {
+  OrderMiMi{shipment} to ShipmentMiMi
+}
+relationship ManyToMany {
+  SupplierMiMi{products(name)} to ProductMiMi{suppliers}
+}
+entity CustomerAlpha {
+  firstName String required
+  lastName String required
+  email String required
+  phoneNumber String
+}
+entity ProductAlpha {
+  name String required
+  price BigDecimal required
+  stock Integer required
+  description TextBlob
+}
+entity OrderAlpha {
+  orderDate Instant required
+  totalPrice BigDecimal required
+  status OrderAlphaStatus
+}
+entity EmployeeAlpha {
+  firstName String required
+  lastName String required
+  email String required
+  hireDate Instant
+  position String
+}
+entity CategoryAlpha {
+  name String required
+  description String
+}
+entity ReviewAlpha {
+  rating Integer required min(1) max(5)
+  comment TextBlob
+  reviewDate Instant required
+}
+entity PaymentAlpha {
+  amount BigDecimal required
+  paymentDate Instant required
+  paymentMethod PaymentAlphaMethod
+}
+entity InvoiceAlpha {
+  invoiceNumber String required
+  issueDate Instant required
+  dueDate Instant
+  amount BigDecimal required
+}
+entity ShipmentAlpha {
+  trackingNumber String required
+  shippedDate Instant
+  deliveryDate Instant
+}
+entity SupplierAlpha {
+  name String required
+  contactPerson String
+  email String
+  phoneNumber String
+}
+enum OrderAlphaStatus {
+  PENDING, SHIPPED, DELIVERED, CANCELLED
+}
+enum PaymentAlphaMethod {
+  CREDIT_CARD, PAYPAL, BANK_TRANSFER
+}
+relationship OneToMany {
+  CustomerAlpha{orders} to OrderAlpha{customer(email)} , OrderAlpha{products} to ProductAlpha{order}
+}
+relationship ManyToOne {
+  ProductAlpha{category(name)} to CategoryAlpha
+}
+relationship ManyToOne {
+  ReviewAlpha{product(name)} to ProductAlpha
+}
+relationship ManyToOne {
+  OrderAlpha{payment} to PaymentAlpha
+}
+relationship ManyToOne {
+  OrderAlpha{shipment} to ShipmentAlpha
+}
+relationship ManyToMany {
+  SupplierAlpha{products(name)} to ProductAlpha{suppliers}
+}
+entity CustomerBeta {
+  firstName String required
+  lastName String required
+  email String required
+  phoneNumber String
+}
+entity ProductBeta {
+  name String required
+  price BigDecimal required
+  stock Integer required
+  description TextBlob
+}
+entity OrderBeta {
+  orderDate Instant required
+  totalPrice BigDecimal required
+  status OrderBetaStatus
+}
+entity EmployeeBeta {
+  firstName String required
+  lastName String required
+  email String required
+  hireDate Instant
+  position String
+}
+entity CategoryBeta {
+  name String required
+  description String
+}
+entity ReviewBeta {
+  rating Integer required min(1) max(5)
+  comment TextBlob
+  reviewDate Instant required
+}
+entity PaymentBeta {
+  amount BigDecimal required
+  paymentDate Instant required
+  paymentMethod PaymentBetaMethod
+}
+entity InvoiceBeta {
+  invoiceNumber String required
+  issueDate Instant required
+  dueDate Instant
+  amount BigDecimal required
+}
+entity ShipmentBeta {
+  trackingNumber String required
+  shippedDate Instant
+  deliveryDate Instant
+}
+entity SupplierBeta {
+  name String required
+  contactPerson String
+  email String
+  phoneNumber String
+}
+enum OrderBetaStatus {
+  PENDING, SHIPPED, DELIVERED, CANCELLED
+}
+enum PaymentBetaMethod {
+  CREDIT_CARD, PAYPAL, BANK_TRANSFER
+}
+relationship OneToMany {
+  CustomerBeta{orders} to OrderBeta{customer(email)} , OrderBeta{products} to ProductBeta{order}
+}
+relationship ManyToOne {
+  ProductBeta{category(name)} to CategoryBeta
+}
+relationship ManyToOne {
+  ReviewBeta{product(name)} to ProductBeta
+}
+relationship ManyToOne {
+  OrderBeta{payment} to PaymentBeta
+}
+relationship ManyToOne {
+  OrderBeta{shipment} to ShipmentBeta
+}
+relationship ManyToMany {
+  SupplierBeta{products(name)} to ProductBeta{suppliers}
+}
+entity CustomerGamma {
+  firstName String required
+  lastName String required
+  email String required
+  phoneNumber String
+}
+entity ProductGamma {
+  name String required
+  price BigDecimal required
+  stock Integer required
+  description TextBlob
+}
+entity OrderGamma {
+  orderDate Instant required
+  totalPrice BigDecimal required
+  status OrderGammaStatus
+}
+entity EmployeeGamma {
+  firstName String required
+  lastName String required
+  email String required
+  hireDate Instant
+  position String
+}
+entity CategoryGamma {
+  name String required
+  description String
+}
+entity ReviewGamma {
+  rating Integer required min(1) max(5)
+  comment TextBlob
+  reviewDate Instant required
+}
+entity PaymentGamma {
+  amount BigDecimal required
+  paymentDate Instant required
+  paymentMethod PaymentGammaMethod
+}
+entity InvoiceGamma {
+  invoiceNumber String required
+  issueDate Instant required
+  dueDate Instant
+  amount BigDecimal required
+}
+entity ShipmentGamma {
+  trackingNumber String required
+  shippedDate Instant
+  deliveryDate Instant
+}
+entity SupplierGamma {
+  name String required
+  contactPerson String
+  email String
+  phoneNumber String
+}
+enum OrderGammaStatus {
+  PENDING, SHIPPED, DELIVERED, CANCELLED
+}
+enum PaymentGammaMethod {
+  CREDIT_CARD, PAYPAL, BANK_TRANSFER
+}
+relationship OneToMany {
+  CustomerGamma{orders} to OrderGamma{customer(email)} , OrderGamma{products} to ProductGamma{order}
+}
+relationship ManyToOne {
+  ProductGamma{category(name)} to CategoryGamma
+}
+relationship ManyToOne {
+  ReviewGamma{product(name)} to ProductGamma
+}
+relationship ManyToOne {
+  OrderGamma{payment} to PaymentGamma
+}
+relationship ManyToOne {
+  OrderGamma{shipment} to ShipmentGamma
+}
+relationship ManyToMany {
+  SupplierGamma{products(name)} to ProductGamma{suppliers}
+}
+entity CustomerSigma {
+  firstName String required
+  lastName String required
+  email String required
+  phoneNumber String
+}
+entity ProductSigma {
+  name String required
+  price BigDecimal required
+  stock Integer required
+  description TextBlob
+}
+entity OrderSigma {
+  orderDate Instant required
+  totalPrice BigDecimal required
+  status OrderSigmaStatus
+}
+entity EmployeeSigma {
+  firstName String required
+  lastName String required
+  email String required
+  hireDate Instant
+  position String
+}
+entity CategorySigma {
+  name String required
+  description String
+}
+entity ReviewSigma {
+  rating Integer required min(1) max(5)
+  comment TextBlob
+  reviewDate Instant required
+}
+entity PaymentSigma {
+  amount BigDecimal required
+  paymentDate Instant required
+  paymentMethod PaymentSigmaMethod
+}
+entity InvoiceSigma {
+  invoiceNumber String required
+  issueDate Instant required
+  dueDate Instant
+  amount BigDecimal required
+}
+entity ShipmentSigma {
+  trackingNumber String required
+  shippedDate Instant
+  deliveryDate Instant
+}
+entity SupplierSigma {
+  name String required
+  contactPerson String
+  email String
+  phoneNumber String
+}
+enum OrderSigmaStatus {
+  PENDING, SHIPPED, DELIVERED, CANCELLED
+}
+enum PaymentSigmaMethod {
+  CREDIT_CARD, PAYPAL, BANK_TRANSFER
+}
+relationship OneToMany {
+  CustomerSigma{orders} to OrderSigma{customer(email)} , OrderSigma{products} to ProductSigma{order}
+}
+relationship ManyToOne {
+  ProductSigma{category(name)} to CategorySigma
+}
+relationship ManyToOne {
+  ReviewSigma{product(name)} to ProductSigma
+}
+relationship ManyToOne {
+  OrderSigma{payment} to PaymentSigma
+}
+relationship ManyToOne {
+  OrderSigma{shipment} to ShipmentSigma
+}
+relationship ManyToMany {
+  SupplierSigma{products(name)} to ProductSigma{suppliers}
+}
+entity CustomerTheta {
+  firstName String required
+  lastName String required
+  email String required
+  phoneNumber String
+}
+entity ProductTheta {
+  name String required
+  price BigDecimal required
+  stock Integer required
+  description TextBlob
+}
+entity OrderTheta {
+  orderDate Instant required
+  totalPrice BigDecimal required
+  status OrderThetaStatus
+}
+entity EmployeeTheta {
+  firstName String required
+  lastName String required
+  email String required
+  hireDate Instant
+  position String
+}
+entity CategoryTheta {
+  name String required
+  description String
+}
+entity ReviewTheta {
+  rating Integer required min(1) max(5)
+  comment TextBlob
+  reviewDate Instant required
+}
+entity PaymentTheta {
+  amount BigDecimal required
+  paymentDate Instant required
+  paymentMethod PaymentThetaMethod
+}
+entity InvoiceTheta {
+  invoiceNumber String required
+  issueDate Instant required
+  dueDate Instant
+  amount BigDecimal required
+}
+entity ShipmentTheta {
+  trackingNumber String required
+  shippedDate Instant
+  deliveryDate Instant
+}
+entity SupplierTheta {
+  name String required
+  contactPerson String
+  email String
+  phoneNumber String
+}
+enum OrderThetaStatus {
+  PENDING, SHIPPED, DELIVERED, CANCELLED
+}
+enum PaymentThetaMethod {
+  CREDIT_CARD, PAYPAL, BANK_TRANSFER
+}
+relationship OneToMany {
+  CustomerTheta{orders} to OrderTheta{customer(email)} , OrderTheta{products} to ProductTheta{order}
+}
+relationship ManyToOne {
+  ProductTheta{category(name)} to CategoryTheta
+}
+relationship ManyToOne {
+  ReviewTheta{product(name)} to ProductTheta
+}
+relationship ManyToOne {
+  OrderTheta{payment} to PaymentTheta
+}
+relationship ManyToOne {
+  OrderTheta{shipment} to ShipmentTheta
+}
+relationship ManyToMany {
+  SupplierTheta{products(name)} to ProductTheta{suppliers}
+}
+entity NextCustomer {
+  firstName String required
+  lastName String required
+  email String required
+  phoneNumber String
+}
+entity NextProduct {
+  name String required
+  price BigDecimal required
+  stock Integer required
+  description TextBlob
+}
+entity NextOrder {
+  orderDate Instant required
+  totalPrice BigDecimal required
+  status OrderStatus
+}
+entity NextEmployee {
+  firstName String required
+  lastName String required
+  email String required
+  hireDate Instant
+  position String
+}
+entity NextCategory {
+  name String required
+  description String
+}
+entity NextReview {
+  rating Integer required min(1) max(5)
+  comment TextBlob
+  reviewDate Instant required
+}
+entity NextPayment {
+  amount BigDecimal required
+  paymentDate Instant required
+  paymentMethod NextPaymentMethod
+}
+entity NextInvoice {
+  invoiceNumber String required
+  issueDate Instant required
+  dueDate Instant
+  amount BigDecimal required
+}
+entity NextShipment {
+  trackingNumber String required
+  shippedDate Instant
+  deliveryDate Instant
+}
+entity NextSupplier {
+  name String required
+  contactPerson String
+  email String
+  phoneNumber String
+}
+enum NextPaymentMethod {
+  CREDIT_CARD, PAYPAL, BANK_TRANSFER
+}
+relationship OneToMany {
+  NextCustomer{orders} to NextOrder{customer(email)} , NextOrder{products} to NextProduct{order}
+}
+relationship ManyToOne {
+  NextProduct{category(name)} to NextCategory
+}
+relationship ManyToOne {
+  NextReview{product(name)} to NextProduct
+}
+relationship ManyToOne {
+  NextOrder{payment} to NextPayment
+}
+relationship ManyToOne {
+  NextOrder{shipment} to NextShipment
+}
+relationship ManyToMany {
+  NextSupplier{products(name)} to NextProduct{suppliers}
+}
+entity NextCustomerVi {
+  firstName String required
+  lastName String required
+  email String required
+  phoneNumber String
+}
+entity NextProductVi {
+  name String required
+  price BigDecimal required
+  stock Integer required
+  description TextBlob
+}
+entity NextOrderVi {
+  orderDate Instant required
+  totalPrice BigDecimal required
+  status OrderViStatus
+}
+entity NextEmployeeVi {
+  firstName String required
+  lastName String required
+  email String required
+  hireDate Instant
+  position String
+}
+entity NextCategoryVi {
+  name String required
+  description String
+}
+entity NextReviewVi {
+  rating Integer required min(1) max(5)
+  comment TextBlob
+  reviewDate Instant required
+}
+entity NextPaymentVi {
+  amount BigDecimal required
+  paymentDate Instant required
+  paymentMethod NextPaymentViMethod
+}
+entity NextInvoiceVi {
+  invoiceNumber String required
+  issueDate Instant required
+  dueDate Instant
+  amount BigDecimal required
+}
+entity NextShipmentVi {
+  trackingNumber String required
+  shippedDate Instant
+  deliveryDate Instant
+}
+entity NextSupplierVi {
+  name String required
+  contactPerson String
+  email String
+  phoneNumber String
+}
+enum NextPaymentViMethod {
+  CREDIT_CARD, PAYPAL, BANK_TRANSFER
+}
+relationship OneToMany {
+  NextCustomerVi{orders} to NextOrderVi{customer(email)} , NextOrderVi{products} to NextProductVi{order}
+}
+relationship ManyToOne {
+  NextProductVi{category(name)} to NextCategoryVi
+}
+relationship ManyToOne {
+  NextReviewVi{product(name)} to NextProductVi
+}
+relationship ManyToOne {
+  NextOrderVi{payment} to NextPaymentVi
+}
+relationship ManyToOne {
+  NextOrderVi{shipment} to NextShipmentVi
+}
+relationship ManyToMany {
+  NextSupplierVi{products(name)} to NextProductVi{suppliers}
+}
+entity NextCustomerViVi {
+  firstName String required
+  lastName String required
+  email String required
+  phoneNumber String
+}
+entity NextProductViVi {
+  name String required
+  price BigDecimal required
+  stock Integer required
+  description TextBlob
+}
+entity NextOrderViVi {
+  orderDate Instant required
+  totalPrice BigDecimal required
+  status OrderViViStatus
+}
+entity NextEmployeeViVi {
+  firstName String required
+  lastName String required
+  email String required
+  hireDate Instant
+  position String
+}
+entity NextCategoryViVi {
+  name String required
+  description String
+}
+entity NextReviewViVi {
+  rating Integer required min(1) max(5)
+  comment TextBlob
+  reviewDate Instant required
+}
+entity NextPaymentViVi {
+  amount BigDecimal required
+  paymentDate Instant required
+  paymentMethod NextPaymentViViMethod
+}
+entity NextInvoiceViVi {
+  invoiceNumber String required
+  issueDate Instant required
+  dueDate Instant
+  amount BigDecimal required
+}
+entity NextShipmentViVi {
+  trackingNumber String required
+  shippedDate Instant
+  deliveryDate Instant
+}
+entity NextSupplierViVi {
+  name String required
+  contactPerson String
+  email String
+  phoneNumber String
+}
+enum NextPaymentViViMethod {
+  CREDIT_CARD, PAYPAL, BANK_TRANSFER
+}
+relationship OneToMany {
+  NextCustomerViVi{orders} to NextOrderViVi{customer(email)} , NextOrderViVi{products} to NextProductViVi{order}
+}
+relationship ManyToOne {
+  NextProductViVi{category(name)} to NextCategoryViVi
+}
+relationship ManyToOne {
+  NextReviewViVi{product(name)} to NextProductViVi
+}
+relationship ManyToOne {
+  NextOrderViVi{payment} to NextPaymentViVi
+}
+relationship ManyToOne {
+  NextOrderViVi{shipment} to NextShipmentViVi
+}
+relationship ManyToMany {
+  NextSupplierViVi{products(name)} to NextProductViVi{suppliers}
+}
+entity NextCustomerMi {
+  firstName String required
+  lastName String required
+  email String required
+  phoneNumber String
+}
+entity NextProductMi {
+  name String required
+  price BigDecimal required
+  stock Integer required
+  description TextBlob
+}
+entity NextOrderMi {
+  orderDate Instant required
+  totalPrice BigDecimal required
+  status OrderMiStatus
+}
+entity NextEmployeeMi {
+  firstName String required
+  lastName String required
+  email String required
+  hireDate Instant
+  position String
+}
+entity NextCategoryMi {
+  name String required
+  description String
+}
+entity NextReviewMi {
+  rating Integer required min(1) max(5)
+  comment TextBlob
+  reviewDate Instant required
+}
+entity NextPaymentMi {
+  amount BigDecimal required
+  paymentDate Instant required
+  paymentMethod NextPaymentMiMethod
+}
+entity NextInvoiceMi {
+  invoiceNumber String required
+  issueDate Instant required
+  dueDate Instant
+  amount BigDecimal required
+}
+entity NextShipmentMi {
+  trackingNumber String required
+  shippedDate Instant
+  deliveryDate Instant
+}
+entity NextSupplierMi {
+  name String required
+  contactPerson String
+  email String
+  phoneNumber String
+}
+enum NextPaymentMiMethod {
+  CREDIT_CARD, PAYPAL, BANK_TRANSFER
+}
+relationship OneToMany {
+  NextCustomerMi{orders} to OrderMi{customer(email)} , OrderMi{products} to ProductMi{order}
+}
+relationship ManyToOne {
+  ProductMi{category(name)} to NextCategoryMi
+}
+relationship ManyToOne {
+  NextReviewMi{product(name)} to ProductMi
+}
+relationship ManyToOne {
+  OrderMi{payment} to NextPaymentMi
+}
+relationship ManyToOne {
+  OrderMi{shipment} to NextShipmentMi
+}
+relationship ManyToMany {
+  NextSupplierMi{products(name)} to ProductMi{suppliers}
+}
+entity NextCustomerMiMi {
+  firstName String required
+  lastName String required
+  email String required
+  phoneNumber String
+}
+entity NextProductMiMi {
+  name String required
+  price BigDecimal required
+  stock Integer required
+  description TextBlob
+}
+entity NextOrderMiMi {
+  orderDate Instant required
+  totalPrice BigDecimal required
+  status OrderMiMiStatus
+}
+entity NextEmployeeMiMi {
+  firstName String required
+  lastName String required
+  email String required
+  hireDate Instant
+  position String
+}
+entity NextCategoryMiMi {
+  name String required
+  description String
+}
+entity NextReviewMiMi {
+  rating Integer required min(1) max(5)
+  comment TextBlob
+  reviewDate Instant required
+}
+entity NextPaymentMiMi {
+  amount BigDecimal required
+  paymentDate Instant required
+  paymentMethod NextPaymentMiMiMethod
+}
+entity NextInvoiceMiMi {
+  invoiceNumber String required
+  issueDate Instant required
+  dueDate Instant
+  amount BigDecimal required
+}
+entity NextShipmentMiMi {
+  trackingNumber String required
+  shippedDate Instant
+  deliveryDate Instant
+}
+entity NextSupplierMiMi {
+  name String required
+  contactPerson String
+  email String
+  phoneNumber String
+}
+enum NextPaymentMiMiMethod {
+  CREDIT_CARD, PAYPAL, BANK_TRANSFER
+}
+relationship OneToMany {
+  NextCustomerMiMi{orders} to NextOrderMiMi{customer(email)} , NextOrderMiMi{products} to NextProductMiMi{order}
+}
+relationship ManyToOne {
+  NextProductMiMi{category(name)} to NextCategoryMiMi
+}
+relationship ManyToOne {
+  NextReviewMiMi{product(name)} to NextProductMiMi
+}
+relationship ManyToOne {
+  NextOrderMiMi{payment} to NextPaymentMiMi
+}
+relationship ManyToOne {
+  NextOrderMiMi{shipment} to NextShipmentMiMi
+}
+relationship ManyToMany {
+  NextSupplierMiMi{products(name)} to NextProductMiMi{suppliers}
+}
+entity NextCustomerAlpha {
+  firstName String required
+  lastName String required
+  email String required
+  phoneNumber String
+}
+entity NextProductAlpha {
+  name String required
+  price BigDecimal required
+  stock Integer required
+  description TextBlob
+}
+entity NextOrderAlpha {
+  orderDate Instant required
+  totalPrice BigDecimal required
+  status OrderAlphaStatus
+}
+entity NextEmployeeAlpha {
+  firstName String required
+  lastName String required
+  email String required
+  hireDate Instant
+  position String
+}
+entity NextCategoryAlpha {
+  name String required
+  description String
+}
+entity NextReviewAlpha {
+  rating Integer required min(1) max(5)
+  comment TextBlob
+  reviewDate Instant required
+}
+entity NextPaymentAlpha {
+  amount BigDecimal required
+  paymentDate Instant required
+  paymentMethod NextPaymentAlphaMethod
+}
+entity NextInvoiceAlpha {
+  invoiceNumber String required
+  issueDate Instant required
+  dueDate Instant
+  amount BigDecimal required
+}
+entity NextShipmentAlpha {
+  trackingNumber String required
+  shippedDate Instant
+  deliveryDate Instant
+}
+entity NextSupplierAlpha {
+  name String required
+  contactPerson String
+  email String
+  phoneNumber String
+}
+enum NextPaymentAlphaMethod {
+  CREDIT_CARD, PAYPAL, BANK_TRANSFER
+}
+relationship OneToMany {
+  NextCustomerAlpha{orders} to NextOrderAlpha{customer(email)} , NextOrderAlpha{products} to NextProductAlpha{order}
+}
+relationship ManyToOne {
+  NextProductAlpha{category(name)} to NextCategoryAlpha
+}
+relationship ManyToOne {
+  NextReviewAlpha{product(name)} to NextProductAlpha
+}
+relationship ManyToOne {
+  NextOrderAlpha{payment} to NextPaymentAlpha
+}
+relationship ManyToOne {
+  NextOrderAlpha{shipment} to NextShipmentAlpha
+}
+relationship ManyToMany {
+  NextSupplierAlpha{products(name)} to NextProductAlpha{suppliers}
+}
+entity NextCustomerBeta {
+  firstName String required
+  lastName String required
+  email String required
+  phoneNumber String
+}
+entity NextProductBeta {
+  name String required
+  price BigDecimal required
+  stock Integer required
+  description TextBlob
+}
+entity NextOrderBeta {
+  orderDate Instant required
+  totalPrice BigDecimal required
+  status OrderBetaStatus
+}
+entity NextEmployeeBeta {
+  firstName String required
+  lastName String required
+  email String required
+  hireDate Instant
+  position String
+}
+entity NextCategoryBeta {
+  name String required
+  description String
+}
+entity NextReviewBeta {
+  rating Integer required min(1) max(5)
+  comment TextBlob
+  reviewDate Instant required
+}
+entity NextPaymentBeta {
+  amount BigDecimal required
+  paymentDate Instant required
+  paymentMethod NextPaymentBetaMethod
+}
+entity NextInvoiceBeta {
+  invoiceNumber String required
+  issueDate Instant required
+  dueDate Instant
+  amount BigDecimal required
+}
+entity NextShipmentBeta {
+  trackingNumber String required
+  shippedDate Instant
+  deliveryDate Instant
+}
+entity NextSupplierBeta {
+  name String required
+  contactPerson String
+  email String
+  phoneNumber String
+}
+enum NextPaymentBetaMethod {
+  CREDIT_CARD, PAYPAL, BANK_TRANSFER
+}
+relationship OneToMany {
+  NextCustomerBeta{orders} to NextOrderBeta{customer(email)} , NextOrderBeta{products} to NextProductBeta{order}
+}
+relationship ManyToOne {
+  NextProductBeta{category(name)} to NextCategoryBeta
+}
+relationship ManyToOne {
+  NextReviewBeta{product(name)} to NextProductBeta
+}
+relationship ManyToOne {
+  NextOrderBeta{payment} to NextPaymentBeta
+}
+relationship ManyToOne {
+  NextOrderBeta{shipment} to NextShipmentBeta
+}
+relationship ManyToMany {
+  NextSupplierBeta{products(name)} to NextProductBeta{suppliers}
+}
+entity NextCustomerGamma {
+  firstName String required
+  lastName String required
+  email String required
+  phoneNumber String
+}
+entity NextProductGamma {
+  name String required
+  price BigDecimal required
+  stock Integer required
+  description TextBlob
+}
+entity NextOrderGamma {
+  orderDate Instant required
+  totalPrice BigDecimal required
+  status OrderGammaStatus
+}
+entity NextEmployeeGamma {
+  firstName String required
+  lastName String required
+  email String required
+  hireDate Instant
+  position String
+}
+entity NextCategoryGamma {
+  name String required
+  description String
+}
+entity NextReviewGamma {
+  rating Integer required min(1) max(5)
+  comment TextBlob
+  reviewDate Instant required
+}
+entity NextPaymentGamma {
+  amount BigDecimal required
+  paymentDate Instant required
+  paymentMethod NextPaymentGammaMethod
+}
+entity NextInvoiceGamma {
+  invoiceNumber String required
+  issueDate Instant required
+  dueDate Instant
+  amount BigDecimal required
+}
+entity NextShipmentGamma {
+  trackingNumber String required
+  shippedDate Instant
+  deliveryDate Instant
+}
+entity NextSupplierGamma {
+  name String required
+  contactPerson String
+  email String
+  phoneNumber String
+}
+enum NextPaymentGammaMethod {
+  CREDIT_CARD, PAYPAL, BANK_TRANSFER
+}
+relationship OneToMany {
+  NextCustomerGamma{orders} to NextOrderGamma{customer(email)} , NextOrderGamma{products} to NextProductGamma{order}
+}
+relationship ManyToOne {
+  NextProductGamma{category(name)} to NextCategoryGamma
+}
+relationship ManyToOne {
+  NextReviewGamma{product(name)} to NextProductGamma
+}
+relationship ManyToOne {
+  NextOrderGamma{payment} to NextPaymentGamma
+}
+relationship ManyToOne {
+  NextOrderGamma{shipment} to NextShipmentGamma
+}
+relationship ManyToMany {
+  NextSupplierGamma{products(name)} to NextProductGamma{suppliers}
+}
+entity NextCustomerSigma {
+  firstName String required
+  lastName String required
+  email String required
+  phoneNumber String
+}
+entity NextProductSigma {
+  name String required
+  price BigDecimal required
+  stock Integer required
+  description TextBlob
+}
+entity NextOrderSigma {
+  orderDate Instant required
+  totalPrice BigDecimal required
+  status OrderSigmaStatus
+}
+entity NextEmployeeSigma {
+  firstName String required
+  lastName String required
+  email String required
+  hireDate Instant
+  position String
+}
+entity NextCategorySigma {
+  name String required
+  description String
+}
+entity NextReviewSigma {
+  rating Integer required min(1) max(5)
+  comment TextBlob
+  reviewDate Instant required
+}
+entity NextPaymentSigma {
+  amount BigDecimal required
+  paymentDate Instant required
+  paymentMethod NextPaymentSigmaMethod
+}
+entity NextInvoiceSigma {
+  invoiceNumber String required
+  issueDate Instant required
+  dueDate Instant
+  amount BigDecimal required
+}
+entity NextShipmentSigma {
+  trackingNumber String required
+  shippedDate Instant
+  deliveryDate Instant
+}
+entity NextSupplierSigma {
+  name String required
+  contactPerson String
+  email String
+  phoneNumber String
+}
+enum NextPaymentSigmaMethod {
+  CREDIT_CARD, PAYPAL, BANK_TRANSFER
+}
+relationship OneToMany {
+  NextCustomerSigma{orders} to NextOrderSigma{customer(email)} , NextOrderSigma{products} to NextProductSigma{order}
+}
+relationship ManyToOne {
+  NextProductSigma{category(name)} to NextCategorySigma
+}
+relationship ManyToOne {
+  NextReviewSigma{product(name)} to NextProductSigma
+}
+relationship ManyToOne {
+  NextOrderSigma{payment} to NextPaymentSigma
+}
+relationship ManyToOne {
+  NextOrderSigma{shipment} to NextShipmentSigma
+}
+relationship ManyToMany {
+  NextSupplierSigma{products(name)} to NextProductSigma{suppliers}
+}
+entity NextCustomerTheta {
+  firstName String required
+  lastName String required
+  email String required
+  phoneNumber String
+}
+entity NextProductTheta {
+  name String required
+  price BigDecimal required
+  stock Integer required
+  description TextBlob
+}
+entity NextOrderTheta {
+  orderDate Instant required
+  totalPrice BigDecimal required
+  status OrderThetaStatus
+}
+entity NextEmployeeTheta {
+  firstName String required
+  lastName String required
+  email String required
+  hireDate Instant
+  position String
+}
+entity NextCategoryTheta {
+  name String required
+  description String
+}
+entity NextReviewTheta {
+  rating Integer required min(1) max(5)
+  comment TextBlob
+  reviewDate Instant required
+}
+entity NextPaymentTheta {
+  amount BigDecimal required
+  paymentDate Instant required
+  paymentMethod NextPaymentThetaMethod
+}
+entity NextInvoiceTheta {
+  invoiceNumber String required
+  issueDate Instant required
+  dueDate Instant
+  amount BigDecimal required
+}
+entity NextShipmentTheta {
+  trackingNumber String required
+  shippedDate Instant
+  deliveryDate Instant
+}
+entity NextSupplierTheta {
+  name String required
+  contactPerson String
+  email String
+  phoneNumber String
+}
+enum NextPaymentThetaMethod {
+  CREDIT_CARD, PAYPAL, BANK_TRANSFER
+}
+relationship OneToMany {
+  NextCustomerTheta{orders} to NextOrderTheta{customer(email)} , NextOrderTheta{products} to NextProductTheta{order}
+}
+relationship ManyToOne {
+  NextProductTheta{category(name)} to NextCategoryTheta
+}
+relationship ManyToOne {
+  NextReviewTheta{product(name)} to NextProductTheta
+}
+relationship ManyToOne {
+  NextOrderTheta{payment} to NextPaymentTheta
+}
+relationship ManyToOne {
+  NextOrderTheta{shipment} to NextShipmentTheta
+}
+relationship ManyToMany {
+  NextSupplierTheta{products(name)} to NextProductTheta{suppliers}
+}
+relationship ManyToOne {
+  Customer{tenant} to @OnDelete("CASCADE") MasterTenant
+  Product{tenant} to @OnDelete("CASCADE") MasterTenant
+  Order{tenant} to @OnDelete("CASCADE") MasterTenant
+  Employee{tenant} to @OnDelete("CASCADE") MasterTenant
+  Category{tenant} to @OnDelete("CASCADE") MasterTenant
+  Review{tenant} to @OnDelete("CASCADE") MasterTenant
+  Payment{tenant} to @OnDelete("CASCADE") MasterTenant
+  Invoice{tenant} to @OnDelete("CASCADE") MasterTenant
+  Shipment{tenant} to @OnDelete("CASCADE") MasterTenant
+  Supplier{tenant} to @OnDelete("CASCADE") MasterTenant
+  CustomerVi{tenant} to @OnDelete("CASCADE") MasterTenant
+  ProductVi{tenant} to @OnDelete("CASCADE") MasterTenant
+  OrderVi{tenant} to @OnDelete("CASCADE") MasterTenant
+  EmployeeVi{tenant} to @OnDelete("CASCADE") MasterTenant
+  CategoryVi{tenant} to @OnDelete("CASCADE") MasterTenant
+  ReviewVi{tenant} to @OnDelete("CASCADE") MasterTenant
+  PaymentVi{tenant} to @OnDelete("CASCADE") MasterTenant
+  InvoiceVi{tenant} to @OnDelete("CASCADE") MasterTenant
+  ShipmentVi{tenant} to @OnDelete("CASCADE") MasterTenant
+  SupplierVi{tenant} to @OnDelete("CASCADE") MasterTenant
+  CustomerViVi{tenant} to @OnDelete("CASCADE") MasterTenant
+  ProductViVi{tenant} to @OnDelete("CASCADE") MasterTenant
+  OrderViVi{tenant} to @OnDelete("CASCADE") MasterTenant
+  EmployeeViVi{tenant} to @OnDelete("CASCADE") MasterTenant
+  CategoryViVi{tenant} to @OnDelete("CASCADE") MasterTenant
+  ReviewViVi{tenant} to @OnDelete("CASCADE") MasterTenant
+  PaymentViVi{tenant} to @OnDelete("CASCADE") MasterTenant
+  InvoiceViVi{tenant} to @OnDelete("CASCADE") MasterTenant
+  ShipmentViVi{tenant} to @OnDelete("CASCADE") MasterTenant
+  SupplierViVi{tenant} to @OnDelete("CASCADE") MasterTenant
+  CustomerMi{tenant} to @OnDelete("CASCADE") MasterTenant
+  ProductMi{tenant} to @OnDelete("CASCADE") MasterTenant
+  OrderMi{tenant} to @OnDelete("CASCADE") MasterTenant
+  EmployeeMi{tenant} to @OnDelete("CASCADE") MasterTenant
+  CategoryMi{tenant} to @OnDelete("CASCADE") MasterTenant
+  ReviewMi{tenant} to @OnDelete("CASCADE") MasterTenant
+  PaymentMi{tenant} to @OnDelete("CASCADE") MasterTenant
+  InvoiceMi{tenant} to @OnDelete("CASCADE") MasterTenant
+  ShipmentMi{tenant} to @OnDelete("CASCADE") MasterTenant
+  SupplierMi{tenant} to @OnDelete("CASCADE") MasterTenant
+  CustomerMiMi{tenant} to @OnDelete("CASCADE") MasterTenant
+  ProductMiMi{tenant} to @OnDelete("CASCADE") MasterTenant
+  OrderMiMi{tenant} to @OnDelete("CASCADE") MasterTenant
+  EmployeeMiMi{tenant} to @OnDelete("CASCADE") MasterTenant
+  CategoryMiMi{tenant} to @OnDelete("CASCADE") MasterTenant
+  ReviewMiMi{tenant} to @OnDelete("CASCADE") MasterTenant
+  PaymentMiMi{tenant} to @OnDelete("CASCADE") MasterTenant
+  InvoiceMiMi{tenant} to @OnDelete("CASCADE") MasterTenant
+  ShipmentMiMi{tenant} to @OnDelete("CASCADE") MasterTenant
+  SupplierMiMi{tenant} to @OnDelete("CASCADE") MasterTenant
+  CustomerAlpha {tenant} to @OnDelete("CASCADE") MasterTenant
+  ProductAlpha {tenant} to @OnDelete("CASCADE") MasterTenant
+  OrderAlpha {tenant} to @OnDelete("CASCADE") MasterTenant
+  EmployeeAlpha {tenant} to @OnDelete("CASCADE") MasterTenant
+  CategoryAlpha {tenant} to @OnDelete("CASCADE") MasterTenant
+  ReviewAlpha {tenant} to @OnDelete("CASCADE") MasterTenant
+  PaymentAlpha {tenant} to @OnDelete("CASCADE") MasterTenant
+  InvoiceAlpha {tenant} to @OnDelete("CASCADE") MasterTenant
+  ShipmentAlpha {tenant} to @OnDelete("CASCADE") MasterTenant
+  SupplierAlpha {tenant} to @OnDelete("CASCADE") MasterTenant
+  CustomerBeta {tenant} to @OnDelete("CASCADE") MasterTenant
+  ProductBeta {tenant} to @OnDelete("CASCADE") MasterTenant
+  OrderBeta {tenant} to @OnDelete("CASCADE") MasterTenant
+  EmployeeBeta {tenant} to @OnDelete("CASCADE") MasterTenant
+  CategoryBeta {tenant} to @OnDelete("CASCADE") MasterTenant
+  ReviewBeta {tenant} to @OnDelete("CASCADE") MasterTenant
+  PaymentBeta {tenant} to @OnDelete("CASCADE") MasterTenant
+  InvoiceBeta {tenant} to @OnDelete("CASCADE") MasterTenant
+  ShipmentBeta {tenant} to @OnDelete("CASCADE") MasterTenant
+  SupplierBeta {tenant} to @OnDelete("CASCADE") MasterTenant
+  CustomerGamma {tenant} to @OnDelete("CASCADE") MasterTenant
+  ProductGamma {tenant} to @OnDelete("CASCADE") MasterTenant
+  OrderGamma {tenant} to @OnDelete("CASCADE") MasterTenant
+  EmployeeGamma {tenant} to @OnDelete("CASCADE") MasterTenant
+  CategoryGamma {tenant} to @OnDelete("CASCADE") MasterTenant
+  ReviewGamma {tenant} to @OnDelete("CASCADE") MasterTenant
+  PaymentGamma {tenant} to @OnDelete("CASCADE") MasterTenant
+  InvoiceGamma {tenant} to @OnDelete("CASCADE") MasterTenant
+  ShipmentGamma {tenant} to @OnDelete("CASCADE") MasterTenant
+  SupplierGamma {tenant} to @OnDelete("CASCADE") MasterTenant
+  CustomerSigma {tenant} to @OnDelete("CASCADE") MasterTenant
+  ProductSigma {tenant} to @OnDelete("CASCADE") MasterTenant
+  OrderSigma {tenant} to @OnDelete("CASCADE") MasterTenant
+  EmployeeSigma {tenant} to @OnDelete("CASCADE") MasterTenant
+  CategorySigma {tenant} to @OnDelete("CASCADE") MasterTenant
+  ReviewSigma {tenant} to @OnDelete("CASCADE") MasterTenant
+  PaymentSigma {tenant} to @OnDelete("CASCADE") MasterTenant
+  InvoiceSigma {tenant} to @OnDelete("CASCADE") MasterTenant
+  ShipmentSigma {tenant} to @OnDelete("CASCADE") MasterTenant
+  SupplierSigma {tenant} to @OnDelete("CASCADE") MasterTenant
+  CustomerTheta {tenant} to @OnDelete("CASCADE") MasterTenant
+  ProductTheta {tenant} to @OnDelete("CASCADE") MasterTenant
+  OrderTheta {tenant} to @OnDelete("CASCADE") MasterTenant
+  EmployeeTheta {tenant} to @OnDelete("CASCADE") MasterTenant
+  CategoryTheta {tenant} to @OnDelete("CASCADE") MasterTenant
+  ReviewTheta {tenant} to @OnDelete("CASCADE") MasterTenant
+  PaymentTheta {tenant} to @OnDelete("CASCADE") MasterTenant
+  InvoiceTheta {tenant} to @OnDelete("CASCADE") MasterTenant
+  ShipmentTheta {tenant} to @OnDelete("CASCADE") MasterTenant
+  SupplierTheta {tenant} to @OnDelete("CASCADE") MasterTenant
+  NextCustomer{tenant} to @OnDelete("CASCADE") MasterTenant
+  NextProduct{tenant} to @OnDelete("CASCADE") MasterTenant
+  NextOrder{tenant} to @OnDelete("CASCADE") MasterTenant
+  NextEmployee{tenant} to @OnDelete("CASCADE") MasterTenant
+  NextCategory{tenant} to @OnDelete("CASCADE") MasterTenant
+  NextReview{tenant} to @OnDelete("CASCADE") MasterTenant
+  NextPayment{tenant} to @OnDelete("CASCADE") MasterTenant
+  NextInvoice{tenant} to @OnDelete("CASCADE") MasterTenant
+  NextShipment{tenant} to @OnDelete("CASCADE") MasterTenant
+  NextSupplier{tenant} to @OnDelete("CASCADE") MasterTenant
+  NextCustomerVi{tenant} to @OnDelete("CASCADE") MasterTenant
+  NextProductVi{tenant} to @OnDelete("CASCADE") MasterTenant
+  NextOrderVi{tenant} to @OnDelete("CASCADE") MasterTenant
+  NextEmployeeVi{tenant} to @OnDelete("CASCADE") MasterTenant
+  NextCategoryVi{tenant} to @OnDelete("CASCADE") MasterTenant
+  NextReviewVi{tenant} to @OnDelete("CASCADE") MasterTenant
+  NextPaymentVi{tenant} to @OnDelete("CASCADE") MasterTenant
+  NextInvoiceVi{tenant} to @OnDelete("CASCADE") MasterTenant
+  NextShipmentVi{tenant} to @OnDelete("CASCADE") MasterTenant
+  NextSupplierVi{tenant} to @OnDelete("CASCADE") MasterTenant
+  NextCustomerViVi{tenant} to @OnDelete("CASCADE") MasterTenant
+  NextProductViVi{tenant} to @OnDelete("CASCADE") MasterTenant
+  NextOrderViVi{tenant} to @OnDelete("CASCADE") MasterTenant
+  NextEmployeeViVi{tenant} to @OnDelete("CASCADE") MasterTenant
+  NextCategoryViVi{tenant} to @OnDelete("CASCADE") MasterTenant
+  NextReviewViVi{tenant} to @OnDelete("CASCADE") MasterTenant
+  NextPaymentViVi{tenant} to @OnDelete("CASCADE") MasterTenant
+  NextInvoiceViVi{tenant} to @OnDelete("CASCADE") MasterTenant
+  NextShipmentViVi{tenant} to @OnDelete("CASCADE") MasterTenant
+  NextSupplierViVi{tenant} to @OnDelete("CASCADE") MasterTenant
+  NextCustomerMi{tenant} to @OnDelete("CASCADE") MasterTenant
+  NextProductMi{tenant} to @OnDelete("CASCADE") MasterTenant
+  NextOrderMi{tenant} to @OnDelete("CASCADE") MasterTenant
+  NextEmployeeMi{tenant} to @OnDelete("CASCADE") MasterTenant
+  NextCategoryMi{tenant} to @OnDelete("CASCADE") MasterTenant
+  NextReviewMi{tenant} to @OnDelete("CASCADE") MasterTenant
+  NextPaymentMi{tenant} to @OnDelete("CASCADE") MasterTenant
+  NextInvoiceMi{tenant} to @OnDelete("CASCADE") MasterTenant
+  NextShipmentMi{tenant} to @OnDelete("CASCADE") MasterTenant
+  NextSupplierMi{tenant} to @OnDelete("CASCADE") MasterTenant
+  NextCustomerMiMi{tenant} to @OnDelete("CASCADE") MasterTenant
+  NextProductMiMi{tenant} to @OnDelete("CASCADE") MasterTenant
+  NextOrderMiMi{tenant} to @OnDelete("CASCADE") MasterTenant
+  NextEmployeeMiMi{tenant} to @OnDelete("CASCADE") MasterTenant
+  NextCategoryMiMi{tenant} to @OnDelete("CASCADE") MasterTenant
+  NextReviewMiMi{tenant} to @OnDelete("CASCADE") MasterTenant
+  NextPaymentMiMi{tenant} to @OnDelete("CASCADE") MasterTenant
+  NextInvoiceMiMi{tenant} to @OnDelete("CASCADE") MasterTenant
+  NextShipmentMiMi{tenant} to @OnDelete("CASCADE") MasterTenant
+  NextSupplierMiMi{tenant} to @OnDelete("CASCADE") MasterTenant
+  NextCustomerAlpha {tenant} to @OnDelete("CASCADE") MasterTenant
+  NextProductAlpha {tenant} to @OnDelete("CASCADE") MasterTenant
+  NextOrderAlpha {tenant} to @OnDelete("CASCADE") MasterTenant
+  NextEmployeeAlpha {tenant} to @OnDelete("CASCADE") MasterTenant
+  NextCategoryAlpha {tenant} to @OnDelete("CASCADE") MasterTenant
+  NextReviewAlpha {tenant} to @OnDelete("CASCADE") MasterTenant
+  NextPaymentAlpha {tenant} to @OnDelete("CASCADE") MasterTenant
+  NextInvoiceAlpha {tenant} to @OnDelete("CASCADE") MasterTenant
+  NextShipmentAlpha {tenant} to @OnDelete("CASCADE") MasterTenant
+  NextSupplierAlpha {tenant} to @OnDelete("CASCADE") MasterTenant
+  NextCustomerBeta {tenant} to @OnDelete("CASCADE") MasterTenant
+  NextProductBeta {tenant} to @OnDelete("CASCADE") MasterTenant
+  NextOrderBeta {tenant} to @OnDelete("CASCADE") MasterTenant
+  NextEmployeeBeta {tenant} to @OnDelete("CASCADE") MasterTenant
+  NextCategoryBeta {tenant} to @OnDelete("CASCADE") MasterTenant
+  NextReviewBeta {tenant} to @OnDelete("CASCADE") MasterTenant
+  NextPaymentBeta {tenant} to @OnDelete("CASCADE") MasterTenant
+  NextInvoiceBeta {tenant} to @OnDelete("CASCADE") MasterTenant
+  NextShipmentBeta {tenant} to @OnDelete("CASCADE") MasterTenant
+  NextSupplierBeta {tenant} to @OnDelete("CASCADE") MasterTenant
+  NextCustomerGamma {tenant} to @OnDelete("CASCADE") MasterTenant
+  NextProductGamma {tenant} to @OnDelete("CASCADE") MasterTenant
+  NextOrderGamma {tenant} to @OnDelete("CASCADE") MasterTenant
+  NextEmployeeGamma {tenant} to @OnDelete("CASCADE") MasterTenant
+  NextCategoryGamma {tenant} to @OnDelete("CASCADE") MasterTenant
+  NextReviewGamma {tenant} to @OnDelete("CASCADE") MasterTenant
+  NextPaymentGamma {tenant} to @OnDelete("CASCADE") MasterTenant
+  NextInvoiceGamma {tenant} to @OnDelete("CASCADE") MasterTenant
+  NextShipmentGamma {tenant} to @OnDelete("CASCADE") MasterTenant
+  NextSupplierGamma {tenant} to @OnDelete("CASCADE") MasterTenant
+  NextCustomerSigma {tenant} to @OnDelete("CASCADE") MasterTenant
+  NextProductSigma {tenant} to @OnDelete("CASCADE") MasterTenant
+  NextOrderSigma {tenant} to @OnDelete("CASCADE") MasterTenant
+  NextEmployeeSigma {tenant} to @OnDelete("CASCADE") MasterTenant
+  NextCategorySigma {tenant} to @OnDelete("CASCADE") MasterTenant
+  NextReviewSigma {tenant} to @OnDelete("CASCADE") MasterTenant
+  NextPaymentSigma {tenant} to @OnDelete("CASCADE") MasterTenant
+  NextInvoiceSigma {tenant} to @OnDelete("CASCADE") MasterTenant
+  NextShipmentSigma {tenant} to @OnDelete("CASCADE") MasterTenant
+  NextSupplierSigma {tenant} to @OnDelete("CASCADE") MasterTenant
+  NextCustomerTheta {tenant} to @OnDelete("CASCADE") MasterTenant
+  NextProductTheta {tenant} to @OnDelete("CASCADE") MasterTenant
+  NextOrderTheta {tenant} to @OnDelete("CASCADE") MasterTenant
+  NextEmployeeTheta {tenant} to @OnDelete("CASCADE") MasterTenant
+  NextCategoryTheta {tenant} to @OnDelete("CASCADE") MasterTenant
+  NextReviewTheta {tenant} to @OnDelete("CASCADE") MasterTenant
+  NextPaymentTheta {tenant} to @OnDelete("CASCADE") MasterTenant
+  NextInvoiceTheta {tenant} to @OnDelete("CASCADE") MasterTenant
+  NextShipmentTheta {tenant} to @OnDelete("CASCADE") MasterTenant
+  NextSupplierTheta {tenant} to @OnDelete("CASCADE") MasterTenant
+}

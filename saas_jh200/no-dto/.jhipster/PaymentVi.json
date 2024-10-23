@@ -1,0 +1,39 @@
+{
+  "annotations": {
+    "changelogDate": "20241023161759"
+  },
+  "applications": ["jhmapstruct"],
+  "fields": [
+    {
+      "fieldName": "amount",
+      "fieldType": "BigDecimal",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "paymentDate",
+      "fieldType": "Instant",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "paymentMethod",
+      "fieldType": "PaymentViMethod",
+      "fieldValues": "CREDIT_CARD,PAYPAL,BANK_TRANSFER"
+    }
+  ],
+  "jpaMetamodelFiltering": true,
+  "name": "PaymentVi",
+  "pagination": "pagination",
+  "relationships": [
+    {
+      "options": {
+        "onDelete": "CASCADE"
+      },
+      "otherEntityName": "masterTenant",
+      "relationshipName": "tenant",
+      "relationshipSide": "left",
+      "relationshipType": "many-to-one"
+    }
+  ],
+  "searchEngine": "no",
+  "service": "serviceClass"
+}

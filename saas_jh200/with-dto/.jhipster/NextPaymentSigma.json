@@ -1,0 +1,40 @@
+{
+  "annotations": {
+    "changelogDate": "20241023190904"
+  },
+  "applications": ["jhmapstruct"],
+  "dto": "mapstruct",
+  "fields": [
+    {
+      "fieldName": "amount",
+      "fieldType": "BigDecimal",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "paymentDate",
+      "fieldType": "Instant",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "paymentMethod",
+      "fieldType": "NextPaymentSigmaMethod",
+      "fieldValues": "CREDIT_CARD,PAYPAL,BANK_TRANSFER"
+    }
+  ],
+  "jpaMetamodelFiltering": true,
+  "name": "NextPaymentSigma",
+  "pagination": "pagination",
+  "relationships": [
+    {
+      "options": {
+        "onDelete": "CASCADE"
+      },
+      "otherEntityName": "masterTenant",
+      "relationshipName": "tenant",
+      "relationshipSide": "left",
+      "relationshipType": "many-to-one"
+    }
+  ],
+  "searchEngine": "no",
+  "service": "serviceClass"
+}

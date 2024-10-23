@@ -1,0 +1,67 @@
+{
+  "annotations": {
+    "changelogDate": "20241023165504"
+  },
+  "applications": ["jhmapstruct"],
+  "dto": "mapstruct",
+  "fields": [
+    {
+      "fieldName": "orderDate",
+      "fieldType": "Instant",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "totalPrice",
+      "fieldType": "BigDecimal",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "status",
+      "fieldType": "OrderAlphaStatus",
+      "fieldValues": "PENDING,SHIPPED,DELIVERED,CANCELLED"
+    }
+  ],
+  "jpaMetamodelFiltering": true,
+  "name": "OrderAlpha",
+  "pagination": "pagination",
+  "relationships": [
+    {
+      "otherEntityName": "productAlpha",
+      "otherEntityRelationshipName": "order",
+      "relationshipName": "products",
+      "relationshipSide": "left",
+      "relationshipType": "one-to-many"
+    },
+    {
+      "otherEntityName": "paymentAlpha",
+      "relationshipName": "payment",
+      "relationshipSide": "left",
+      "relationshipType": "many-to-one"
+    },
+    {
+      "otherEntityName": "shipmentAlpha",
+      "relationshipName": "shipment",
+      "relationshipSide": "left",
+      "relationshipType": "many-to-one"
+    },
+    {
+      "options": {
+        "onDelete": "CASCADE"
+      },
+      "otherEntityName": "masterTenant",
+      "relationshipName": "tenant",
+      "relationshipSide": "left",
+      "relationshipType": "many-to-one"
+    },
+    {
+      "otherEntityField": "email",
+      "otherEntityName": "customerAlpha",
+      "otherEntityRelationshipName": "orders",
+      "relationshipName": "customer",
+      "relationshipSide": "right",
+      "relationshipType": "many-to-one"
+    }
+  ],
+  "searchEngine": "no",
+  "service": "serviceClass"
+}

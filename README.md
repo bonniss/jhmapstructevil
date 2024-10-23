@@ -272,6 +272,34 @@ Run 3: 8.753 seconds
 ~~~~~~~~~~~~~~~~~~
 ```
 
+### SaaS 200 entities
+
+200 entities with SaaS.
+
+**M1 Pro**:
+
+```txt
+==================
+saas_jh200
+==================
+
+~~~~~~~~~~~~~~~~~~
+Measuring build time for no-dto...
+Run 1: 11.709 seconds
+Run 2: 10.579 seconds
+Run 3: 10.373 seconds
+10.887 seconds
+~~~~~~~~~~~~~~~~~~
+
+~~~~~~~~~~~~~~~~~~
+Measuring build time for with-dto...
+Run 1: 14.689 seconds
+Run 2: 14.773 seconds
+Run 3: 14.711 seconds
+14.724 seconds
+~~~~~~~~~~~~~~~~~~
+```
+
 ### Realworld app
 
 A real-world app design with a complex network of relationships (50+ entities), including multiple `ManyToMany` relationships, while also applying to the SaaS model.

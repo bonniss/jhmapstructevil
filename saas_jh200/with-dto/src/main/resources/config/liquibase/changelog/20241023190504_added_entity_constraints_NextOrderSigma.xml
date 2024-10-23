@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd
+                        http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+    <!--
+        Added the constraints for entity NextOrderSigma.
+    -->
+    <changeSet id="20241023190504-2" author="jhipster">
+
+        <addForeignKeyConstraint baseColumnNames="payment_id"
+                                 baseTableName="next_order_sigma"
+                                 constraintName="fk_next_order_sigma__payment_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="next_payment_sigma"
+                                 />
+
+        <addForeignKeyConstraint baseColumnNames="shipment_id"
+                                 baseTableName="next_order_sigma"
+                                 constraintName="fk_next_order_sigma__shipment_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="next_shipment_sigma"
+                                 />
+
+        <addForeignKeyConstraint baseColumnNames="tenant_id"
+                                 baseTableName="next_order_sigma"
+                                 constraintName="fk_next_order_sigma__tenant_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="master_tenant"
+                                 onDelete="CASCADE"
+                                 />
+
+        <addForeignKeyConstraint baseColumnNames="customer_id"
+                                 baseTableName="next_order_sigma"
+                                 constraintName="fk_next_order_sigma__customer_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="next_customer_sigma"
+                                 />
+    </changeSet>
+</databaseChangeLog>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd
+                        http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+    <!--
+        Added the constraints for entity SupplierTheta.
+    -->
+    <changeSet id="20241023174059-2" author="jhipster">
+
+        <addForeignKeyConstraint baseColumnNames="tenant_id"
+                                 baseTableName="supplier_theta"
+                                 constraintName="fk_supplier_theta__tenant_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="master_tenant"
+                                 onDelete="CASCADE"
+                                 />
+
+        <addForeignKeyConstraint baseColumnNames="supplier_theta_id"
+                                 baseTableName="rel_supplier_theta__products"
+                                 constraintName="fk_rel_supplier_theta__products__supplier_theta_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="supplier_theta"
+                                 />
+
+        <addForeignKeyConstraint baseColumnNames="products_id"
+                                 baseTableName="rel_supplier_theta__products"
+                                 constraintName="fk_rel_supplier_theta__products__products_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="product_theta"
+                                 />
+    </changeSet>
+</databaseChangeLog>
